@@ -63,13 +63,13 @@ const Bio = () => {
         Tongasoa, bienvenue sur mon blog, je m'appelle{" "}
         <strong>{author.name}</strong>. {author.summary}
         {` `}
-        {/* <a
+        <a
           href={`https://twitter.com/${social.twitter}`}
           target="_blank"
           rel="noopener noreferrer"
-          >
+        >
           Suivez-moi sur Twitter.
-        </a> */}
+        </a>
       </p>
     </div>
   )
