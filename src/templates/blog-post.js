@@ -5,7 +5,6 @@ import Img from "gatsby-image"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -24,30 +23,11 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       <article>
         {featuredImgFluid ? <Img fluid={featuredImgFluid} /> : null}
         <header>
-          <h1
-            style={{
-              marginTop: rhythm(1),
-              marginBottom: 0,
-            }}
-          >
-            {post.frontmatter.title}
-          </h1>
-          <p
-            style={{
-              ...scale(-1 / 5),
-              display: `block`,
-              marginBottom: rhythm(1),
-            }}
-          >
-            {new Date(post.frontmatter.date).toLocaleDateString("fr-FR")}
-          </p>
+          <h1>{post.frontmatter.title}</h1>
+          <p>{new Date(post.frontmatter.date).toLocaleDateString("fr-FR")}</p>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
+        <hr />
         <footer>
           <Bio />
         </footer>
