@@ -52,7 +52,9 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
                   {title}
                 </Link>
               </h3>
-              <small>{node.frontmatter.date}</small>
+              <small>
+                {new Date(node.frontmatter.date).toLocaleDateString("fr-FR")}
+              </small>
             </header>
             <section>
               <p
@@ -85,7 +87,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date
             title
             description
           }

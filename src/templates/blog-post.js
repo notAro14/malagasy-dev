@@ -39,7 +39,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               marginBottom: rhythm(1),
             }}
           >
-            {post.frontmatter.date}
+            {new Date(post.frontmatter.date).toLocaleDateString("fr-FR")}
           </p>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
