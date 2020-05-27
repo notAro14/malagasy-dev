@@ -1,12 +1,10 @@
 import { createMuiTheme } from "@material-ui/core"
-// import teal from "@material-ui/core/colors/teal"
+import yellow from "@material-ui/core/colors/yellow"
 
 const theme = createMuiTheme({
   palette: {
     type: "dark",
-    // background: {
-    //   default: "yellow",
-    // },
+    secondary: yellow,
   },
 })
 export default theme

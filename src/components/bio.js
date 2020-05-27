@@ -8,6 +8,19 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
+import styled from "styled-components"
+import Typography from "@material-ui/core/Typography"
+import Paper from "@material-ui/core/Paper"
+
+const BioContainer = styled(Paper)`
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+`
+const BioText = styled.div`
+  text-align: center;
+`
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -35,11 +48,7 @@ const Bio = () => {
 
   const { author, social } = data.site.siteMetadata
   return (
-    <div
-      style={{
-        display: `flex`,
-      }}
-    >
+    <BioContainer>
       <Image
         fixed={data.avatar.childImageSharp.fixed}
         alt={author.name}
@@ -55,19 +64,12 @@ const Bio = () => {
           borderRadius: `50%`,
         }}
       />
-      <p>
-        Tongasoa, bienvenue sur mon blog, je m'appelle{" "}
-        <strong>{author.name}</strong>. {author.summary}
-        {` `}
-        <a
-          href={`https://twitter.com/${social.twitter}`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Suivez-moi sur Twitter.
-        </a>
-      </p>
-    </div>
+      <BioText>
+        <Typography variant="subtitle1" component="p">
+          Tongasoa, bienvenue sur mon blog. {author.summary}
+        </Typography>
+      </BioText>
+    </BioContainer>
   )
 }
 
