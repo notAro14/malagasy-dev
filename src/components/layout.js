@@ -1,5 +1,6 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link as GatsbyLink } from "gatsby"
+import Link from "@material-ui/core/Link"
 import { Container } from "@material-ui/core"
 
 const Layout = ({ location, title, children }) => {
@@ -18,6 +19,8 @@ const Layout = ({ location, title, children }) => {
             boxShadow: `none`,
           }}
           to={`/`}
+          component={GatsbyLink}
+          underline="none"
         >
           {title}
         </Link>
@@ -35,6 +38,8 @@ const Layout = ({ location, title, children }) => {
             boxShadow: `none`,
           }}
           to={`/`}
+          component={GatsbyLink}
+          underline="none"
         >
           {title}
         </Link>
@@ -48,7 +53,7 @@ const Layout = ({ location, title, children }) => {
       <footer>
         © {new Date().getFullYear()}, Built with
         {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
+        <Link href="https://www.gatsbyjs.org">Gatsby</Link>
       </footer>
     </Container>
   )
