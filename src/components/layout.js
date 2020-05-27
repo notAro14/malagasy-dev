@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import { Container } from "@material-ui/core"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -15,7 +16,6 @@ const Layout = ({ location, title, children }) => {
         <Link
           style={{
             boxShadow: `none`,
-            color: `inherit`,
           }}
           to={`/`}
         >
@@ -27,14 +27,12 @@ const Layout = ({ location, title, children }) => {
     header = (
       <h3
         style={{
-          fontFamily: `Montserrat, sans-serif`,
           marginTop: 0,
         }}
       >
         <Link
           style={{
             boxShadow: `none`,
-            color: `inherit`,
           }}
           to={`/`}
         >
@@ -44,14 +42,7 @@ const Layout = ({ location, title, children }) => {
     )
   }
   return (
-    <div
-      style={{
-        marginLeft: `auto`,
-        marginRight: `auto`,
-        maxWidth: "65vw",
-        padding: "1rem",
-      }}
-    >
+    <Container maxWidth="sm">
       <header>{header}</header>
       <main>{children}</main>
       <footer>
@@ -59,7 +50,7 @@ const Layout = ({ location, title, children }) => {
         {` `}
         <a href="https://www.gatsbyjs.org">Gatsby</a>
       </footer>
-    </div>
+    </Container>
   )
 }
 
