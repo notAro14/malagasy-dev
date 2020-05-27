@@ -3,7 +3,7 @@ module.exports = {
     title: `Malagasy Dev`,
     author: {
       name: `Mamitiana`,
-      summary: `Je suis passionné par la tech et le web. Ici je te parle de dev mais aussi de plein d'autres choses. Alors installe toi bien, et bonne lecture.`,
+      summary: `Ici je te parle de dev mais aussi de plein d'autres choses. Alors installe toi bien, et bonne lecture.`,
     },
     description: `Un blog sur la tech mais pas que.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
@@ -48,6 +48,15 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        stylesProvider: {
+          injectFirst: true,
+        },
+      },
+    },
+    `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -70,12 +79,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

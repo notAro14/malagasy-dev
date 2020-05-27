@@ -1,69 +1,27 @@
 import React from "react"
-import { Link } from "gatsby"
+import Link from "@material-ui/core/Link"
+import { Container } from "@material-ui/core"
+import Header from "./header"
 
-import { rhythm, scale } from "../utils/typography"
+const Layout = ({ location, title, children, currentActivePage }) => {
+  // const rootPath = `${__PATH_PREFIX__}/`
 
-const Layout = ({ location, title, children }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
-  let header
+  // if (location.pathname === rootPath) {
 
-  if (location.pathname === rootPath) {
-    header = (
-      <h1
-        style={{
-          ...scale(1.5),
-          marginBottom: rhythm(1.5),
-          marginTop: 0,
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          {title}
-        </Link>
-      </h1>
-    )
-  } else {
-    header = (
-      <h3
-        style={{
-          fontFamily: `Montserrat, sans-serif`,
-          marginTop: 0,
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          {title}
-        </Link>
-      </h3>
-    )
-  }
+  // } else {
+
+  // }
+  // console.log(location)
   return (
-    <div
-      style={{
-        marginLeft: `auto`,
-        marginRight: `auto`,
-        maxWidth: rhythm(24),
-        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-      }}
-    >
-      <header>{header}</header>
+    <Container maxWidth="sm">
+      <Header currentActivePage={currentActivePage} />
       <main>{children}</main>
       <footer>
         © {new Date().getFullYear()}, Built with
         {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
+        <Link href="https://www.gatsbyjs.org">Gatsby</Link>
       </footer>
-    </div>
+    </Container>
   )
 }
 

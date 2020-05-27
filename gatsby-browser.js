@@ -1,7 +1,7 @@
-// custom typefaces
-// import "typeface-montserrat"
-// import "typeface-merriweather"
-import "typeface-roboto"
-
+import React from "react"
+import TopLayout from "./src/components/topLayout"
 import "prismjs/themes/prism.css"
-// import "prismjs/themes/prism-twilight.css"
+
+export const wrapRootElement = ({ element }) => {
+  return <TopLayout>{element}</TopLayout>
+}
