@@ -19,16 +19,13 @@ const ArticlePreview = ({ node }) => {
             <Box fontWeight={700}>{title}</Box>
           </Link>
         </Typography>
-        {/* <Link
-            style={{ boxShadow: `none` }}
-            to={node.fields.slug}
-            component={GatsbyLink}
-          >
-            {title}
-          </Link> */}
-        <small>
-          {new Date(node.frontmatter.date).toLocaleDateString("fr-FR")}
-        </small>
+
+        <Typography color="textSecondary" component="p" variant="caption">
+          {`${new Date(node.frontmatter.date).toLocaleDateString("fr-FR")} • ${
+            node.timeToRead
+          } min `}
+          &#x1F453;
+        </Typography>
       </header>
       <section>
         <p

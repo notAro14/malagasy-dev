@@ -2,13 +2,15 @@ module.exports = {
   siteMetadata: {
     title: `Malagasy Dev`,
     author: {
-      name: `Mamitiana`,
-      summary: `Ici je te parle de dev mais aussi de plein d'autres choses. Alors installe toi bien, et bonne lecture.`,
+      name: `Mamitiana Andriamaro`,
+      summary: `Ici je te parle de dev mais aussi de plein d'autres choses.`,
     },
     description: `Un blog sur la tech mais pas que.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
     social: {
-      twitter: `notarodev`,
+      twitter: `https://twitter.com/notarodev`,
+      github: `https://github.com/notAro14`,
+      linkedin: `https://www.linkedin.com/in/mamitiana/`,
     },
   },
   plugins: [

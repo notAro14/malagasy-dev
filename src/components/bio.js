@@ -11,15 +11,27 @@ import Image from "gatsby-image"
 import styled from "styled-components"
 import Typography from "@material-ui/core/Typography"
 import Paper from "@material-ui/core/Paper"
+import { Box, Link } from "@material-ui/core"
+import GitHubIcon from "@material-ui/icons/GitHub"
+import LinkedInIcon from "@material-ui/icons/LinkedIn"
+import TwitterIcon from "@material-ui/icons/Twitter"
 
 const BioContainer = styled(Paper)`
-  padding: 0.5rem;
+  padding: 1rem;
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
 `
 const BioText = styled.div`
-  text-align: center;
+  padding: 0.5rem;
+  margin-left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+`
+const SocialsContainer = styled.div`
+  display: flex;
+  margin-top: 1rem;
+  justify-content: space-around;
 `
 
 const Bio = () => {
@@ -35,18 +47,22 @@ const Bio = () => {
       site {
         siteMetadata {
           author {
-            name
             summary
           }
           social {
             twitter
+            github
+            linkedin
           }
         }
       }
     }
   `)
 
-  const { author, social } = data.site.siteMetadata
+  const {
+    author,
+    social: { twitter, github, linkedin },
+  } = data.site.siteMetadata
   return (
     <BioContainer>
       <Image
@@ -65,9 +81,37 @@ const Bio = () => {
         }}
       />
       <BioText>
-        <Typography variant="subtitle1" component="p">
-          Tongasoa, bienvenue sur mon blog. {author.summary}
+        <Typography color="textSecondary" variant="subtitle2" component="p">
+          <Box textAlign="center">
+            Tongasoa, bienvenue sur mon blog. {author.summary}
+          </Box>
         </Typography>
+        <SocialsContainer>
+          <Link
+            color="secondary"
+            target="_blank"
+            rel="noopener noreferrer"
+            href={github}
+          >
+            <GitHubIcon titleAccess="Github" />
+          </Link>
+          <Link
+            color="secondary"
+            target="_blank"
+            rel="noopener noreferrer"
+            href={linkedin}
+          >
+            <LinkedInIcon titleAccess="Linkedin" />
+          </Link>
+          <Link
+            color="secondary"
+            target="_blank"
+            rel="noopener noreferrer"
+            href={twitter}
+          >
+            <TwitterIcon titleAccess="Twitter" />
+          </Link>
+        </SocialsContainer>
       </BioText>
     </BioContainer>
   )

@@ -1,10 +1,22 @@
 import { createMuiTheme } from "@material-ui/core"
-import yellow from "@material-ui/core/colors/yellow"
 
 const theme = createMuiTheme({
   palette: {
+    text: {
+      primary: "#F0F6EE",
+      secondary: "#C1A792",
+    },
     type: "dark",
-    secondary: yellow,
+    primary: {
+      main: "#DA7649",
+    },
+    secondary: {
+      main: "#ffd479",
+    },
+  },
+  typography: {
+    fontFamily: ["Inter", "sans-serif"].join(","),
+    fontSize: 16,
   },
 })
 export default theme
