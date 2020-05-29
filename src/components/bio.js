@@ -125,7 +125,7 @@ const Bio = () => {
           color="secondary"
           target="_blank"
           rel="noopener noreferrer"
-          href={github}
+          href={`https://github.com/${github}`}
         >
           <Image fixed={data.github.childImageSharp.fixed} alt="github icon" />
         </Link>
@@ -133,7 +133,7 @@ const Bio = () => {
           color="secondary"
           target="_blank"
           rel="noopener noreferrer"
-          href={linkedin}
+          href={`https://www.linkedin.com/in/${linkedin}/`}
         >
           <Image
             fixed={data.linkedin.childImageSharp.fixed}
@@ -144,7 +144,7 @@ const Bio = () => {
           color="secondary"
           target="_blank"
           rel="noopener noreferrer"
-          href={twitter}
+          href={`https://twitter.com/${twitter}`}
         >
           <Image
             fixed={data.twitter.childImageSharp.fixed}
@@ -155,7 +155,7 @@ const Bio = () => {
           color="secondary"
           target="_blank"
           rel="noopener noreferrer"
-          href={medium}
+          href={`https://medium.com/${medium}`}
         >
           <Image fixed={data.medium.childImageSharp.fixed} alt="medium icon" />
         </Link>
