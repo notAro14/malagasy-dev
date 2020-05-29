@@ -2,6 +2,7 @@ import React from "react"
 import { Link as GatsbyLink, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Link from "@material-ui/core/Link"
+import { DiscussionEmbed } from "disqus-react"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -17,6 +18,11 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const featuredImgFluid = post.frontmatter.featuredImage
     ? post.frontmatter.featuredImage.childImageSharp.fluid
     : null
+
+  const disqusConfig = {
+    shortname: process.env.GATSBY_DISQUS_NAME,
+    config: { identifier: post.fields.slug, title: post.frontmatter.title },
+  }
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -72,6 +78,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </li>
         </ul>
       </nav>
+      <DiscussionEmbed {...disqusConfig} />
     </Layout>
   )
 }
@@ -90,6 +97,9 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 160)
       html
       timeToRead
+      fields {
+        slug
+      }
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
