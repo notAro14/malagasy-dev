@@ -7,6 +7,9 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+import Typography from "@material-ui/core/Typography"
+import Box from "@material-ui/core/Box"
+
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata.title
@@ -23,9 +26,18 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       />
       <article>
         {featuredImgFluid ? <Img fluid={featuredImgFluid} /> : null}
-        <header>
-          <h1>{post.frontmatter.title}</h1>
-          <p>{new Date(post.frontmatter.date).toLocaleDateString("fr-FR")}</p>
+        <header style={{ margin: "1.5rem 0 1.5rem 0" }}>
+          <Typography color="secondary" component="h3" variant="h4">
+            <Box fontWeight={700}>{post.frontmatter.title}</Box>
+          </Typography>
+          <Box fontWeight={500}>
+            <Typography color="textSecondary" component="p" variant="subtitle2">
+              {`${new Date(post.frontmatter.date).toLocaleDateString(
+                "fr-FR"
+              )} • Temps de lecture : ${post.timeToRead} min `}{" "}
+              &#x1F453;
+            </Typography>
+          </Box>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr />
@@ -77,6 +89,7 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       html
+      timeToRead
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")

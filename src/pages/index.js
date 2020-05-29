@@ -5,7 +5,7 @@ import { graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import ArticlePreview from "../components/article-preview"
+import ArticlePreview from "../components/article-preview/article-preview"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -13,9 +13,10 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+      <SEO title="Tous les articles" />
 
       <Bio />
+
       {posts.map(({ node }) => {
         return <ArticlePreview key={node.fields.slug} node={node} />
       })}
@@ -35,6 +36,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
+          timeToRead
           excerpt
           fields {
             slug

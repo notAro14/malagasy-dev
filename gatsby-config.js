@@ -2,13 +2,16 @@ module.exports = {
   siteMetadata: {
     title: `Malagasy Dev`,
     author: {
-      name: `Mamitiana`,
-      summary: `Ici je te parle de dev mais aussi de plein d'autres choses. Alors installe toi bien, et bonne lecture.`,
+      name: `Mamitiana Andriamaro`,
+      summary: `Ici je te parle de dev mais aussi de plein d'autres choses.`,
     },
     description: `Un blog sur la tech mais pas que.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
     social: {
-      twitter: `notarodev`,
+      twitter: `https://twitter.com/notarodev`,
+      github: `https://github.com/notAro14`,
+      linkedin: `https://www.linkedin.com/in/mamitiana/`,
+      medium: `https://medium.com/@notAro14`,
     },
   },
   plugins: [
@@ -69,13 +72,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Malagasy Dev blog`,
+        short_name: `MalagasyDev`,
         start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
+        background_color: `#303030`,
+        theme_color: `#F1EA65`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/favicon.png`,
       },
     },
     `gatsby-plugin-react-helmet`,

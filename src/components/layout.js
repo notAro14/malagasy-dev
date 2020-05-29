@@ -1,7 +1,14 @@
 import React from "react"
-import Link from "@material-ui/core/Link"
+
 import { Container } from "@material-ui/core"
-import Header from "./header"
+import Header from "./header/header"
+import Footer from "./footer/footer"
+
+import ThemeProvider from "@material-ui/styles/ThemeProvider"
+import theme from "../theme"
+
+import GlobalStyles from "./global-styles"
+import CssBaseline from "@material-ui/core/CssBaseline"
 
 const Layout = ({ location, title, children, currentActivePage }) => {
   // const rootPath = `${__PATH_PREFIX__}/`
@@ -14,13 +21,13 @@ const Layout = ({ location, title, children, currentActivePage }) => {
   // console.log(location)
   return (
     <Container maxWidth="sm">
-      <Header currentActivePage={currentActivePage} />
-      <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <Link href="https://www.gatsbyjs.org">Gatsby</Link>
-      </footer>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <CssBaseline />
+        <Header currentActivePage={currentActivePage} />
+        <main>{children}</main>
+        <Footer />
+      </ThemeProvider>
     </Container>
   )
 }
