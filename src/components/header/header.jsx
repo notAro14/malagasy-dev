@@ -1,5 +1,6 @@
 import React from "react"
-import { Link as GatsbyLink } from "gatsby"
+import { Link as GatsbyLink, graphql, useStaticQuery } from "gatsby"
+import Image from "gatsby-image"
 
 import { Link } from "@material-ui/core"
 import Typography from "@material-ui/core/Typography"
@@ -20,6 +21,19 @@ const NavLink = ({ children, to, activePage, component }) => {
 }
 
 export default function Header({ currentActivePage }) {
+  const data = useStaticQuery(graphql`
+    query {
+      logo: file(absolutePath: { regex: "/logo_transparent.png/" }) {
+        childImageSharp {
+          fixed(width: 50, height: 50) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+    }
+  `)
+
+  const logo = data.logo.childImageSharp.fixed
   let about = false
   let contact = false
 
@@ -38,8 +52,15 @@ export default function Header({ currentActivePage }) {
   return (
     <Navbar>
       <Typography color="primary" variant="h5" component="h1">
-        <Link component={GatsbyLink} to="/" underline="none">
-          <Box fontWeight={700}>MalagasyDev</Box>
+        <Link
+          style={{ display: "flex", alignItems: "center" }}
+          component={GatsbyLink}
+          to="/"
+          underline="none"
+        >
+          <Image fixed={logo} alt="Malagasy Dev" />
+          <span style={{ marginLeft: "1rem" }}>MalagasyDev</span>
+          {/* <Box fontWeight={700}>MalagasyDev</Box> */}
         </Link>
       </Typography>
       <Links>

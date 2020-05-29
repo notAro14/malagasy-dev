@@ -1,6 +1,5 @@
 import React from "react"
 import Link from "@material-ui/core/Link"
-import { Link as GatsbyLink, graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 
 const FooterContainer = styled.footer`
@@ -11,26 +10,6 @@ const FooterContainer = styled.footer`
 `
 
 const Footer = () => {
-  const data = useStaticQuery(graphql`
-    query FooterQuery {
-      site {
-        siteMetadata {
-          author {
-            name
-          }
-          social {
-            twitter
-            github
-            linkedin
-          }
-        }
-      }
-    }
-  `)
-  const {
-    author: { name },
-    social: { github, twitter, linkedin },
-  } = data.site.siteMetadata
   return (
     <FooterContainer>
       <div
@@ -48,6 +27,7 @@ const Footer = () => {
           <Link href="https://www.gatsbyjs.org/">Gatsby</Link>
         </div>
         <div>
+          Credits:{" "}
           <Link href="https://icons8.com/icon/63777/github">Github</Link>|
           <Link href="https://icons8.com/icon/13930/linkedin">Linkedin</Link>|
           <Link href="https://icons8.com/icon/13963/twitter">Twitter</Link>|
