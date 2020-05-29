@@ -11,7 +11,7 @@ const NavLink = ({ children, to, activePage, component }) => {
   return (
     <Link component={component} underline="none" to={to}>
       <NavLinkContainer activePage={activePage}>
-        <Typography color="textPrimary" variant="p" component="h4">
+        <Typography color="textPrimary" variant="subtitle1" component="h4">
           <Box fontWeight={700}>{children}</Box>
         </Typography>
       </NavLinkContainer>

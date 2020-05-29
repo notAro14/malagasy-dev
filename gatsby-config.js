@@ -11,6 +11,7 @@ module.exports = {
       twitter: `https://twitter.com/notarodev`,
       github: `https://github.com/notAro14`,
       linkedin: `https://www.linkedin.com/in/mamitiana/`,
+      medium: `https://medium.com/@notAro14`,
     },
   },
   plugins: [
@@ -50,15 +51,14 @@ module.exports = {
         ],
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-material-ui`,
-    //   options: {
-    //     stylesProvider: {
-    //       injectFirst: true,
-    //     },
-    //   },
-    // },
-    `gatsby-plugin-material-ui`,
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        stylesProvider: {
+          injectFirst: true,
+        },
+      },
+    },
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

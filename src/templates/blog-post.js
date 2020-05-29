@@ -30,14 +30,14 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           <Typography color="secondary" component="h3" variant="h4">
             <Box fontWeight={700}>{post.frontmatter.title}</Box>
           </Typography>
-          <Typography color="textSecondary" component="p" variant="subtitle2">
-            <Box fontWeight={500}>
+          <Box fontWeight={500}>
+            <Typography color="textSecondary" component="p" variant="subtitle2">
               {`${new Date(post.frontmatter.date).toLocaleDateString(
                 "fr-FR"
               )} • Temps de lecture : ${post.timeToRead} min `}{" "}
               &#x1F453;
-            </Box>
-          </Typography>
+            </Typography>
+          </Box>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr />

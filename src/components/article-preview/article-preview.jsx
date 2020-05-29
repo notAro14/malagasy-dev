@@ -9,16 +9,16 @@ const ArticlePreview = ({ node }) => {
   return (
     <article key={node.fields.slug}>
       <header>
-        <Typography variant="h6" component="h3">
-          <Link
-            color="secondary"
-            component={GatsbyLink}
-            to={node.fields.slug}
-            underline="none"
-          >
+        <Link
+          color="secondary"
+          component={GatsbyLink}
+          to={node.fields.slug}
+          underline="none"
+        >
+          <Typography variant="h6" component="h3">
             <Box fontWeight={700}>{title}</Box>
-          </Link>
-        </Typography>
+          </Typography>
+        </Link>
 
         <Typography color="textSecondary" component="p" variant="caption">
           {`${new Date(node.frontmatter.date).toLocaleDateString("fr-FR")} • ${

@@ -11,10 +11,6 @@ import Image from "gatsby-image"
 import styled from "styled-components"
 import Typography from "@material-ui/core/Typography"
 import Link from "@material-ui/core/Link"
-import GitHubIcon from "@material-ui/icons/GitHub"
-import LinkedInIcon from "@material-ui/icons/LinkedIn"
-import TwitterIcon from "@material-ui/icons/Twitter"
-import RssFeedIcon from "@material-ui/icons/RssFeed"
 
 const BioContainer = styled.div`
   padding: 1rem;
@@ -27,12 +23,6 @@ const BioContainer = styled.div`
   background: #424242;
   border-radius: 10px;
 `
-// const BioText = styled.div`
-//   padding: 0.5rem;
-//   margin-left: 0.5rem;
-//   display: flex;
-//   flex-direction: column;
-// `
 const Socials = styled.div`
   display: flex;
   margin-top: 1rem;
@@ -50,6 +40,41 @@ const Bio = () => {
           }
         }
       }
+      github: file(absolutePath: { regex: "/icons8-github-48.png/" }) {
+        childImageSharp {
+          fixed(width: 35) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      linkedin: file(absolutePath: { regex: "/icons8-linkedin-48.png/" }) {
+        childImageSharp {
+          fixed(width: 35) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      twitter: file(absolutePath: { regex: "/icons8-twitter-48.png/" }) {
+        childImageSharp {
+          fixed(width: 35) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      medium: file(absolutePath: { regex: "/icons8-medium-monogram-48.png/" }) {
+        childImageSharp {
+          fixed(width: 35) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      rss: file(absolutePath: { regex: "/icons8-rss-48.png/" }) {
+        childImageSharp {
+          fixed(width: 35) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
       site {
         siteMetadata {
           author {
@@ -59,6 +84,7 @@ const Bio = () => {
             twitter
             github
             linkedin
+            medium
           }
         }
       }
@@ -67,7 +93,7 @@ const Bio = () => {
 
   const {
     author,
-    social: { twitter, github, linkedin },
+    social: { twitter, github, linkedin, medium },
   } = data.site.siteMetadata
   return (
     <BioContainer>
@@ -101,7 +127,7 @@ const Bio = () => {
           rel="noopener noreferrer"
           href={github}
         >
-          <GitHubIcon titleAccess="Github" />
+          <Image fixed={data.github.childImageSharp.fixed} alt="github icon" />
         </Link>
         <Link
           color="secondary"
@@ -109,7 +135,10 @@ const Bio = () => {
           rel="noopener noreferrer"
           href={linkedin}
         >
-          <LinkedInIcon titleAccess="Linkedin" />
+          <Image
+            fixed={data.linkedin.childImageSharp.fixed}
+            alt="linkedin icon"
+          />
         </Link>
         <Link
           color="secondary"
@@ -117,10 +146,21 @@ const Bio = () => {
           rel="noopener noreferrer"
           href={twitter}
         >
-          <TwitterIcon titleAccess="Twitter" />
+          <Image
+            fixed={data.twitter.childImageSharp.fixed}
+            alt="twitter icon"
+          />
+        </Link>
+        <Link
+          color="secondary"
+          target="_blank"
+          rel="noopener noreferrer"
+          href={medium}
+        >
+          <Image fixed={data.medium.childImageSharp.fixed} alt="medium icon" />
         </Link>
         <Link component={GatsbyLink} color="secondary" to="/rss.xml">
-          <RssFeedIcon titleAccess="RSS feed" />
+          <Image fixed={data.rss.childImageSharp.fixed} alt="rss feed icon" />
         </Link>
       </Socials>
     </BioContainer>
