@@ -18,6 +18,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const featuredImgFluid = post.frontmatter.featuredImage
     ? post.frontmatter.featuredImage.childImageSharp.fluid
     : null
+  const image = post.frontmatter.featuredImage
+    ? post.frontmatter.featuredImage.childImageSharp.resize
+    : null
 
   const disqusConfig = {
     shortname: process.env.GATSBY_DISQUS_NAME,
@@ -29,6 +32,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
+        lang="fr"
+        image={image}
+        pathname={location.pathname}
       />
       <article>
         {featuredImgFluid ? <Img fluid={featuredImgFluid} /> : null}
@@ -106,6 +112,11 @@ export const pageQuery = graphql`
         description
         featuredImage {
           childImageSharp {
+            resize(width: 1200) {
+              src
+              height
+              width
+            }
             fluid(maxWidth: 800) {
               ...GatsbyImageSharpFluid
             }
