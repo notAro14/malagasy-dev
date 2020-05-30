@@ -28,6 +28,16 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `UA-168065651-1`,
+        head: true,
+        anonymize: true,
+        respectDNT: true,
+        pageTransitionDelay: true,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
@@ -74,12 +84,7 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: `UA-168065651-1`,
-      },
-    },
+
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,

@@ -11,6 +11,7 @@ import Image from "gatsby-image"
 import styled from "styled-components"
 import Typography from "@material-ui/core/Typography"
 import Link from "@material-ui/core/Link"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const BioContainer = styled.div`
   padding: 1rem;
@@ -121,6 +122,45 @@ const Bio = () => {
         Tongasoa, bienvenue sur mon blog. {author.summary}
       </Typography>
       <Socials>
+        <OutboundLink
+          target="_blank"
+          rel="noopener noreferrer"
+          href={`https://github.com/${github}`}
+        >
+          <Image fixed={data.github.childImageSharp.fixed} alt="github icon" />
+        </OutboundLink>
+        <OutboundLink
+          target="_blank"
+          rel="noopener noreferrer"
+          href={`https://www.linkedin.com/in/${linkedin}/`}
+        >
+          <Image
+            fixed={data.linkedin.childImageSharp.fixed}
+            alt="linkedin icon"
+          />
+        </OutboundLink>
+        <OutboundLink
+          target="_blank"
+          rel="noopener noreferrer"
+          href={`https://twitter.com/${twitter}`}
+        >
+          <Image
+            fixed={data.twitter.childImageSharp.fixed}
+            alt="twitter icon"
+          />
+        </OutboundLink>
+        <OutboundLink
+          target="_blank"
+          rel="noopener noreferrer"
+          href={`https://medium.com/${medium}`}
+        >
+          <Image fixed={data.medium.childImageSharp.fixed} alt="medium icon" />
+        </OutboundLink>
+        <Link component={GatsbyLink} color="secondary" to="/rss.xml">
+          <Image fixed={data.rss.childImageSharp.fixed} alt="rss feed icon" />
+        </Link>
+      </Socials>
+      {/* <Socials>
         <Link
           color="secondary"
           target="_blank"
@@ -162,7 +202,7 @@ const Bio = () => {
         <Link component={GatsbyLink} color="secondary" to="/rss.xml">
           <Image fixed={data.rss.childImageSharp.fixed} alt="rss feed icon" />
         </Link>
-      </Socials>
+      </Socials> */}
     </BioContainer>
   )
 }
