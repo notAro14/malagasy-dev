@@ -3,6 +3,9 @@ title: Hello World
 date: "2015-05-01T22:12:03.284Z"
 description: "Hello World"
 featuredImage: "cover.jpg"
+creditsUrl: "https://unsplash.com/@martinshreder"
+creditsUser: "Martin Shreder"
+creditsPlatform: "Unsplash"
 ---
 
 This is my first post on my new fake blog! How exciting!

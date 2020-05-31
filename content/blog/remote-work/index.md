@@ -3,6 +3,9 @@ title: "Working from Home"
 description: "How remote working will change the future"
 date: "2020-05-26"
 featuredImage: "cover.jpg"
+creditsUrl: "https://unsplash.com/@martinshreder"
+creditsUser: "Aroniaina Mamitiana"
+creditsPlatform: "Unsplash"
 ---
 
 This crisis forces us to think differently our working life. Facebook took the drastic measures to make their employees work from Home until 2021.
