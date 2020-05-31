@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Typography from "@material-ui/core/Typography"
 import styled from "styled-components"
-import { getUser as fetchUser } from "../api"
+import { graphql, useStaticQuery } from "gatsby"
 import Link from "@material-ui/core/Link"
 import LinkIcon from "@material-ui/icons/Link"
 import LocationOnIcon from "@material-ui/icons/LocationOn"
@@ -27,18 +27,22 @@ const GithubContainer = styled.div`
 `
 
 const About = () => {
-  const [user, setUser] = useState(null)
-
-  useEffect(() => {
-    const getUser = async () => {
-      const data = await fetchUser()
-      setUser(data)
+  const {
+    githubUserInformation: { githubUser: user },
+  } = useStaticQuery(graphql`
+    query aboutQuery {
+      githubUserInformation {
+        githubUser {
+          avatar_url
+          bio
+          html_url
+          location
+          login
+          name
+        }
+      }
     }
-    getUser()
-  }, [])
-
-  // console.log(user)
-
+  `)
   return (
     <Layout currentActivePage="/about">
       <SEO title="About page" />
@@ -59,45 +63,40 @@ const About = () => {
         </Typography>
 
         {/* GITHUB */}
-        {user ? (
-          <GithubContainer>
-            <img src={user.avatar_url} alt="me" />
-            <div>
-              <Link
-                underline="none"
-                href={user.html_url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Typography variant="h6" component="h6" color="textPrimary">
-                  {user.name}
-                  <LinkIcon color="secondary" />
-                </Typography>
-              </Link>
-              <Typography
-                variant="subtitle2"
-                component="p"
-                color="textSecondary"
-              >
-                {user.login}
+
+        <GithubContainer>
+          <img src={user.avatar_url} alt="me" />
+          <div>
+            <Link
+              underline="none"
+              href={user.html_url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Typography variant="h6" component="h6" color="textPrimary">
+                {user.name}
+                <LinkIcon color="secondary" />
               </Typography>
-              <Typography variant="body2" component="p">
-                {user.bio}
-              </Typography>
-              <Typography
-                style={{
-                  marginTop: "0.75rem",
-                  display: "flex",
-                  alignItems: "center",
-                }}
-                variant="subtitle2"
-                component="p"
-              >
-                <LocationOnIcon color="inherit" /> <span>{user.location}</span>
-              </Typography>
-            </div>
-          </GithubContainer>
-        ) : null}
+            </Link>
+            <Typography variant="subtitle2" component="p" color="textSecondary">
+              {user.login}
+            </Typography>
+            <Typography variant="body2" component="p">
+              {user.bio}
+            </Typography>
+            <Typography
+              style={{
+                marginTop: "0.75rem",
+                display: "flex",
+                alignItems: "center",
+              }}
+              variant="subtitle2"
+              component="p"
+            >
+              <LocationOnIcon color="inherit" /> <span>{user.location}</span>
+            </Typography>
+          </div>
+        </GithubContainer>
         {/* GITHUB */}
 
         <Typography variant="h5" component="h3" color="secondary">
