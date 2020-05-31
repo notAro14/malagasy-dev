@@ -11,7 +11,10 @@ const GlobalStyles = createGlobalStyle`
   h4,
   h5,
   h6 {
-    color: #ffd479;
+    color: #F1EA65;
+  }
+  i {
+    font-size: 3rem;
   }
 `
 export default GlobalStyles
