@@ -7,6 +7,7 @@ import { DiscussionEmbed } from "disqus-react"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Credits from "../components/credits/credits"
 
 import Typography from "@material-ui/core/Typography"
 import Box from "@material-ui/core/Box"
@@ -38,6 +39,13 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       />
       <article>
         {featuredImgFluid ? <Img fluid={featuredImgFluid} /> : null}
+        {post.frontmatter.creditsUrl ? (
+          <Credits
+            userUrl={post.frontmatter.creditsUrl}
+            userName={post.frontmatter.creditsUser}
+            platform={post.frontmatter.creditsPlatform}
+          />
+        ) : null}
         <header style={{ margin: "1.5rem 0 1.5rem 0" }}>
           <Typography color="secondary" component="h3" variant="h4">
             <Box fontWeight={700}>{post.frontmatter.title}</Box>
@@ -122,6 +130,9 @@ export const pageQuery = graphql`
             }
           }
         }
+        creditsUrl
+        creditsUser
+        creditsPlatform
       }
     }
   }

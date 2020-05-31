@@ -160,6 +160,16 @@ const Bio = () => {
           <Image fixed={data.rss.childImageSharp.fixed} alt="rss feed icon" />
         </Link>
       </Socials>
+      <Typography variant="caption" component="caption">
+        Icons by{" "}
+        <Link
+          href="https://icons8.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Icon8
+        </Link>
+      </Typography>
       {/* <Socials>
         <Link
           color="secondary"
