@@ -24,3 +24,15 @@ Oh, and here's a great quote from this Wikipedia on
 > firm-textured, round yolk that is bright orange-red in color.
 
 ![Chinese Salty Egg](./salty_egg.jpg)
+
+And this is a code sample:
+
+```jsx
+import React from "react"
+
+const FakeComponent = () => {
+  return <div>Hello, World</div>
+}
+
+export default FakeComponent
+```
