@@ -4,7 +4,7 @@ import { Typography } from "@material-ui/core"
 
 const Credits = ({ userName, platform, userUrl }) => {
   return (
-    <Typography color="textPrimary" variant="subtitle2" component="p">
+    <Typography color="textPrimary" variant="caption" component="p">
       Photo by{" "}
       <Link
         color="secondary"
