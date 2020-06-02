@@ -54,7 +54,15 @@ const About = () => {
         <Typography variant="body2" component="p">
           Je suis Mamitiana, je suis ingénieur en électronique. A la fin de mes
           études, je me suis découvert une vraie passion pour le développement
-          Web, en particulier le Front-end.
+          Web, en particulier le{" "}
+          <Link
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://frontendmasters.com/books/front-end-handbook/2018/what-is-a-FD.html"
+          >
+            Front-end
+          </Link>
+          .
         </Typography>
         <br />
         <Typography variant="body2" component="p">
@@ -75,7 +83,7 @@ const About = () => {
             >
               <Typography variant="h6" component="h6" color="textPrimary">
                 {user.name}
-                <LinkIcon color="secondary" />
+                <LinkIcon color="primary" />
               </Typography>
             </Link>
             <Typography variant="subtitle2" component="p" color="textSecondary">
@@ -121,7 +129,7 @@ const About = () => {
         </Typography>
         <br />
         <Typography variant="h5" component="h3" color="secondary">
-          Ma stack préférée
+          Mes outils
         </Typography>
         <StackContainer>
           <span>Front end</span>

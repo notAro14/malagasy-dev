@@ -39,11 +39,12 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       />
       <article>
         {featuredImgFluid ? <Img fluid={featuredImgFluid} /> : null}
-        {post.frontmatter.creditsUrl ? (
+        {post.frontmatter.creditsUserUrl ? (
           <Credits
-            userUrl={post.frontmatter.creditsUrl}
+            userUrl={post.frontmatter.creditsUserUrl}
             userName={post.frontmatter.creditsUser}
             platform={post.frontmatter.creditsPlatform}
+            platformUrl={post.frontmatter.creditsPlatformUrl}
           />
         ) : null}
         <header style={{ margin: "1.5rem 0 1.5rem 0" }}>
@@ -130,9 +131,10 @@ export const pageQuery = graphql`
             }
           }
         }
-        creditsUrl
+        creditsUserUrl
         creditsUser
         creditsPlatform
+        creditsPlatformUrl
       }
     }
   }
