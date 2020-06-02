@@ -1,38 +1,36 @@
 ---
 title: Hello World
-date: "2015-05-01T22:12:03.284Z"
-description: "Hello World"
+date: "2020-06-01"
+description: "Mon tout premier article, je te partage une citation."
 featuredImage: "cover.jpg"
-creditsUrl: "https://unsplash.com/@martinshreder"
-creditsUser: "Martin Shreder"
-creditsPlatform: "Unsplash"
+creditsUserUrl: "https://pixabay.com/users/lucioliu-4032922/"
+creditsUser: "lucioliu"
+creditsPlatform: "Pixabay"
+creditsPlatformUrl: "https://pixabay.com/"
 ---
 
-This is my first post on my new fake blog! How exciting!
+C'est mon tout premier article sur ce blog. C'est le début d'une nouvelle aventure, j'espère que j'écrirai des articles plus intéressants que celui-ci à l'avenir.
 
-I'm sure I'll write a lot more interesting things in the future.
+En attendant, je te partage cet aphorisme de Nietzsche dans le chapitre **Opinions et sentences mêlées** de son livre <a href="https://fr.wikipedia.org/wiki/Humain,_trop_humain" target="_blank" rel="noopener noreferrer">_Humain, trop humain_</a>.
 
-Oh, and here's a great quote from this Wikipedia on
-[salted duck eggs](https://en.wikipedia.org/wiki/Salted_duck_egg).
+> **L'OREILLE QUI FAIT DEFAUT**
+>
+> -- "On appartient à la populace tant que l'on fait toujours retomber la faute sur les autres ; on est sur le chemin de la vérité lorsque l'on ne rend responsable que soi-même ; mais le sage ne considère personne comme coupable, ni lui-même, ni les autres."
+>
+> -- Qui dit cela ?
+>
+> -- Epictète, il y a dix-huit cent ans.
+>
+> -- On l'a entendu, mais on l'a oublié.
+>
+> -- Non, on ne l'a pas entendu et on ne l'a pas oublié : il y a des choses qu'on n'oublie pas. Mais l'oreille faisait défaut pour entendre, l'oreille d'Epictète.
+>
+> -- Il se l'est donc dit lui-même à l'oreille ?
+>
+> -- Parfaitement : la sagesse, c'est le murmure du solitaire sur la place tumultueuse.
 
-> A salted duck egg is a Chinese preserved food product made by soaking duck
-> eggs in brine, or packing each egg in damp, salted charcoal. In Asian
-> supermarkets, these eggs are sometimes sold covered in a thick layer of salted
-> charcoal paste. The eggs may also be sold with the salted paste removed,
-> wrapped in plastic, and vacuum packed. From the salt curing process, the
-> salted duck eggs have a briny aroma, a gelatin-like egg white and a
-> firm-textured, round yolk that is bright orange-red in color.
+Allez, à la prochaine <span>&#128075;</span>.
 
-![Chinese Salty Egg](./salty_egg.jpg)
-
-And this is a code sample:
-
-```jsx
-import React from "react"
-
-const FakeComponent = () => {
-  return <div>Hello, World</div>
-}
-
-export default FakeComponent
-```
+<div style="text-align:center;">
+<img width="200" alt="a guy saying see you at the sea" src="./sea-ya.gif" />
+</div>

@@ -16,7 +16,7 @@ const theme = createMuiTheme({
   },
   typography: {
     fontSize: 16.5,
-    fontFamily: "Poppins, Robot, sans-serif",
+    fontFamily: ["Poppins", "Roboto", "sans-serif"].join(","),
   },
 })
 export default theme
