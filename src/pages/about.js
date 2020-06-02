@@ -5,8 +5,8 @@ import Typography from "@material-ui/core/Typography"
 import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 import Link from "@material-ui/core/Link"
-import LinkIcon from "@material-ui/icons/Link"
 import LocationOnIcon from "@material-ui/icons/LocationOn"
+import Button from "@material-ui/core/Button"
 
 const StackContainer = styled.div`
   display: flex;
@@ -27,9 +27,7 @@ const GithubContainer = styled.div`
 `
 
 const About = () => {
-  const {
-    githubUserInformation: { githubUser: user },
-  } = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query aboutQuery {
       githubUserInformation {
         githubUser {
@@ -41,8 +39,17 @@ const About = () => {
           name
         }
       }
+      file(relativePath: { eq: "cv.pdf" }) {
+        publicURL
+      }
     }
   `)
+  const {
+    githubUserInformation: { githubUser: user },
+    file: { publicURL },
+  } = data
+  console.log(publicURL)
+
   return (
     <Layout currentActivePage="/about">
       <SEO title="About page" />
@@ -75,17 +82,9 @@ const About = () => {
         <GithubContainer>
           <img src={user.avatar_url} alt="me" />
           <div>
-            <Link
-              underline="none"
-              href={user.html_url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Typography variant="h6" component="h6" color="textPrimary">
-                {user.name}
-                <LinkIcon color="primary" />
-              </Typography>
-            </Link>
+            <Typography variant="h6" component="h6" color="textPrimary">
+              {user.name}
+            </Typography>
             <Typography variant="subtitle2" component="p" color="textSecondary">
               {user.login}
             </Typography>
@@ -97,6 +96,7 @@ const About = () => {
                 marginTop: "0.75rem",
                 display: "flex",
                 alignItems: "center",
+                marginBottom: "1rem",
               }}
               variant="subtitle2"
               component="p"
@@ -104,6 +104,24 @@ const About = () => {
               <LocationOnIcon color="inherit" /> <span>{user.location}</span>
             </Typography>
           </div>
+          <Button
+            fullWidth
+            variant="contained"
+            href={user.html_url}
+            component="a"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Mon Github
+          </Button>
+          <Link
+            color="primary"
+            href={publicURL}
+            component="a"
+            style={{ marginTop: "0.5rem" }}
+          >
+            Mon CV
+          </Link>
         </GithubContainer>
         {/* GITHUB */}
 
