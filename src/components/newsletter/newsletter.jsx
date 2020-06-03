@@ -4,6 +4,7 @@ import TextField from "@material-ui/core/TextField"
 import Button from "@material-ui/core/Button"
 import Typography from "@material-ui/core/Typography"
 import { NewsletterContainer } from "./newsletter.styles"
+import Dialog from "../dialog/dialog"
 
 const Newsletter = () => {
   const [newsletter, setNewsletter] = useState({
@@ -11,6 +12,8 @@ const Newsletter = () => {
     fName: "",
     lName: "",
   })
+  const [open, setOpen] = useState(false)
+  const [mailchimpData, setMailchimpData] = useState({ result: "", msg: "" })
   const handleChange = e =>
     setNewsletter({ ...newsletter, [e.target.name]: e.target.value })
 
@@ -23,8 +26,11 @@ const Newsletter = () => {
       .then(data => {
         // I recommend setting data to React state
         // but you can do whatever you want (including ignoring this `then()` altogether)
-        console.log({ data })
-        alert("Inscription réalisée avec succès")
+        // console.log({ data })
+        const { result, msg } = data
+        setMailchimpData({ result, msg })
+        setNewsletter({ email: "", fName: "", lName: "" })
+        setOpen(true)
       })
       .catch(e => {
         // unnecessary because Mailchimp only ever
@@ -35,7 +41,18 @@ const Newsletter = () => {
   }
 
   return (
-    <div>
+    <div style={{ marginBottom: "1rem" }}>
+      <Dialog
+        buttonText="Ok"
+        modalText={
+          mailchimpData.result === "success"
+            ? "Merci pour ton inscription :)"
+            : "Oops une erreur s'est produite"
+        }
+        modalTitle={mailchimpData.result === "success" ? "Validée" : "Erreur"}
+        open={open}
+        handleClose={() => setOpen(false)}
+      />
       <Typography variant="h6" component="h2" color="secondary">
         Inscription à la Newsletter
       </Typography>

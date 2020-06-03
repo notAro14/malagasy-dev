@@ -4,7 +4,6 @@ import Image from "gatsby-image"
 
 import { Link } from "@material-ui/core"
 import Typography from "@material-ui/core/Typography"
-import Box from "@material-ui/core/Box"
 
 import { NavLinkContainer, Navbar, Links } from "./header.styles"
 
@@ -13,7 +12,7 @@ const NavLink = ({ children, to, activePage, component }) => {
     <Link component={component} underline="none" to={to}>
       <NavLinkContainer activePage={activePage}>
         <Typography color="textPrimary" variant="subtitle1" component="h4">
-          <Box fontWeight={700}>{children}</Box>
+          {children}
         </Typography>
       </NavLinkContainer>
     </Link>

@@ -50,7 +50,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         ) : null}
         <header style={{ margin: "1.5rem 0 1.5rem 0" }}>
           <Typography color="secondary" component="h2" variant="h4">
-            <Box fontWeight={700}>{post.frontmatter.title}</Box>
+            {post.frontmatter.title}
           </Typography>
           <Box fontWeight={500}>
             <Typography color="textSecondary" component="p" variant="subtitle2">

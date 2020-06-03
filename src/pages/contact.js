@@ -4,7 +4,6 @@ import SEO from "../components/seo"
 import Typography from "@material-ui/core/Typography"
 
 import Form from "../components/form/form"
-import Newsletter from "../components/newsletter/newsletter"
 
 const Contact = () => {
   return (
@@ -20,8 +19,6 @@ const Contact = () => {
         Attention, les spams sont filtrés.
       </Typography>
       <Form />
-      <br />
-      <Newsletter />
     </Layout>
   )
 }

@@ -2,7 +2,6 @@ import React from "react"
 import { Link as GatsbyLink } from "gatsby"
 import { Link } from "@material-ui/core"
 import Typography from "@material-ui/core/Typography"
-import Box from "@material-ui/core/Box"
 
 const ArticlePreview = ({ node }) => {
   const title = node.frontmatter.title || node.fields.slug
@@ -15,8 +14,8 @@ const ArticlePreview = ({ node }) => {
           to={node.fields.slug}
           underline="none"
         >
-          <Typography variant="h6" component="h3">
-            <Box fontWeight={700}>{title}</Box>
+          <Typography variant="h6" component="h2">
+            {title}
           </Typography>
         </Link>
 
@@ -34,6 +33,7 @@ const ArticlePreview = ({ node }) => {
           }}
         />
       </section>
+      <hr />
     </article>
   )
 }
