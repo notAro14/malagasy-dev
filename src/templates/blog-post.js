@@ -8,6 +8,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Credits from "../components/credits/credits"
+import Newsletter from "../components/newsletter/newsletter"
 
 import Typography from "@material-ui/core/Typography"
 import Box from "@material-ui/core/Box"
@@ -48,7 +49,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           />
         ) : null}
         <header style={{ margin: "1.5rem 0 1.5rem 0" }}>
-          <Typography color="secondary" component="h3" variant="h4">
+          <Typography color="secondary" component="h2" variant="h4">
             <Box fontWeight={700}>{post.frontmatter.title}</Box>
           </Typography>
           <Box fontWeight={500}>
@@ -62,7 +63,15 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr />
-        <footer>
+        <footer
+          style={{
+            height: "800px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-around",
+          }}
+        >
+          <Newsletter />
           <Bio />
         </footer>
       </article>

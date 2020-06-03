@@ -165,7 +165,9 @@ const Bio = () => {
         <Link
           href="https://icons8.com/"
           target="_blank"
+          underline="none"
           rel="noopener noreferrer"
+          color="initial"
         >
           Icon8
         </Link>

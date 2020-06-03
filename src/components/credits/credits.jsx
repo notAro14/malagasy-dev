@@ -7,8 +7,9 @@ const Credits = ({ userName, platform, userUrl, platformUrl }) => {
     <Typography color="textPrimary" variant="caption" component="p">
       Photo by{" "}
       <Link
-        color="secondary"
+        color="initial"
         target="_blank"
+        underline="none"
         rel="noopener noreferrer"
         href={userUrl}
       >
@@ -16,7 +17,8 @@ const Credits = ({ userName, platform, userUrl, platformUrl }) => {
       </Link>{" "}
       on{" "}
       <Link
-        color="secondary"
+        color="initial"
+        underline="none"
         target="_blank"
         rel="noopener noreferrer"
         href={platformUrl}

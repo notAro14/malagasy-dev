@@ -24,7 +24,13 @@ const Footer = () => {
       >
         <div>
           © {new Date().getFullYear()}. Fait avec{" "}
-          <Link href="https://www.gatsbyjs.org/">Gatsby</Link>
+          <Link
+            underline="none"
+            color="initial"
+            href="https://www.gatsbyjs.org/"
+          >
+            Gatsby
+          </Link>
         </div>
         {/* <div>
           Credits:{" "}

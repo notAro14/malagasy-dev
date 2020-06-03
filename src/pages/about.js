@@ -111,14 +111,16 @@ const About = () => {
             component="a"
             target="_blank"
             rel="noopener noreferrer"
+            color="primary"
           >
             Mon Github
           </Button>
           <Link
-            color="primary"
+            color="initial"
             href={publicURL}
             component="a"
             style={{ marginTop: "0.5rem" }}
+            underline="none"
           >
             Mon CV
           </Link>
