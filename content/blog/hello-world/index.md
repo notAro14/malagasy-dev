@@ -9,7 +9,7 @@ creditsPlatform: "Pixabay"
 creditsPlatformUrl: "https://pixabay.com/"
 ---
 
-C'est mon tout premier article sur ce blog. C'est le début d'une nouvelle aventure, j'espère que j'écrirai des articles plus intéressants que celui-ci à l'avenir.
+C'est mon tout premier article sur ce blog. C'est le début d'une nouvelle aventure pour moi. T'en fais pas, je te proposerai des articles plus intéressants que celui-ci à l'avenir <span>&#128074;</span>
 
 En attendant, je te partage cet aphorisme de Nietzsche dans le chapitre **Opinions et sentences mêlées** de son livre <a href="https://fr.wikipedia.org/wiki/Humain,_trop_humain" target="_blank" rel="noopener noreferrer">_Humain, trop humain_</a>.
 

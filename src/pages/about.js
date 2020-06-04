@@ -57,7 +57,6 @@ const About = () => {
         <Typography variant="h5" component="h3" color="secondary">
           A propos de moi
         </Typography>
-        <br />
         <Typography variant="body2" component="p">
           Je suis Mamitiana, je suis ingénieur en électronique. A la fin de mes
           études, je me suis découvert une vraie passion pour le développement
@@ -130,7 +129,6 @@ const About = () => {
         <Typography variant="h5" component="h3" color="secondary">
           Le blog
         </Typography>
-        <br />
         <Typography variant="body2" component="p">
           Je partage dans ce blog ce que j'apprends durant mon parcours. Mais je
           parle aussi de choses qui me tiennent à coeur:
@@ -144,8 +142,9 @@ const About = () => {
           </Typography>
         </ul>
         <Typography variant="body2" component="p">
-          Si je parviens à aider ne serait-ce qu'une personne grâce à mes
-          articles, alors j'aurais réussi mon objectif.
+          Mon objectif ici c'est vraiment le partage. Si je parviens à aider ne
+          serait-ce qu'une personne grâce à ce blog, alors j'aurais atteint cet
+          objectif.
         </Typography>
         <br />
         <Typography variant="h5" component="h3" color="secondary">
