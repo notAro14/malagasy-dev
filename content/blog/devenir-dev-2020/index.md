@@ -24,7 +24,7 @@ Que tu sois autodidacte, étudiant en licence informatique ou salarié en reconv
 Allez, go.
 
 <div style="text-align:center;">
-<img width="500" alt="a guy who is ready" src="./ready.gif" />
+<img width="350" alt="a guy who is ready" src="./ready.gif" />
 </div>
 
 ## A. C'est quoi un dev ?
@@ -168,7 +168,7 @@ Dans tous les cas, que tu veuilles t'orienter vers le front ou le back, je te co
 Bon, c'était un article très long.
 
 <div style="text-align:center;">
-<img width="500" alt="a guy who is not patient" src="./damn-time.gif" />
+<img width="350" alt="a guy who is not patient" src="./damn-time.gif" />
 </div>
 
 Mais il y a encore tellement à dire. Mon but n'était pas d'être exhaustif, ce n'est pas un guide pour te former au développement (tu peux trouver ça [ici](https://roadmap.sh/)).
