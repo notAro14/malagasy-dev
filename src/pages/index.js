@@ -15,16 +15,13 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Tous les articles" />
-
       <Bio />
-
-      <Newsletter />
-
       <hr />
-
       {posts.map(({ node }) => {
         return <ArticlePreview key={node.fields.slug} node={node} />
       })}
+      <br />
+      <Newsletter />
     </Layout>
   )
 }
