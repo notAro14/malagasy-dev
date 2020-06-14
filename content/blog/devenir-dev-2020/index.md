@@ -29,7 +29,7 @@ Allez, go.
 
 ## A. C'est quoi un dev ?
 
-Commençons par la base, un développeur c'est quoi ? Il est connu aussi sous les appelations codeur, programmeur, hacker ou encore informaticien 🤮.
+Commençons par la base, un développeur c'est quoi ? Il est connu aussi sous les appellations codeur, programmeur, hacker ou encore informaticien 🤮.
 
 Je te cache pas, je déteste ces appellations.
 
