@@ -31,7 +31,7 @@ const Socials = styled.div`
   width: 70%;
 `
 
-const Bio = () => {
+const Bio = ({ isHomePage }) => {
   const data = useStaticQuery(graphql`
     query BioQuery {
       avatar: file(absolutePath: { regex: "/avatar.png/" }) {
@@ -86,6 +86,7 @@ const Bio = () => {
             github
             linkedin
             medium
+            devTo
           }
         }
       }
@@ -94,7 +95,7 @@ const Bio = () => {
 
   const {
     author,
-    social: { twitter, github, linkedin, medium },
+    social: { twitter, github, linkedin, medium, devTo },
   } = data.site.siteMetadata
   return (
     <BioContainer>
@@ -113,14 +114,26 @@ const Bio = () => {
           borderRadius: `50%`,
         }}
       />
-      <Typography
-        style={{ textAlign: "center" }}
-        color="textSecondary"
-        variant="subtitle2"
-        component="p"
-      >
-        Tongasoa, bienvenue sur mon blog. {author.summary}
-      </Typography>
+      {isHomePage ? (
+        <Typography
+          style={{ textAlign: "center" }}
+          color="textPrimary"
+          variant="subtitle2"
+          component="p"
+        >
+          Tongasoa, bienvenue sur mon blog. {author.summary}
+        </Typography>
+      ) : (
+        <Typography
+          style={{ textAlign: "center" }}
+          color="textPrimary"
+          variant="subtitle2"
+          component="p"
+        >
+          Suis-moi sur les réseaux
+        </Typography>
+      )}
+
       <Socials>
         <OutboundLink
           target="_blank"
@@ -128,6 +141,19 @@ const Bio = () => {
           href={`https://github.com/${github}`}
         >
           <Image fixed={data.github.childImageSharp.fixed} alt="github icon" />
+        </OutboundLink>
+        <OutboundLink
+          target="_blank"
+          rel="noopener noreferrer"
+          href={`https://dev.to/${devTo}`}
+        >
+          <img
+            style={{ background: "#DDD" }}
+            src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg"
+            alt="Aro's DEV Profile"
+            height="30"
+            width="30"
+          />
         </OutboundLink>
         <OutboundLink
           target="_blank"
@@ -149,18 +175,18 @@ const Bio = () => {
             alt="twitter icon"
           />
         </OutboundLink>
-        <OutboundLink
+        {/* <OutboundLink
           target="_blank"
           rel="noopener noreferrer"
           href={`https://medium.com/${medium}`}
         >
           <Image fixed={data.medium.childImageSharp.fixed} alt="medium icon" />
-        </OutboundLink>
+        </OutboundLink> */}
         <Link component={GatsbyLink} color="secondary" to="/rss.xml">
           <Image fixed={data.rss.childImageSharp.fixed} alt="rss feed icon" />
         </Link>
       </Socials>
-      <Typography variant="subtitle2" component="p">
+      <Typography color="textSecondary" variant="subtitle2" component="p">
         Icons by{" "}
         <Link
           href="https://icons8.com/"

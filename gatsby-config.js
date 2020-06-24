@@ -7,7 +7,7 @@ module.exports = {
     title: `Malagasy Dev`,
     author: {
       name: `Mamitiana Andriamaro`,
-      summary: `Ici je te parle de dev mais aussi de plein d'autres choses.`,
+      summary: `Je te partage tout ce que je sais sur le code mais pas que :)`,
     },
     description: `Un blog sur le développement web et la tech mais pas que.`,
     siteUrl: `https://malagasydev.netlify.app`,
@@ -16,6 +16,7 @@ module.exports = {
       github: `notAro14`,
       linkedin: `mamitiana`,
       medium: `@notAro14`,
+      devTo: `notaro14`,
     },
     keywords: [
       "développement",

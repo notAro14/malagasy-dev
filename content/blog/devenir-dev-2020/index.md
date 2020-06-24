@@ -1,7 +1,7 @@
 ---
-title: Devenir développeur
+title: "Devenir développeur"
 date: "2020-06-11"
-description: "Présentation générale du métier de développeur informatique"
+description: "Je suis ingénieur informaticieenn. Je codeuh les ordinateureuhhh!!!"
 featuredImage: "cover.jpg"
 creditsUserUrl: "https://unsplash.com/@kobuagency/"
 creditsUser: "kobuagency"
@@ -177,7 +177,7 @@ Je voulais surtout te donner une introduction générale aux différents métier
 
 J'espère t'avoir éclairé un peu pour que tu puisses choisir vers quelle voie tu souhaites t'orienter. Mais le plus important, c'est de commencer.
 
-Peut importe ton choix, commence dès aujourd'hui, n'attends pas le _bon_ moment.
+Peu importe ton choix, commence dès aujourd'hui, n'attends pas le _bon_ moment.
 
 N'oublie pas :
 

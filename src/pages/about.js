@@ -7,6 +7,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import Link from "@material-ui/core/Link"
 import LocationOnIcon from "@material-ui/icons/LocationOn"
 import Button from "@material-ui/core/Button"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const StackContainer = styled.div`
   display: flex;
@@ -42,14 +43,22 @@ const About = () => {
       file(relativePath: { eq: "cv.pdf" }) {
         publicURL
       }
+      site {
+        siteMetadata {
+          social {
+            devTo
+          }
+        }
+      }
     }
   `)
   const {
     githubUserInformation: { githubUser: user },
     file: { publicURL },
   } = data
-  console.log(publicURL)
-
+  const {
+    social: { devTo },
+  } = data.site.siteMetadata
   return (
     <Layout currentActivePage="/about">
       <SEO title="About page" />
@@ -58,13 +67,12 @@ const About = () => {
           A propos de moi
         </Typography>
         <Typography variant="body2" component="p">
-          Je suis Mamitiana, je suis ingénieur en électronique. A la fin de mes
-          études, je me suis découvert une vraie passion pour le développement
-          Web, en particulier le{" "}
+          Je suis Mamitiana. A la fin de mes études, je me suis découvert une
+          vraie passion pour le Web, en particulier le{" "}
           <Link
             target="_blank"
             rel="noopener noreferrer"
-            href="https://frontendmasters.com/books/front-end-handbook/2018/what-is-a-FD.html"
+            href="https://frontendmasters.com/books/front-end-handbook/2019/#2"
           >
             Front-end
           </Link>
@@ -73,7 +81,7 @@ const About = () => {
         <br />
         <Typography variant="body2" component="p">
           Depuis, je consacre une grande partie de mon temps libre pour me
-          former dans le développement Web, dans l'espoir d'en faire mon métier.
+          former dans le développement Web.
         </Typography>
 
         {/* GITHUB */}
@@ -145,6 +153,26 @@ const About = () => {
           Mon objectif ici c'est vraiment le partage. Si je parviens à aider ne
           serait-ce qu'une personne grâce à ce blog, alors j'aurais atteint cet
           objectif.
+        </Typography>
+        <br />
+        <hr />
+        <Typography variant="body2" component="p">
+          PS: J'écris (en anglais) des articles aussi sur{" "}
+          <OutboundLink
+            target="_blank"
+            rel="noopener noreferrer"
+            href={`https://dev.to/${devTo}`}
+            style={{ display: "flex", alignItems: "center" }}
+          >
+            Dev.to{" "}
+            <img
+              style={{ background: "#DDD" }}
+              src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg"
+              alt="Aro's DEV Profile"
+              height="30"
+              width="30"
+            />
+          </OutboundLink>{" "}
         </Typography>
         <br />
         <Typography variant="h5" component="h3" color="secondary">
