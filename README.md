@@ -6,4 +6,4 @@ Blog sur les technologies du web et le développement en général.
 
 Fait avec [Gatsby](https://www.gatsbyjs.org/) et le [Gatsby blog starter](https://github.com/gatsbyjs/gatsby-starter-blog)
 
-Le blog n'est pas encore fini (pas de vrais articles pour l'instant) mais il est déployé sur https://malagasydev.com/
+Lien du blog: https://malagasydev.com/
