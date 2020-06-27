@@ -10,7 +10,7 @@ module.exports = {
       summary: `Je te partage tout ce que je sais sur le code mais pas que :)`,
     },
     description: `Un blog sur le développement web et la tech mais pas que.`,
-    siteUrl: `https://malagasydev.netlify.app`,
+    siteUrl: `https://malagasydev.com`,
     social: {
       twitter: `notarodev`,
       github: `notAro14`,

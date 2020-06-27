@@ -69,7 +69,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 }
 
 const token = process.env.GITHUB_TOKEN
-console.log(token)
+// console.log(token)
 
 const headers = {
   Authorization: `Token ${token}`,
