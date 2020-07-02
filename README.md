@@ -2,8 +2,10 @@
 
 # Malagasy Dev
 
-Blog sur les technologies du web et le développement en général.
+My personal blog on Web development. I write specifically about Javascript and React ecosystem.
 
-Fait avec [Gatsby](https://www.gatsbyjs.org/) et le [Gatsby blog starter](https://github.com/gatsbyjs/gatsby-starter-blog)
+Built with [Gatsby](https://www.gatsbyjs.org/) and the [Gatsby blog starter](https://github.com/gatsbyjs/gatsby-starter-blog)
 
-Lien du blog: https://malagasydev.com/
+## Link
+
+Live: https://malagasydev.com/

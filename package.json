@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-blog",
-  "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "name": "malagasy-dev",
+  "private": false,
+  "description": "Blog on Web development, Javascript and React",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "notAro14 <mamitiana.dev.js@gmail.com>",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
@@ -46,7 +46,10 @@
   },
   "homepage": "https://github.com/notAro14/malagasy-dev",
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "javascript",
+    "blog",
+    "react"
   ],
   "license": "MIT",
   "main": "n/a",
