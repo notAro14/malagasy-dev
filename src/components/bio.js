@@ -95,7 +95,7 @@ const Bio = ({ isHomePage }) => {
 
   const {
     author,
-    social: { twitter, github, linkedin, medium, devTo },
+    social: { twitter, github, linkedin, devTo },
   } = data.site.siteMetadata
   return (
     <BioContainer>

@@ -157,22 +157,14 @@ const About = () => {
         <br />
         <hr />
         <Typography variant="body2" component="p">
-          PS: J'écris (en anglais) des articles aussi sur{" "}
+          PS: J'écris des articles aussi sur{" "}
           <OutboundLink
             target="_blank"
             rel="noopener noreferrer"
             href={`https://dev.to/${devTo}`}
-            style={{ display: "flex", alignItems: "center" }}
           >
-            Dev.to{" "}
-            <img
-              style={{ background: "#DDD" }}
-              src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg"
-              alt="Aro's DEV Profile"
-              height="30"
-              width="30"
-            />
-          </OutboundLink>{" "}
+            Dev.to
+          </OutboundLink>
         </Typography>
         <br />
         <Typography variant="h5" component="h3" color="secondary">
