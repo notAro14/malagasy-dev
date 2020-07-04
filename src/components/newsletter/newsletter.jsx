@@ -53,7 +53,7 @@ const Newsletter = () => {
         open={open}
         handleClose={() => setOpen(false)}
       />
-      <Typography variant="h6" component="h2" color="secondary">
+      <Typography variant="h6" component="h2" color="primary">
         Inscription à la Newsletter
       </Typography>
       <Typography variant="body2" component="p" color="textPrimary">

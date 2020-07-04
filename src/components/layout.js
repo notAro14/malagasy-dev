@@ -20,7 +20,7 @@ const Layout = ({ location, title, children, currentActivePage }) => {
   // }
   // console.log(location)
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="sm">
       <ThemeProvider theme={theme}>
         <GlobalStyles />
         <CssBaseline />

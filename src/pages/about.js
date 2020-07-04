@@ -4,7 +4,7 @@ import SEO from "../components/seo"
 import Typography from "@material-ui/core/Typography"
 import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
-import Link from "@material-ui/core/Link"
+// import Link from "@material-ui/core/Link"
 import LocationOnIcon from "@material-ui/icons/LocationOn"
 import Button from "@material-ui/core/Button"
 import { OutboundLink } from "gatsby-plugin-google-analytics"
@@ -54,7 +54,7 @@ const About = () => {
   `)
   const {
     githubUserInformation: { githubUser: user },
-    file: { publicURL },
+    // file: { publicURL },
   } = data
   const {
     social: { devTo },
@@ -67,21 +67,15 @@ const About = () => {
           A propos de moi
         </Typography>
         <Typography variant="body2" component="p">
-          Je suis Mamitiana. A la fin de mes études, je me suis découvert une
-          vraie passion pour le Web, en particulier le{" "}
-          <Link
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://frontendmasters.com/books/front-end-handbook/2019/#2"
-          >
-            Front-end
-          </Link>
-          .
+          Salut, je m'appelle Aro. Je travaille comme ingénieur dans le domaine
+          de l'informatique industrielle. Je suis passionné par les technologies
+          du web et le développment logiciel en général.
         </Typography>
         <br />
         <Typography variant="body2" component="p">
-          Depuis, je consacre une grande partie de mon temps libre pour me
-          former dans le développement Web.
+          Je partage essentiellement dans ce blog tout ce que je sais sur le dev
+          et la programmation. Mais j'écris aussi du contenu sur le design et
+          l'entrepreneuriat.
         </Typography>
 
         {/* GITHUB */}
@@ -122,7 +116,7 @@ const About = () => {
           >
             Mon Github
           </Button>
-          <Link
+          {/* <Link
             color="initial"
             href={publicURL}
             component="a"
@@ -130,31 +124,10 @@ const About = () => {
             underline="none"
           >
             Mon CV
-          </Link>
+          </Link> */}
         </GithubContainer>
         {/* GITHUB */}
 
-        <Typography variant="h5" component="h3" color="secondary">
-          Le blog
-        </Typography>
-        <Typography variant="body2" component="p">
-          Je partage dans ce blog ce que j'apprends durant mon parcours. Mais je
-          parle aussi de choses qui me tiennent à coeur:
-        </Typography>
-        <ul>
-          <Typography variant="body2" component="p">
-            <li>le design</li>
-            <li>la productivité</li>
-            <li>l'entrepreneuriat</li>
-            <li>et plein d'autres choses...</li>
-          </Typography>
-        </ul>
-        <Typography variant="body2" component="p">
-          Mon objectif ici c'est vraiment le partage. Si je parviens à aider ne
-          serait-ce qu'une personne grâce à ce blog, alors j'aurais atteint cet
-          objectif.
-        </Typography>
-        <br />
         <hr />
         <Typography variant="body2" component="p">
           PS: J'écris des articles aussi sur{" "}

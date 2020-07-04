@@ -14,9 +14,8 @@ const Contact = () => {
       </Typography>
       <Typography variant="body2" component="p" color="textPrimary">
         Si tu as des questions, un projet à me proposer, ou si tu veux juste me
-        parler, tu peux le faire avec le formulaire en dessous.
+        parler, n'hésite pas à me contacter.
         <br />
-        Attention, les spams sont filtrés.
       </Typography>
       <Form />
     </Layout>
