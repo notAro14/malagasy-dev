@@ -1,7 +1,7 @@
 ---
 title: "Devenir développeur"
 date: "2020-06-11"
-description: "Je suis ingénieur informaticieenn. Je codeuh les ordinateureuhhh!!!"
+description: "Si toi aussi tu es perdu dans la jungle des buzzwords, suis le lapin blanc."
 featuredImage: "cover.jpg"
 creditsUserUrl: "https://unsplash.com/@kobuagency/"
 creditsUser: "kobuagency"
