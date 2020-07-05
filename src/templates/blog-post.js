@@ -63,23 +63,25 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             </Typography>
           </Box>
           <div style={{ marginBottom: "0.25rem" }}>
-            {post.frontmatter.tags.map((tag, index) => {
-              return (
-                <Link
-                  component={GatsbyLink}
-                  style={{ margin: "0.25rem" }}
-                  to={`/tags/${tag}`}
-                >
-                  <Chip
-                    size="small"
-                    onClick={() => {}} // to make the cursor to pointer
-                    color="primary"
-                    key={index}
-                    label={tag}
-                  />
-                </Link>
-              )
-            })}
+            {post.frontmatter.tags
+              ? post.frontmatter.tags.map((tag, index) => {
+                  return (
+                    <Link
+                      component={GatsbyLink}
+                      style={{ margin: "0.25rem" }}
+                      to={`/tags/${tag}`}
+                    >
+                      <Chip
+                        size="small"
+                        onClick={() => {}} // to make the cursor to pointer
+                        color="primary"
+                        key={index}
+                        label={tag}
+                      />
+                    </Link>
+                  )
+                })
+              : null}
           </div>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
