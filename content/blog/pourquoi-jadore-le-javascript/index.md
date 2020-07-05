@@ -1,5 +1,5 @@
 ---
-title: "Pourquoi j'adore Javascript"
+title: "Pourquoi j'adore le Javascript"
 date: "2020-06-24"
 description: "Javascript est un language franchement sympathique"
 featuredImage: "cover.jpg"
@@ -7,6 +7,7 @@ creditsUserUrl: "https://unsplash.com/@kimtheris"
 creditsUser: "Sereja Ris"
 creditsPlatform: "Unsplash"
 creditsPlatformUrl: "https://unsplash.com/"
+tags: ["web", "javascript"]
 ---
 
 > English version -> [Why I love Javascript](https://dev.to/notaro14/why-i-love-javascript-1mb4)
@@ -19,7 +20,9 @@ Pourtant pour faire du web, t'es quasiment obligé de toucher à du Javascript �
 
 Pour ma part, j'adore ce langage. Il y a quelques fontionnalités franchement sympa qui méritent à elles seules qu'on s'intéresse au JS.
 
-Alors peut-être que je suis un gros faquin qui n'y connaît rien, mais ce n'es pas la question. Aujourd'hui je t'explique ces fonctionnalités super utiles du JS aka Ecmascript. C'est parti.
+Alors peut-être que je suis un gros faquin qui n'y connaît rien, mais ce n'es pas la question. Aujourd'hui je t'explique ces fonctionnalités super utiles du JS aka Ecmascript.
+
+C'est parti.
 
 <div style="text-align:center;">
 <img width="300" alt="a cat is ready" src="./cat.gif" />
@@ -116,9 +119,7 @@ Le **destructuring** est aussi utilisé pour les tableaux. Ci-dessous un rapide 
 const myArray = [1, 2]
 let [a, b] = myArray
 console.log(a) // 1
-console.log(b) // 2
-
-[b, a] = [a, b] // on assigne a dans b et b dans a
+console.log(b)[(b, a)] = [a, b] // 2 // on assigne a dans b et b dans a
 
 console.log(a) // 2
 console.log(b) // 1

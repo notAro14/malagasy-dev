@@ -11,7 +11,7 @@ const NavLink = ({ children, to, activePage, component }) => {
   return (
     <Link component={component} underline="none" to={to}>
       <NavLinkContainer activePage={activePage}>
-        <Typography color="textPrimary" variant="subtitle1" component="h4">
+        <Typography color="textPrimary" variant="subtitle2" component="h6">
           {children}
         </Typography>
       </NavLinkContainer>
@@ -35,10 +35,14 @@ export default function Header({ currentActivePage }) {
   const logo = data.logo.childImageSharp.fixed
   let about = false
   let contact = false
+  let tags = false
 
   switch (currentActivePage) {
     case "/about":
       about = true
+      break
+    case "/tags":
+      tags = true
       break
     case "/contact":
       contact = true
@@ -63,6 +67,9 @@ export default function Header({ currentActivePage }) {
         </Link>
       </Typography>
       <Links>
+        <NavLink activePage={tags} component={GatsbyLink} to="/tags">
+          Tags
+        </NavLink>
         <NavLink activePage={about} component={GatsbyLink} to="/about">
           A propos
         </NavLink>

@@ -17,8 +17,8 @@ export const Links = styled.ul`
   padding-left: 0;
 `
 export const NavLinkContainer = styled.li`
-  padding: 1rem;
-  margin: 0.5rem;
+  padding: 0.25rem;
+  margin: 0.25rem;
   border-radius: 5px;
   background-color: ${props =>
     props.activePage ? "rgba(66, 66, 66, 1)" : "inherit"};

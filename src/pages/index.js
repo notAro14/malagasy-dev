@@ -11,6 +11,7 @@ import Newsletter from "../components/newsletter/newsletter"
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
+  console.log(siteTitle)
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -44,6 +45,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
+            tags
             date
             title
             description

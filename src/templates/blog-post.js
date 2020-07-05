@@ -12,6 +12,7 @@ import Newsletter from "../components/newsletter/newsletter"
 
 import Typography from "@material-ui/core/Typography"
 import Box from "@material-ui/core/Box"
+import Chip from "@material-ui/core/Chip"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -52,6 +53,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           <Typography color="secondary" component="h2" variant="h4">
             {post.frontmatter.title}
           </Typography>
+
           <Box fontWeight={500}>
             <Typography color="textSecondary" component="p" variant="subtitle2">
               {`${new Date(post.frontmatter.date).toLocaleDateString(
@@ -60,6 +62,25 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               &#x1F453;
             </Typography>
           </Box>
+          <div style={{ marginBottom: "0.25rem" }}>
+            {post.frontmatter.tags.map((tag, index) => {
+              return (
+                <Link
+                  component={GatsbyLink}
+                  style={{ margin: "0.25rem" }}
+                  to={`/tags/${tag}`}
+                >
+                  <Chip
+                    size="small"
+                    onClick={() => {}} // to make the cursor to pointer
+                    color="primary"
+                    key={index}
+                    label={tag}
+                  />
+                </Link>
+              )
+            })}
+          </div>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr />
@@ -125,6 +146,7 @@ export const pageQuery = graphql`
         slug
       }
       frontmatter {
+        tags
         title
         date(formatString: "MMMM DD, YYYY")
         description
