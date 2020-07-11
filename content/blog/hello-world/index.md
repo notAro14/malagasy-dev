@@ -7,6 +7,7 @@ creditsUserUrl: "https://pixabay.com/users/lucioliu-4032922/"
 creditsUser: "lucioliu"
 creditsPlatform: "Pixabay"
 creditsPlatformUrl: "https://pixabay.com/"
+tags: ["philosophie"]
 ---
 
 C'est mon tout premier article sur ce blog. C'est le début d'une nouvelle aventure pour moi. T'en fais pas, je te proposerai des articles plus intéressants que celui-ci à l'avenir <span>&#128074;</span>

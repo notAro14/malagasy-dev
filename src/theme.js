@@ -6,12 +6,13 @@ const theme = createMuiTheme({
       // primary: "#F0F6EE",
       // secondary: "#C1A792",
     },
-    type: "dark",
+    type: "light",
     primary: {
       main: "#F38560",
     },
     secondary: {
-      main: "#F1EA65",
+      // main: "#F1EA65",
+      main: "#F3CF60",
     },
   },
   typography: {

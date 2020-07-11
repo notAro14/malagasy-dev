@@ -22,7 +22,15 @@ const BlogIndex = ({ data, location }) => {
         return <ArticlePreview key={node.fields.slug} node={node} />
       })}
       <br />
-      <Newsletter />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <Newsletter />
+      </div>
     </Layout>
   )
 }

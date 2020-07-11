@@ -7,7 +7,7 @@ module.exports = {
     title: `Malagasy Dev`,
     author: {
       name: `Mamitiana Andriamaro`,
-      summary: `Je te partage tout ce que je sais sur le code mais pas que :)`,
+      summary: `Je parle de code, de design, de philosophie et d'autres trucs`,
     },
     description: `Un blog sur le développement web et la tech mais pas que.`,
     siteUrl: `https://malagasydev.com`,
@@ -19,13 +19,7 @@ module.exports = {
       devTo: `notaro14`,
     },
     keywords: [
-      "développement web madagascar",
-      "web madagascar",
-      "front-end madagascar",
-      "react madagascar",
-      "gatsby madagascar",
-      "entrepreneur madagascar",
-      "javascript madagascar",
+      "madagascar",
       "javascript",
       "productivité",
       "entrepreneuriat",
@@ -33,6 +27,9 @@ module.exports = {
       "css",
       "react",
       "gatsby",
+      "technologies",
+      "société",
+      "design",
     ],
   },
   plugins: [

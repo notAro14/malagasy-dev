@@ -88,14 +88,15 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <hr />
         <footer
           style={{
-            height: "800px",
+            height: "600px",
             display: "flex",
             flexDirection: "column",
+            alignItems: "center",
             justifyContent: "space-around",
           }}
         >
-          <Newsletter />
           <Bio />
+          <Newsletter />
         </footer>
       </article>
 

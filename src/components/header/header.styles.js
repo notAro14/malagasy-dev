@@ -17,13 +17,14 @@ export const Links = styled.ul`
   padding-left: 0;
 `
 export const NavLinkContainer = styled.li`
-  padding: 0.25rem;
-  margin: 0.25rem;
+  padding: 0.5rem;
+  color: #fff;
+  margin: 0.1rem;
   border-radius: 5px;
   background-color: ${props =>
-    props.activePage ? "rgba(66, 66, 66, 1)" : "inherit"};
+    props.activePage ? "rgb(243,133,96)" : "inherit"};
   transition: all ease 400ms;
   &:hover {
-    background-color: rgba(66, 66, 66, 1);
+    background-color: rgb(243, 133, 96);
   }
 `

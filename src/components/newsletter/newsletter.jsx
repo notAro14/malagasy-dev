@@ -53,10 +53,15 @@ const Newsletter = () => {
         open={open}
         handleClose={() => setOpen(false)}
       />
-      <Typography variant="h6" component="h2" color="primary">
+      <Typography align="center" variant="h6" component="h2" color="primary">
         Inscription à la Newsletter
       </Typography>
-      <Typography variant="body2" component="p" color="textPrimary">
+      <Typography
+        align="center"
+        variant="body2"
+        component="p"
+        color="textPrimary"
+      >
         Je t'enverrai un mail à chaque nouvel article.
       </Typography>
       <NewsletterContainer onSubmit={handleSubmit}>

@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Layout from "../components/layout"
+import Typography from "@material-ui/core/Typography"
 import SEO from "../components/seo"
 
 // Utilities
@@ -18,10 +19,12 @@ const TagsPage = ({
   },
   location,
 }) => (
-  <Layout location={location} title={title}>
+  <Layout currentActivePage="/tags" location={location} title={title}>
     <SEO title="Tous les tags" />
     <div>
-      <h1>Tags</h1>
+      <Typography variant="h5" component="h3" color="secondary">
+        Liste des tags
+      </Typography>
       <ul>
         {group.map(tag => (
           <li key={tag.fieldValue}>

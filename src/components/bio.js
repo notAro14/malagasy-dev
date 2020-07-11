@@ -19,15 +19,26 @@ const BioContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  padding: 2rem;
-  margin-bottom: 1rem;
-  background: #424242;
-  border-radius: 10px;
+  margin: auto;
+  max-width: 65%;
+  background: #eee;
+  border-radius: 5px;
 `
+const BioContent = styled.div`
+  display: flex;
+  align-items: center;
+  max-width: 60%;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    max-width: 100%;
+  }
+`
+
 const Socials = styled.div`
   display: flex;
   margin-top: 1rem;
   justify-content: space-around;
+  align-items: center;
   width: 70%;
 `
 
@@ -99,40 +110,42 @@ const Bio = ({ isHomePage }) => {
   } = data.site.siteMetadata
   return (
     <BioContainer>
-      <Image
-        fixed={data.avatar.childImageSharp.fixed}
-        alt={author.name}
-        style={{
-          marginBottom: 0,
-          minWidth: 50,
-          borderRadius: `100%`,
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-        imgStyle={{
-          borderRadius: `50%`,
-        }}
-      />
-      {isHomePage ? (
-        <Typography
-          style={{ textAlign: "center" }}
-          color="textPrimary"
-          variant="subtitle2"
-          component="p"
-        >
-          Tongasoa, bienvenue sur mon blog. {author.summary}
-        </Typography>
-      ) : (
-        <Typography
-          style={{ textAlign: "center" }}
-          color="textPrimary"
-          variant="subtitle2"
-          component="p"
-        >
-          Suis-moi sur les réseaux
-        </Typography>
-      )}
+      <BioContent>
+        <Image
+          fixed={data.avatar.childImageSharp.fixed}
+          alt={author.name}
+          style={{
+            marginBottom: 0,
+            minWidth: 50,
+            borderRadius: `100%`,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+          imgStyle={{
+            borderRadius: `50%`,
+          }}
+        />
+        {isHomePage ? (
+          <Typography
+            align="center"
+            color="textPrimary"
+            variant="subtitle2"
+            component="p"
+          >
+            {author.summary}
+          </Typography>
+        ) : (
+          <Typography
+            align="center"
+            color="textPrimary"
+            variant="subtitle2"
+            component="p"
+          >
+            Suis-moi sur les réseaux
+          </Typography>
+        )}
+      </BioContent>
 
       <Socials>
         <OutboundLink
@@ -186,7 +199,7 @@ const Bio = ({ isHomePage }) => {
           <Image fixed={data.rss.childImageSharp.fixed} alt="rss feed icon" />
         </Link>
       </Socials>
-      <Typography color="textSecondary" variant="subtitle2" component="p">
+      {/* <Typography color="textSecondary" variant="subtitle2" component="p">
         Icons by{" "}
         <Link
           href="https://icons8.com/"
@@ -197,7 +210,7 @@ const Bio = ({ isHomePage }) => {
         >
           Icon8
         </Link>
-      </Typography>
+      </Typography> */}
       {/* <Socials>
         <Link
           color="secondary"

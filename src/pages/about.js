@@ -15,16 +15,32 @@ const StackContainer = styled.div`
   align-items: center;
   padding: 1.5rem;
 `
+const AboutMe = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  @media screen and (max-width: 768px) {
+    flex-direction: column-reverse;
+  }
+`
+const AboutText = styled.div`
+  padding: 3.5rem;
+  line-height: 150%;
+  @media screen and (max-width: 768px) {
+    padding: 0;
+  }
+`
 
 const GithubContainer = styled.div`
-  background: #424242;
-  margin: 1rem auto;
   padding: 1.5rem;
+  min-width: 35%;
   width: 300px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: #eeeeee;
+  margin: 1rem;
 `
 
 const About = () => {
@@ -66,83 +82,105 @@ const About = () => {
         <Typography variant="h5" component="h3" color="secondary">
           A propos de moi
         </Typography>
-        <Typography variant="body2" component="p">
-          Salut, je m'appelle Aro. Je travaille comme ingénieur dans le domaine
-          de l'informatique industrielle. Je suis passionné par les technologies
-          du web et le développment logiciel en général.
-        </Typography>
-        <br />
-        <Typography variant="body2" component="p">
-          Je partage essentiellement dans ce blog tout ce que je sais sur le dev
-          et la programmation. Mais j'écris aussi du contenu sur le design et
-          l'entrepreneuriat.
-        </Typography>
-
-        {/* GITHUB */}
-
-        <GithubContainer>
-          <img src={user.avatar_url} alt="me" />
-          <div>
-            <Typography variant="h6" component="h6" color="textPrimary">
-              {user.name}
-            </Typography>
-            <Typography variant="subtitle2" component="p" color="textSecondary">
-              {user.login}
-            </Typography>
+        <AboutMe>
+          <AboutText>
             <Typography variant="body2" component="p">
-              {user.bio}
+              Salut, je m'appelle Mamitiana. Je suis un développeur. A mes
+              heures perdues, je m'intéresse au design, à la philosophie et à
+              plein d'autres trucs.
             </Typography>
-            <Typography
-              style={{
-                marginTop: "0.75rem",
-                display: "flex",
-                alignItems: "center",
-                marginBottom: "1rem",
-              }}
-              variant="subtitle2"
-              component="p"
+            <br />
+            <Typography variant="body2" component="p">
+              Dans ce blog, je te parle de code essentiellement. Mais aussi de
+              mes autres intérêts.
+            </Typography>
+            <hr />
+            <Typography variant="body2" component="p">
+              PS: J'écris des articles aussi sur{" "}
+              <OutboundLink
+                target="_blank"
+                rel="noopener noreferrer"
+                href={`https://dev.to/${devTo}`}
+              >
+                Dev.to
+              </OutboundLink>
+            </Typography>
+          </AboutText>
+
+          {/* GITHUB */}
+
+          <GithubContainer>
+            <img src={user.avatar_url} alt="me" />
+            <div>
+              <Typography variant="h6" component="h6" color="textPrimary">
+                {user.name}
+              </Typography>
+              <Typography
+                variant="subtitle2"
+                component="p"
+                color="textSecondary"
+              >
+                {user.login}
+              </Typography>
+              <Typography variant="body2" component="p">
+                {user.bio}
+              </Typography>
+              <Typography
+                style={{
+                  marginTop: "0.75rem",
+                  display: "flex",
+                  alignItems: "center",
+                  marginBottom: "1rem",
+                }}
+                variant="subtitle2"
+                component="p"
+              >
+                <LocationOnIcon color="inherit" /> <span>{user.location}</span>
+              </Typography>
+            </div>
+            <Button
+              fullWidth
+              variant="outlined"
+              href={user.html_url}
+              component="a"
+              target="_blank"
+              rel="noopener noreferrer"
+              color="primary"
             >
-              <LocationOnIcon color="inherit" /> <span>{user.location}</span>
-            </Typography>
-          </div>
-          <Button
-            fullWidth
-            variant="contained"
-            href={user.html_url}
-            component="a"
-            target="_blank"
-            rel="noopener noreferrer"
-            color="primary"
-          >
-            Mon Github
-          </Button>
-          {/* <Link
+              Mon Github
+            </Button>
+            {/* <Link
             color="initial"
             href={publicURL}
             component="a"
             style={{ marginTop: "0.5rem" }}
             underline="none"
-          >
+            >
             Mon CV
           </Link> */}
-        </GithubContainer>
-        {/* GITHUB */}
+          </GithubContainer>
+          {/* GITHUB */}
+        </AboutMe>
 
-        <hr />
-        <Typography variant="body2" component="p">
-          PS: J'écris des articles aussi sur{" "}
-          <OutboundLink
-            target="_blank"
-            rel="noopener noreferrer"
-            href={`https://dev.to/${devTo}`}
-          >
-            Dev.to
-          </OutboundLink>
-        </Typography>
         <br />
         <Typography variant="h5" component="h3" color="secondary">
-          Mes outils
+          Mes outils de dev
         </Typography>
+        {/* <div>
+          <div>
+            <span>Front End</span>
+            <ul>
+              <li>
+                <i className="devicon-react-original colored"></i>
+                <span>React</span>
+              </li>
+              <li>
+                <i className="devicon-javascript-plain colored"></i>
+                <span>Javascript</span>
+              </li>
+            </ul>
+          </div>
+        </div> */}
         <StackContainer>
           <span>Front end</span>
           <i className="devicon-react-original colored"></i>

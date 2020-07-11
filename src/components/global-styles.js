@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components"
 
 const GlobalStyles = createGlobalStyle`
   a {
-    text-decoration: none;
+    /* text-decoration: none; */
     color: #6ad0f3;
   }
   h1,
@@ -11,12 +11,12 @@ const GlobalStyles = createGlobalStyle`
   h4,
   h5,
   h6 {
-    color: #F1EA65;
-    /* margin-bottom:0.2rem;
-    margin-top:1.5rem; */
+    /* color: #60CEF3; */
+    color: #F3CF60;
+    /* color: #60F385; */
   }
   i {
-    font-size: 3rem;
+    font-size: 35px;
   }
 `
 export default GlobalStyles

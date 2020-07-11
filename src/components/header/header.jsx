@@ -48,6 +48,7 @@ export default function Header({ currentActivePage }) {
       contact = true
       break
     default:
+      tags = false
       about = false
       contact = false
       break
