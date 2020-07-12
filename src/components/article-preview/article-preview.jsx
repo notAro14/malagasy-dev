@@ -33,6 +33,7 @@ const ArticlePreview = ({ node }) => {
             return (
               <Link
                 component={GatsbyLink}
+                key={index}
                 style={{ marginRight: "0.5rem" }}
                 to={`/tags/${tag}`}
               >
