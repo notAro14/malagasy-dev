@@ -88,7 +88,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <hr />
         <footer
           style={{
-            height: "600px",
+            height: "800px",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
