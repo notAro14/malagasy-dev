@@ -11,15 +11,14 @@ import Newsletter from "../components/newsletter/newsletter"
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
-  console.log(siteTitle)
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Tous les articles" />
       <Bio isHomePage />
       <hr />
-      {posts.map(({ node }) => {
-        return <ArticlePreview key={node.fields.slug} node={node} />
+      {posts.map(({ node }, index) => {
+        return <ArticlePreview key={index} node={node} />
       })}
       <br />
       <div
