@@ -76,28 +76,28 @@ const About = () => {
         absolutePath: { regex: "/styled-components.png/" }
       ) {
         childImageSharp {
-          fixed(width: 35, height: 35) {
+          fixed(width: 32, height: 32) {
             ...GatsbyImageSharpFixed
           }
         }
       }
       redux: file(absolutePath: { regex: "/redux.png/" }) {
         childImageSharp {
-          fixed(width: 35, height: 35) {
+          fixed(width: 32, height: 32) {
             ...GatsbyImageSharpFixed
           }
         }
       }
       materialUi: file(absolutePath: { regex: "/material-ui.png/" }) {
         childImageSharp {
-          fixed(width: 35, height: 35) {
+          fixed(width: 32, height: 32) {
             ...GatsbyImageSharpFixed
           }
         }
       }
       figma: file(absolutePath: { regex: "/figma.png/" }) {
         childImageSharp {
-          fixed(width: 35, height: 35) {
+          fixed(width: 32, height: 32) {
             ...GatsbyImageSharpFixed
           }
         }
