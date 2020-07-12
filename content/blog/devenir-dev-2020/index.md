@@ -46,7 +46,7 @@ C'est aussi simple que ça.
 
 L'outil peut être différent, la nature du problème à résoudre peut être différente, mais à la base, un dev résoud des problèmes grâce à l'informatique.
 
-## B. Pourquoi devenir développeur ?
+## B. Pourquoi devenir développeur
 
 ### 1. Les chiffres
 
