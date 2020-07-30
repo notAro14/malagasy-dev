@@ -7,7 +7,7 @@ creditsUserUrl: "https://unsplash.com/@kimtheris"
 creditsUser: "Sereja Ris"
 creditsPlatform: "Unsplash"
 creditsPlatformUrl: "https://unsplash.com/"
-tags: ["tech"]
+tags: ["dev"]
 ---
 
 > English version -> [Why I love Javascript](https://dev.to/notaro14/why-i-love-javascript-1mb4)

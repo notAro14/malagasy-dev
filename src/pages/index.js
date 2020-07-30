@@ -15,7 +15,7 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Tous les articles" />
-      <Bio isHomePage />
+      {/* <Bio isHomePage /> */}
       <hr />
       {posts.map(({ node }, index) => {
         return <ArticlePreview key={index} node={node} />

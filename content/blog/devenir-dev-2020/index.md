@@ -7,7 +7,7 @@ creditsUserUrl: "https://unsplash.com/@kobuagency/"
 creditsUser: "kobuagency"
 creditsPlatform: "Unsplash"
 creditsPlatformUrl: "https://unsplash.com/"
-tags: ["tech"]
+tags: ["dev"]
 ---
 
 De plus en plus de personne souhaitent devenir développeurs. A tel point que l'on a l'impression que le numérique est saturé. Et pourtant, c'est loin d'être le cas, on parle même de <a href="https://www.francetvinfo.fr/replay-radio/c-est-mon-boulot/emploi-la-penurie-de-developpeurs-conduit-les-entreprises-a-etre-en-chasse-permanente-de-candidats_3212025.html" target="_blank" rel="noopener noreferrer">pénurie</a>.
@@ -28,7 +28,7 @@ Allez, go.
 <img width="350" alt="a guy who is ready" src="./ready.gif" />
 </div>
 
-## A. C'est quoi un dev ?
+## A. C'est quoi un dev
 
 Commençons par la base, un développeur c'est quoi ? Il est connu aussi sous les appellations codeur, programmeur, hacker ou encore informaticien 🤮.
 

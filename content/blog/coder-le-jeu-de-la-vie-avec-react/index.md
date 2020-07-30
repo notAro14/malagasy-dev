@@ -1,8 +1,8 @@
 ---
 title: "Coder le Jeu de la vie avec React"
-date: "2020-07-23"
+date: "2020-07-31"
 description: "Comment implémenter le jeu de la vie avec React"
-tags: ["tech", "algorithmie"]
+tags: ["dev", "algorithmique", "tutoriel"]
 featuredImage: "cover.jpg"
 ---
 
@@ -10,7 +10,7 @@ Tu te demandes sûrement ce qu'est le Jeu de la vie. Malgré son nom, ce n'est p
 
 Plus exactement, le jeu de la vie est un automate cellulaire inventé par un mathématicien britanique du nom de John Conway dans les années 70. L'automate va évoluer selon l'état de départ que l'on va lui donner. C'est la seule interaction que l'on aura avec lui, ensuite il évoluera tout seul selon un ensemble de règles très simple.
 
-## Le Jeu de la vie
+## I. Le Jeu de la vie
 
 ### Le cadre
 
@@ -78,8 +78,8 @@ Ce sont des structures qui se déplacent d'une génération à l'autre. Les vais
 <img width="250" alt="LWSS" src="./LWSS.gif" />
 </div>
 
-Beaucoup d'autres structures existent dans le jeu de la vie. Je t'ai montré uniquement les quelques structures typiques. Si tu veux en savoir plus, je te conseille l'excellente vidéo youtube de la chaîne [Science étonnante](https://www.youtube.com/watch?v=S-W0NX97DB0) sur le sujet.
+Beaucoup d'autres structures existent dans le jeu de la vie. Je t'ai montré uniquement les quelques structures typiques. Si tu veux en savoir plus, je te conseille l'excellente vidéo de la chaîne [Science étonnante](https://www.youtube.com/watch?v=S-W0NX97DB0) sur Youtube.
 
-## Implémentation du Jeu de la vie avec React
+## II. Implémentation du Jeu de la vie avec React
 
 Site : https://game-of-life-bay.vercel.app/
