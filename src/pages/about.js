@@ -141,14 +141,13 @@ const About = () => {
         <AboutMe>
           <AboutText>
             <Typography variant="body2" component="p">
-              Salut, je m'appelle Mamitiana. Je suis un développeur. A mes
-              heures perdues, je m'intéresse au design, à la philosophie et à
-              plein d'autres trucs.
+              Salut, je m'appelle Mamitiana. Je suis un développeur.
             </Typography>
             <br />
             <Typography variant="body2" component="p">
               Dans ce blog, je te parle de code essentiellement. Mais aussi de
-              mes autres intérêts.
+              plein d'autres trucs comme le web design, la productivité ou
+              encore la philosophie.
             </Typography>
             <hr />
             <Typography variant="body2" component="p">
@@ -166,7 +165,11 @@ const About = () => {
           {/* GITHUB */}
 
           <GithubContainer>
-            <img src={user.avatar_url} alt="me" />
+            <img
+              style={{ width: "200px", borderRadius: "50%" }}
+              src={user.avatar_url}
+              alt="me"
+            />
             <div>
               <Typography variant="h6" component="h6" color="textPrimary">
                 {user.name}

@@ -117,14 +117,16 @@ const Bio = ({ isHomePage }) => {
           style={{
             marginBottom: 0,
             minWidth: 50,
-            borderRadius: `100%`,
+            // borderRadius: `100%`,
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
           }}
-          imgStyle={{
-            borderRadius: `50%`,
-          }}
+          imgStyle={
+            {
+              // borderRadius: `50%`,
+            }
+          }
         />
         {isHomePage ? (
           <Typography

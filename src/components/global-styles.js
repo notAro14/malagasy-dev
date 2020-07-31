@@ -18,5 +18,14 @@ const GlobalStyles = createGlobalStyle`
   i {
     font-size: 32px;
   }
+  blockquote {
+    background-color: rgba(243, 207, 96,0.5);
+    border: none;
+    border-radius: 5px;
+    p {
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+  }
 `
 export default GlobalStyles
