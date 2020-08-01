@@ -141,7 +141,7 @@ const About = () => {
         <AboutMe>
           <AboutText>
             <Typography variant="body2" component="p">
-              Salut, je m'appelle Mamitiana. Je suis un développeur.
+              Salut, je m'appelle Aro. Je suis un développeur.
             </Typography>
             <br />
             <Typography variant="body2" component="p">

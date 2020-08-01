@@ -16,7 +16,7 @@ Plus exactement, le jeu de la vie est un automate cellulaire inventé par un mat
 
 ### Le cadre
 
-Le Jeu de la vie se déroule sur un espace à 2 dimensions composé de cases à l'infini. Une cellule va occupé chaque case. Si la cellule est en vie, la case est colorée. Si elle est morte, la case reste inchangée.
+Le Jeu de la vie se déroule sur un espace à 2 dimensions composé de cases à l'infini. Une cellule va occuper chaque case. Si la cellule est en vie, la case est colorée. Si elle est morte, la case reste inchangée.
 
 ### Les règles
 
@@ -36,7 +36,7 @@ Plusieurs structures ou patterns sont connus dans le jeu de la vie. Je vais t'en
 
 #### Les structures stables
 
-Comme son nom l'indique, une structures stable est une structure qui ne change jamais au fil des générations. Il reste stable. C'est le cas notamment du Bloc, du Bateau, du Tube et de la Ruche.
+Comme son nom l'indique, une structure stable est une structure qui ne change jamais au fil des générations. Il reste stable. C'est le cas notamment du Bloc, du Bateau, du Tube et de la Ruche.
 
 ![Structures stables](./stable.PNG)
 
@@ -136,7 +136,7 @@ Pour chaque sous-tableau row de tab
 
 Comme je l'ai dit plus haut, l'algorithme en soit est vraiment simple à écrire, mais son implémentation dans la pratique est un peu plus compliquée. Mais rien de très complexe hein, il faut juste y réfléchir un peu plus.
 
-Notamment, la partie comptage des cellules voisines pour une cellule donnée n'est pas si évident que ça. De plus il faudra prendre en compte les cellules en bord de tableau.
+Notamment, le comptage des cellules voisines pour une cellule donnée n'est pas si évident que ça. De plus il faudra prendre en compte les cellules en bord de tableau.
 
 Pour compter les cellules voisines, il suffira d'effectuer un petit calcul sur l'index de la cellule en cours pour accéder aux index de ses voisines dans le tableau. Une cellule donnée qui n'est pas située au bord du tableau a 8 voisines. Donc, il y a 8 opérations à effectuer pour obtenir les coordonnées de chaque cellule voisine.
 
