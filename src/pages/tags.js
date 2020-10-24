@@ -25,10 +25,16 @@ const TagsPage = ({
       <Typography variant="h5" component="h3" color="secondary">
         Liste des tags
       </Typography>
+      <Typography variant="body2" component="p" color="textPrimary">
+        Les articles regroupés par thème (tag).
+      </Typography>
       <ul>
         {group.map(tag => (
           <li key={tag.fieldValue}>
-            <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+            <Link
+              style={{ textDecoration: "none" }}
+              to={`/tags/${kebabCase(tag.fieldValue)}/`}
+            >
               {tag.fieldValue} ({tag.totalCount})
             </Link>
           </li>

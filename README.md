@@ -2,7 +2,7 @@
 
 # Malagasy Dev
 
-My personal blog on Web development. I write specifically about Javascript and React ecosystem.
+My personal blog.
 
 Built with [Gatsby](https://www.gatsbyjs.org/) and the [Gatsby blog starter](https://github.com/gatsbyjs/gatsby-starter-blog)
 
