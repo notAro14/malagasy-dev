@@ -2,13 +2,16 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Typography from "@material-ui/core/Typography"
+import { makeStyles } from "@material-ui/styles"
 import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 import Image from "gatsby-image"
-// import Link from "@material-ui/core/Link"
-import LocationOnIcon from "@material-ui/icons/LocationOn"
-import Button from "@material-ui/core/Button"
-import { OutboundLink } from "gatsby-plugin-google-analytics"
+
+const useStyles = makeStyles({
+  text: {
+    marginBottom: "1rem",
+  },
+})
 
 const TechContainer = styled.div`
   display: flex;
@@ -20,7 +23,7 @@ const TechContainer = styled.div`
 const TechGroup = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 1.5rem;
+  margin: 1rem;
   @media screen and (max-width: 768px) {
     margin: 0.5rem;
   }
@@ -50,26 +53,15 @@ const AboutMe = styled.div`
   }
 `
 const AboutText = styled.div`
-  padding: 3.5rem;
   line-height: 150%;
   @media screen and (max-width: 768px) {
     padding: 0;
   }
 `
 
-const GithubContainer = styled.div`
-  padding: 1.5rem;
-  min-width: 35%;
-  width: 300px;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: #eeeeee;
-  margin: 1rem;
-`
-
 const About = () => {
+  const classes = useStyles()
+
   const data = useStaticQuery(graphql`
     query aboutQuery {
       styledComponents: file(
@@ -102,16 +94,6 @@ const About = () => {
           }
         }
       }
-      githubUserInformation {
-        githubUser {
-          avatar_url
-          bio
-          html_url
-          location
-          login
-          name
-        }
-      }
       file(relativePath: { eq: "cv.pdf" }) {
         publicURL
       }
@@ -124,13 +106,6 @@ const About = () => {
       }
     }
   `)
-  const {
-    githubUserInformation: { githubUser: user },
-    // file: { publicURL },
-  } = data
-  const {
-    social: { devTo },
-  } = data.site.siteMetadata
   return (
     <Layout currentActivePage="/about">
       <SEO title="About page" />
@@ -140,88 +115,21 @@ const About = () => {
         </Typography>
         <AboutMe>
           <AboutText>
-            <Typography variant="body2" component="p">
-              Salut, je m'appelle Aro. Je suis un développeur.
+            <Typography className={classes.text} variant="body2" component="p">
+              Salut, je m'appelle Aro. Ancien Ingénieur en Informatique
+              Industrielle, je me suis orienté vers le développement web pour
+              devenir Développeur Frontend.
             </Typography>
-            <br />
-            <Typography variant="body2" component="p">
+            <Typography className={classes.text} variant="body2" component="p">
+              Ceci est mon journal de bord :)
+            </Typography>
+            <Typography className={classes.text} variant="body2" component="p">
               Dans ce blog, je te parle de code essentiellement. Mais aussi de
-              plein d'autres trucs comme le web design, la productivité ou
-              encore la philosophie.
-            </Typography>
-            <hr />
-            <Typography variant="body2" component="p">
-              PS: J'écris des articles aussi sur{" "}
-              <OutboundLink
-                target="_blank"
-                rel="noopener noreferrer"
-                href={`https://dev.to/${devTo}`}
-              >
-                Dev.to
-              </OutboundLink>
+              plein d'autres trucs autour de mes centres d'intérêts comme le web
+              design, la productivité ou encore la philosophie.
             </Typography>
           </AboutText>
-
-          {/* GITHUB */}
-
-          <GithubContainer>
-            <img
-              style={{ width: "200px", borderRadius: "50%" }}
-              src={user.avatar_url}
-              alt="me"
-            />
-            <div>
-              <Typography variant="h6" component="h6" color="textPrimary">
-                {user.name}
-              </Typography>
-              <Typography
-                variant="subtitle2"
-                component="p"
-                color="textSecondary"
-              >
-                {user.login}
-              </Typography>
-              <Typography variant="body2" component="p">
-                {user.bio}
-              </Typography>
-              <Typography
-                style={{
-                  marginTop: "0.75rem",
-                  display: "flex",
-                  alignItems: "center",
-                  marginBottom: "1rem",
-                }}
-                variant="subtitle2"
-                component="p"
-              >
-                <LocationOnIcon color="inherit" /> <span>{user.location}</span>
-              </Typography>
-            </div>
-            <Button
-              fullWidth
-              variant="outlined"
-              href={user.html_url}
-              component="a"
-              target="_blank"
-              rel="noopener noreferrer"
-              color="primary"
-            >
-              Mon Github
-            </Button>
-            {/* <Link
-            color="initial"
-            href={publicURL}
-            component="a"
-            style={{ marginTop: "0.5rem" }}
-            underline="none"
-            >
-            Mon CV
-          </Link> */}
-          </GithubContainer>
-          {/* GITHUB */}
         </AboutMe>
-
-        <br />
         <Typography variant="h5" component="h3" color="secondary">
           Mes outils préférés
         </Typography>
