@@ -5,13 +5,13 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import { useStaticQuery, graphql, Link as GatsbyLink } from "gatsby"
-import Image from "gatsby-image"
-import styled from "styled-components"
-import Typography from "@material-ui/core/Typography"
-import Link from "@material-ui/core/Link"
-import { OutboundLink } from "gatsby-plugin-google-analytics"
+import React from 'react'
+import { useStaticQuery, graphql, Link as GatsbyLink } from 'gatsby'
+import Image from 'gatsby-image'
+import styled from 'styled-components'
+import Typography from '@material-ui/core/Typography'
+import Link from '@material-ui/core/Link'
+// import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const BioContainer = styled.div`
   padding: 1rem;
@@ -118,9 +118,9 @@ const Bio = ({ isHomePage }) => {
             marginBottom: 0,
             minWidth: 50,
             // borderRadius: `100%`,
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
           }}
           imgStyle={
             {
@@ -163,7 +163,7 @@ const Bio = ({ isHomePage }) => {
           href={`https://dev.to/${devTo}`}
         >
           <img
-            style={{ background: "#DDD" }}
+            style={{ background: '#DDD' }}
             src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg"
             alt="Aro's DEV Profile"
             height="30"

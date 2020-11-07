@@ -1,18 +1,17 @@
-import React from "react"
-import { Link as GatsbyLink, graphql } from "gatsby"
-import Img from "gatsby-image"
-import Link from "@material-ui/core/Link"
-import { DiscussionEmbed } from "disqus-react"
+import React from 'react'
+import { Link as GatsbyLink, graphql } from 'gatsby'
+import Img from 'gatsby-image'
+import Link from '@material-ui/core/Link'
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Credits from "../components/credits/credits"
-import Newsletter from "../components/newsletter/newsletter"
+import Bio from '../components/bio'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import Credits from '../components/credits/credits'
+import Newsletter from '../components/newsletter/newsletter'
 
-import Typography from "@material-ui/core/Typography"
-import Box from "@material-ui/core/Box"
-import Chip from "@material-ui/core/Chip"
+import Typography from '@material-ui/core/Typography'
+import Box from '@material-ui/core/Box'
+import Chip from '@material-ui/core/Chip'
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -49,7 +48,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             platformUrl={post.frontmatter.creditsPlatformUrl}
           />
         ) : null}
-        <header style={{ margin: "1.5rem 0 1.5rem 0" }}>
+        <header style={{ margin: '1.5rem 0 1.5rem 0' }}>
           <Typography color="secondary" component="h2" variant="h4">
             {post.frontmatter.title}
           </Typography>
@@ -57,18 +56,18 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           <Box fontWeight={500}>
             <Typography color="textSecondary" component="p" variant="subtitle2">
               {`${new Date(post.frontmatter.date).toLocaleDateString(
-                "fr-FR"
-              )} • Temps de lecture : ${post.timeToRead} min `}{" "}
+                'fr-FR'
+              )} • Temps de lecture : ${post.timeToRead} min `}{' '}
               &#x1F453;
             </Typography>
           </Box>
-          <div style={{ marginBottom: "0.25rem" }}>
+          <div style={{ marginBottom: '0.25rem' }}>
             {post.frontmatter.tags
               ? post.frontmatter.tags.map((tag, index) => {
                   return (
                     <Link
                       component={GatsbyLink}
-                      style={{ margin: "0.25rem" }}
+                      style={{ margin: '0.25rem' }}
                       to={`/tags/${tag}`}
                     >
                       <Chip
@@ -88,11 +87,11 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <hr />
         <footer
           style={{
-            height: "800px",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "space-around",
+            height: '800px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'space-around',
           }}
         >
           <Bio />
