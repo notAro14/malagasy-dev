@@ -1,16 +1,16 @@
 ---
 title: Hello World
-date: "2020-06-01"
-description: "Mon tout premier article, je te partage une citation."
-featuredImage: "cover.jpg"
-creditsUserUrl: "https://pixabay.com/users/lucioliu-4032922/"
-creditsUser: "lucioliu"
-creditsPlatform: "Pixabay"
-creditsPlatformUrl: "https://pixabay.com/"
-tags: ["philosophie"]
+date: '2020-06-01'
+description: 'Mon tout premier article, je te partage une citation.'
+featuredImage: 'cover.jpg'
+creditsUserUrl: 'https://pixabay.com/users/lucioliu-4032922/'
+creditsUser: 'lucioliu'
+creditsPlatform: 'Pixabay'
+creditsPlatformUrl: 'https://pixabay.com/'
+tags: ['philosophie']
 ---
 
-C'est mon tout premier article sur ce blog. C'est le début d'une nouvelle aventure pour moi. T'en fais pas, je te proposerai des articles plus intéressants que celui-ci à l'avenir <span>&#128074;</span>
+C'est mon tout premier article sur ce blog. C'est le début d'une nouvelle aventure pour moi. T'en fais pas, je te proposerai des articles plus intéressants que celui-ci à l'avenir <span role="img" aria-label="poing">&#128074;</span>
 
 En attendant, je te partage cet aphorisme de Nietzsche dans le chapitre **Opinions et sentences mêlées** de son livre <a href="https://fr.wikipedia.org/wiki/Humain,_trop_humain" target="_blank" rel="noopener noreferrer">_Humain, trop humain_</a>.
 

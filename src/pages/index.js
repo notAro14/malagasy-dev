@@ -1,12 +1,12 @@
 // Gatsby supports TypeScript natively!
-import React from "react"
-import { graphql } from "gatsby"
+import React from 'react'
+import { graphql } from 'gatsby'
 
-// import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import ArticlePreview from "../components/article-preview/article-preview"
-import Newsletter from "../components/newsletter/newsletter"
+import Bio from '../components/bio'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import ArticlePreview from '../components/article-preview/article-preview'
+import Newsletter from '../components/newsletter/newsletter'
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -14,8 +14,8 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="Tous les articles" />
-      {/* <Bio isHomePage /> */}
+      <SEO title="Blog" />
+      <Bio isHomePage />
       <hr />
       {posts.map(({ node }, index) => {
         return <ArticlePreview key={index} node={node} />
@@ -23,9 +23,9 @@ const BlogIndex = ({ data, location }) => {
       <br />
       <div
         style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
         }}
       >
         <Newsletter />

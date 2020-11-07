@@ -1,14 +1,14 @@
-import React from "react"
-import PropTypes from "prop-types"
-import Layout from "../components/layout"
-import Typography from "@material-ui/core/Typography"
-import SEO from "../components/seo"
+import React from 'react'
+import PropTypes from 'prop-types'
+import Layout from '../components/layout'
+import Typography from '@material-ui/core/Typography'
+import SEO from '../components/seo'
 
 // Utilities
-import kebabCase from "lodash/kebabCase"
+import kebabCase from 'lodash/kebabCase'
 
 // Components
-import { Link, graphql } from "gatsby"
+import { Link, graphql } from 'gatsby'
 
 const TagsPage = ({
   data: {
@@ -20,7 +20,7 @@ const TagsPage = ({
   location,
 }) => (
   <Layout currentActivePage="/tags" location={location} title={title}>
-    <SEO title="Tous les tags" />
+    <SEO title="Tags" />
     <div>
       <Typography variant="h5" component="h3" color="secondary">
         Liste des tags
@@ -32,7 +32,7 @@ const TagsPage = ({
         {group.map(tag => (
           <li key={tag.fieldValue}>
             <Link
-              style={{ textDecoration: "none" }}
+              style={{ textDecoration: 'none' }}
               to={`/tags/${kebabCase(tag.fieldValue)}/`}
             >
               {tag.fieldValue} ({tag.totalCount})

@@ -1,14 +1,14 @@
-import React from "react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Typography from "@material-ui/core/Typography"
+import React from 'react'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import Typography from '@material-ui/core/Typography'
 
-import Form from "../components/form/form"
+import Form from '../components/form/form'
 
 const Contact = () => {
   return (
     <Layout currentActivePage="/contact">
-      <SEO title="Contact Page" />
+      <SEO title="Contacte-moi" />
       <Typography variant="h6" component="h2" color="secondary">
         Formulaire de contact
       </Typography>

@@ -1,6 +1,7 @@
-import React from "react"
-import Link from "@material-ui/core/Link"
-import styled from "styled-components"
+import React from 'react'
+import Link from '@material-ui/core/Link'
+import styled from 'styled-components'
+import { useStaticQuery, graphql } from 'gatsby'
 
 const FooterContainer = styled.footer`
   display: flex;
@@ -10,26 +11,42 @@ const FooterContainer = styled.footer`
 `
 
 const Footer = () => {
+  const data = useStaticQuery(graphql`
+    query TwitterAcount {
+      site {
+        siteMetadata {
+          social {
+            twitter
+          }
+        }
+      }
+    }
+  `)
+  const twitterAccount = data.site.siteMetadata.social.twitter
   return (
     <FooterContainer>
       <div
         style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-around",
-          height: "70%",
-          width: "100%",
-          flexDirection: "column",
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-around',
+          height: '70%',
+          width: '100%',
+          flexDirection: 'column',
         }}
       >
         <div>
-          © {new Date().getFullYear()}. Fait avec{" "}
+          © {new Date().getFullYear()}. Fait avec le{' '}
+          <span role="img" aria-label="coeur">
+            &#128150;
+          </span>{' '}
+          par{' '}
           <Link
             underline="none"
             color="initial"
-            href="https://www.gatsbyjs.org/"
+            href={`https://www.twitter.com/${twitterAccount}`}
           >
-            Gatsby
+            @notarodev
           </Link>
         </div>
         {/* <div>

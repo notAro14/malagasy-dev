@@ -1,15 +1,15 @@
-import React from "react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Typography from "@material-ui/core/Typography"
-import { makeStyles } from "@material-ui/styles"
-import styled from "styled-components"
-import { graphql, useStaticQuery } from "gatsby"
-import Image from "gatsby-image"
+import React from 'react'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import Typography from '@material-ui/core/Typography'
+import { makeStyles } from '@material-ui/styles'
+import styled from 'styled-components'
+import { graphql, useStaticQuery } from 'gatsby'
+import Image from 'gatsby-image'
 
 const useStyles = makeStyles({
   text: {
-    marginBottom: "1rem",
+    marginBottom: '1rem',
   },
 })
 
@@ -97,18 +97,11 @@ const About = () => {
       file(relativePath: { eq: "cv.pdf" }) {
         publicURL
       }
-      site {
-        siteMetadata {
-          social {
-            devTo
-          }
-        }
-      }
     }
   `)
   return (
     <Layout currentActivePage="/about">
-      <SEO title="About page" />
+      <SEO title="A propos" />
       <main>
         <Typography variant="h5" component="h3" color="secondary">
           A propos de moi
@@ -116,9 +109,9 @@ const About = () => {
         <AboutMe>
           <AboutText>
             <Typography className={classes.text} variant="body2" component="p">
-              Salut, je m'appelle Aro. Ancien Ingénieur en Informatique
-              Industrielle, je me suis orienté vers le développement web pour
-              devenir Développeur Frontend.
+              Salut, je suis Aro. Ancien Ingénieur en Informatique Industrielle,
+              je me suis orienté vers le développement web pour devenir
+              Développeur Frontend.
             </Typography>
             <Typography className={classes.text} variant="body2" component="p">
               Ceci est mon journal de bord :)

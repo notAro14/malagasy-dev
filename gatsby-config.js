@@ -6,10 +6,10 @@ module.exports = {
   siteMetadata: {
     title: `Malagasy Dev`,
     author: {
-      name: `Mamitiana Andriamaro`,
-      summary: `Je parle de code, de design, de philosophie et d'autres trucs`,
+      name: `Aro Andriamaro`,
+      summary: `Je parle de code, de la tech, et d'autres choses`,
     },
-    description: `Un blog sur le développement web et la tech mais pas que.`,
+    description: `Un blog sur le dev et la tech.`,
     siteUrl: `https://malagasydev.com`,
     social: {
       twitter: `notarodev`,

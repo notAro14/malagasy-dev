@@ -116,8 +116,7 @@ const Bio = ({ isHomePage }) => {
           alt={author.name}
           style={{
             marginBottom: 0,
-            minWidth: 50,
-            // borderRadius: `100%`,
+            minWidth: 75,
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
@@ -155,7 +154,7 @@ const Bio = ({ isHomePage }) => {
           rel="noopener noreferrer"
           href={`https://github.com/${github}`}
         >
-          <Image fixed={data.github.childImageSharp.fixed} alt="github icon" />
+          <Image fixed={data.github.childImageSharp.fixed} alt="Github" />
         </Link>
         <Link
           target="_blank"
@@ -165,7 +164,7 @@ const Bio = ({ isHomePage }) => {
           <img
             style={{ background: '#DDD' }}
             src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg"
-            alt="Aro's DEV Profile"
+            alt="DevTo"
             height="30"
             width="30"
           />
@@ -175,20 +174,14 @@ const Bio = ({ isHomePage }) => {
           rel="noopener noreferrer"
           href={`https://www.linkedin.com/in/${linkedin}/`}
         >
-          <Image
-            fixed={data.linkedin.childImageSharp.fixed}
-            alt="linkedin icon"
-          />
+          <Image fixed={data.linkedin.childImageSharp.fixed} alt="LinkedIn" />
         </Link>
         <Link
           target="_blank"
           rel="noopener noreferrer"
           href={`https://twitter.com/${twitter}`}
         >
-          <Image
-            fixed={data.twitter.childImageSharp.fixed}
-            alt="twitter icon"
-          />
+          <Image fixed={data.twitter.childImageSharp.fixed} alt="Twitter" />
         </Link>
         {/* <Link
           target="_blank"
@@ -198,7 +191,7 @@ const Bio = ({ isHomePage }) => {
           <Image fixed={data.medium.childImageSharp.fixed} alt="medium icon" />
         </Link> */}
         <Link component={GatsbyLink} color="secondary" to="/rss.xml">
-          <Image fixed={data.rss.childImageSharp.fixed} alt="rss feed icon" />
+          <Image fixed={data.rss.childImageSharp.fixed} alt="RSS" />
         </Link>
       </Socials>
       {/* <Typography color="textSecondary" variant="subtitle2" component="p">
