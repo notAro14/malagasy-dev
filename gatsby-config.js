@@ -19,17 +19,17 @@ module.exports = {
       devTo: `notaro14`,
     },
     keywords: [
-      "madagascar",
-      "javascript",
-      "productivité",
-      "entrepreneuriat",
-      "html",
-      "css",
-      "react",
-      "gatsby",
-      "technologies",
-      "société",
-      "design",
+      'madagascar',
+      'javascript',
+      'productivité',
+      'entrepreneuriat',
+      'html',
+      'css',
+      'react',
+      'gatsby',
+      'technologies',
+      'société',
+      'design',
     ],
   },
   plugins: [
@@ -40,7 +40,7 @@ module.exports = {
         head: true,
         anonymize: true,
         respectDNT: true,
-        pageTransitionDelay: true,
+        // pageTransitionDelay: true,
       },
     },
     {
@@ -107,7 +107,7 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-mailchimp",
+      resolve: 'gatsby-plugin-mailchimp',
       options: {
         endpoint: process.env.MAILCHIMP_ENDPOINT, // string; add your MC list endpoint here; see instructions below
         timeout: 3500, // number; the amount of time, in milliseconds, that you want to allow mailchimp to respond to your request before timing out. defaults to 3500
