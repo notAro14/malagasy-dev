@@ -2,6 +2,7 @@ import React from 'react'
 import { Link as GatsbyLink, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import Link from '@material-ui/core/Link'
+// import { DiscussionEmbed } from 'disqus-react'
 
 import Bio from '../components/bio'
 import Layout from '../components/layout'
@@ -24,10 +25,10 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
     ? post.frontmatter.featuredImage.childImageSharp.resize
     : null
 
-  const disqusConfig = {
-    shortname: process.env.GATSBY_DISQUS_NAME,
-    config: { identifier: post.fields.slug, title: post.frontmatter.title },
-  }
+  // const disqusConfig = {
+  //   shortname: process.env.GATSBY_DISQUS_NAME,
+  //   config: { identifier: post.fields.slug, title: post.frontmatter.title },
+  // }
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -125,7 +126,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </li>
         </ul>
       </nav>
-      <DiscussionEmbed {...disqusConfig} />
+      {/* <DiscussionEmbed {...disqusConfig} /> */}
     </Layout>
   )
 }
