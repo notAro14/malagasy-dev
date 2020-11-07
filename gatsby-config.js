@@ -33,16 +33,16 @@ module.exports = {
     ],
   },
   plugins: [
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: `UA-168065651-1`,
-        head: true,
-        anonymize: true,
-        respectDNT: true,
-        // pageTransitionDelay: true,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     trackingId: `UA-168065651-1`,
+    //     head: true,
+    //     anonymize: true,
+    //     respectDNT: true,
+    //     // pageTransitionDelay: true,
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

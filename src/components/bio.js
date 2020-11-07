@@ -150,14 +150,14 @@ const Bio = ({ isHomePage }) => {
       </BioContent>
 
       <Socials>
-        <OutboundLink
+        <Link
           target="_blank"
           rel="noopener noreferrer"
           href={`https://github.com/${github}`}
         >
           <Image fixed={data.github.childImageSharp.fixed} alt="github icon" />
-        </OutboundLink>
-        <OutboundLink
+        </Link>
+        <Link
           target="_blank"
           rel="noopener noreferrer"
           href={`https://dev.to/${devTo}`}
@@ -169,8 +169,8 @@ const Bio = ({ isHomePage }) => {
             height="30"
             width="30"
           />
-        </OutboundLink>
-        <OutboundLink
+        </Link>
+        <Link
           target="_blank"
           rel="noopener noreferrer"
           href={`https://www.linkedin.com/in/${linkedin}/`}
@@ -179,8 +179,8 @@ const Bio = ({ isHomePage }) => {
             fixed={data.linkedin.childImageSharp.fixed}
             alt="linkedin icon"
           />
-        </OutboundLink>
-        <OutboundLink
+        </Link>
+        <Link
           target="_blank"
           rel="noopener noreferrer"
           href={`https://twitter.com/${twitter}`}
@@ -189,14 +189,14 @@ const Bio = ({ isHomePage }) => {
             fixed={data.twitter.childImageSharp.fixed}
             alt="twitter icon"
           />
-        </OutboundLink>
-        {/* <OutboundLink
+        </Link>
+        {/* <Link
           target="_blank"
           rel="noopener noreferrer"
           href={`https://medium.com/${medium}`}
         >
           <Image fixed={data.medium.childImageSharp.fixed} alt="medium icon" />
-        </OutboundLink> */}
+        </Link> */}
         <Link component={GatsbyLink} color="secondary" to="/rss.xml">
           <Image fixed={data.rss.childImageSharp.fixed} alt="rss feed icon" />
         </Link>
