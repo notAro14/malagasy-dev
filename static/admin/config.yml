@@ -2,6 +2,8 @@ backend:
   name: git-gateway
   branch: master
 
+display_url: https://malagasydev.com
+publish_mode: editorial_workflow
 media_folder: content/assets
 
 collections:
@@ -13,6 +15,8 @@ collections:
     media_folder: ''
     public_folder: ''
     path: '{{title}}/index'
+    editor:
+      preview: false
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
