@@ -1,13 +1,13 @@
 ---
-title: "Convertir des fichiers avec Pandoc"
-date: "2020-07-12"
-description: "Si toi aussi tu détestes Office et compagnie, je te montre comment convertir du markdown en Word"
-tags: ["dev", "productivite", "tutoriel"]
-creditsUserUrl: "https://unsplash.com/@pedro_ag_santos/"
-creditsUser: "Pedro Santos"
-creditsPlatform: "Unsplash"
-creditsPlatformUrl: "https://unsplash.com/"
-featuredImage: "cover.jpg"
+title: 'Convertir des fichiers avec Pandoc'
+date: '2020-07-12'
+description: 'Si toi aussi tu détestes Office et compagnie, je te montre comment convertir du markdown en Word'
+tags: ['dev', 'productivite', 'tutoriel']
+creditsUserUrl: 'https://unsplash.com/@pedro_ag_santos/'
+creditsUser: 'Pedro Santos'
+creditsPlatform: 'Unsplash'
+creditsPlatformUrl: 'https://unsplash.com/'
+featuredImage: 'cover.jpg'
 ---
 
 Salut à toi, jeune développeur !
@@ -51,9 +51,9 @@ Dans les exemples qui suivent on va partir du fichier Markdown ci-dessous, que j
 
 ```markdown
 ---
-title: "Hello World"
-author: "John Doe"
-date: "2020-07-12"
+title: 'Hello World'
+author: 'John Doe'
+date: '2020-07-12'
 ---
 
 ## Titre A
@@ -169,7 +169,7 @@ Pour cibler un fichier html personnalisé, tu peux le faire avec l'argument _-c_
 Tu peux créer ton propre fichier css ou copier-coller l'exemple ci-dessous que j'ai nommé _style.css_:
 
 ```css
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&display=swap');
 
 * {
   box-sizing: border-box;
@@ -179,7 +179,7 @@ body {
   max-width: 80vw;
   padding: 2.5rem;
   color: black;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   line-height: 140%;
   color: #333;
 }
@@ -210,7 +210,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Merriweather", serif;
+  font-family: 'Merriweather', serif;
   color: dodgerblue;
 }
 th,

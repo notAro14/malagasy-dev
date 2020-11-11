@@ -18,6 +18,7 @@
     "gatsby-plugin-mailchimp": "^5.2.2",
     "gatsby-plugin-manifest": "^2.5.1",
     "gatsby-plugin-material-ui": "^2.1.10",
+    "gatsby-plugin-netlify-cms": "^4.3.17",
     "gatsby-plugin-offline": "^3.3.1",
     "gatsby-plugin-react-helmet": "^3.3.14",
     "gatsby-plugin-robots-txt": "^1.5.3",
@@ -33,6 +34,7 @@
     "gatsby-source-graphql": "^2.7.6",
     "gatsby-transformer-remark": "^2.9.1",
     "gatsby-transformer-sharp": "^2.5.21",
+    "netlify-cms-app": "^2.13.3",
     "prismjs": "^1.22.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
@@ -58,7 +60,8 @@
   "scripts": {
     "build": "gatsby build",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "gatsby develop",
+    "develop":"gatsby develop",
+    "start": "npm run clean && npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"

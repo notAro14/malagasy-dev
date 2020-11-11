@@ -1,13 +1,13 @@
 ---
 title: "Pourquoi j'adore le Javascript"
-date: "2020-06-24"
-description: "Javascript est un language franchement sympathique"
-featuredImage: "cover.jpg"
-creditsUserUrl: "https://unsplash.com/@kimtheris"
-creditsUser: "Sereja Ris"
-creditsPlatform: "Unsplash"
-creditsPlatformUrl: "https://unsplash.com/"
-tags: ["dev"]
+date: '2020-06-24'
+description: 'Javascript est un language franchement sympathique'
+featuredImage: 'cover.jpg'
+creditsUserUrl: 'https://unsplash.com/@kimtheris'
+creditsUser: 'Sereja Ris'
+creditsPlatform: 'Unsplash'
+creditsPlatformUrl: 'https://unsplash.com/'
+tags: ['dev']
 ---
 
 > English version -> [Why I love Javascript](https://dev.to/notaro14/why-i-love-javascript-1mb4)
@@ -38,12 +38,12 @@ Supposons, tu as un objet _person_ avec 3 champs, dont 1 est un objet.
 
 ```javascript
 const person = {
-  fName: "Thomas",
-  lName: "Durand",
+  fName: 'Thomas',
+  lName: 'Durand',
   age: 25,
   job: {
-    title: "Software Developer",
-    company: "Renault",
+    title: 'Software Developer',
+    company: 'Renault',
   },
 }
 ```
@@ -133,8 +133,8 @@ Par exemple, c'est très utile pour la copie de donnée. Bon, voici le code:
 
 ```javascript
 const personA = {
-  name: "Doe",
-  firstName: "John",
+  name: 'Doe',
+  firstName: 'John',
   age: 25,
 }
 
@@ -154,8 +154,8 @@ personC = { ...personA, age: 50 }
 Et pour les tableaux
 
 ```javascript
-const todos = ["cooking", "laundry"]
-const tomorrowTodos = ["grocery shopping", ...todos, "homework"]
+const todos = ['cooking', 'laundry']
+const tomorrowTodos = ['grocery shopping', ...todos, 'homework']
 console.log(tomorrowTodos) // ["grocery shopping", "cooking","laundry", "homework"]
 ```
 
@@ -187,8 +187,8 @@ C'est un style de programmation dans lequel tu décris ce que tu attends de la m
 ```javascript
 // Map
 // Mettre au pluriel les mots d'un tableau
-const singular = ["pizza", "baggel", "hat"]
-const plural = singular.map(word => word + "s")
+const singular = ['pizza', 'baggel', 'hat']
+const plural = singular.map(word => word + 's')
 console.log(plural) // ["pizzas", "baggels", "hats"]
 
 // Filter

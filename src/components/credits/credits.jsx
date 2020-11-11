@@ -1,11 +1,11 @@
-import React from "react"
-import Link from "@material-ui/core/Link"
-import { Typography } from "@material-ui/core"
+import React from 'react'
+import Link from '@material-ui/core/Link'
+import { Typography } from '@material-ui/core'
 
 const Credits = ({ userName, platform, userUrl, platformUrl }) => {
   return (
     <Typography color="textPrimary" variant="caption" component="p">
-      Photo by{" "}
+      Photo by{' '}
       <Link
         color="initial"
         target="_blank"
@@ -14,8 +14,8 @@ const Credits = ({ userName, platform, userUrl, platformUrl }) => {
         href={userUrl}
       >
         {userName}
-      </Link>{" "}
-      on{" "}
+      </Link>{' '}
+      on{' '}
       <Link
         color="initial"
         underline="none"

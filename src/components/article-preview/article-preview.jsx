@@ -1,8 +1,8 @@
-import React from "react"
-import { Link as GatsbyLink } from "gatsby"
-import { Link } from "@material-ui/core"
-import Typography from "@material-ui/core/Typography"
-import Chip from "@material-ui/core/Chip"
+import React from 'react'
+import { Link as GatsbyLink } from 'gatsby'
+import { Link } from '@material-ui/core'
+import Typography from '@material-ui/core/Typography'
+import Chip from '@material-ui/core/Chip'
 
 const ArticlePreview = ({ node }) => {
   const title = node.frontmatter.title || node.fields.slug
@@ -22,7 +22,7 @@ const ArticlePreview = ({ node }) => {
         </Link>
 
         <Typography color="textSecondary" component="p" variant="caption">
-          {`${new Date(node.frontmatter.date).toLocaleDateString("fr-FR")} • ${
+          {`${new Date(node.frontmatter.date).toLocaleDateString('fr-FR')} • ${
             node.timeToRead
           } min `}
           &#x1F453;
@@ -34,7 +34,7 @@ const ArticlePreview = ({ node }) => {
               <Link
                 component={GatsbyLink}
                 key={index}
-                style={{ marginRight: "0.5rem" }}
+                style={{ marginRight: '0.5rem' }}
                 to={`/tags/${tag}`}
               >
                 <Chip

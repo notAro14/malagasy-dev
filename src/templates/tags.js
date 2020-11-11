@@ -1,12 +1,12 @@
-import React from "react"
-import PropTypes from "prop-types"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Typography from "@material-ui/core/Typography"
-import ArticlePreview from "../components/article-preview/article-preview"
+import React from 'react'
+import PropTypes from 'prop-types'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import Typography from '@material-ui/core/Typography'
+import ArticlePreview from '../components/article-preview/article-preview'
 
 // Components
-import { Link, graphql } from "gatsby"
+import { Link, graphql } from 'gatsby'
 
 const Tags = ({ pageContext, data, location }) => {
   const {
@@ -17,8 +17,8 @@ const Tags = ({ pageContext, data, location }) => {
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
   const tagHeader = `${totalCount} article${
-    totalCount === 1 ? "" : "s"
-  } trouvé${totalCount === 1 ? "" : "s"}`
+    totalCount === 1 ? '' : 's'
+  } trouvé${totalCount === 1 ? '' : 's'}`
 
   return (
     <Layout location={location} title={title}>

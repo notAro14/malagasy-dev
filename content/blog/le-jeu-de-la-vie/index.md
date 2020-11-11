@@ -1,9 +1,9 @@
 ---
-title: "Le jeu de la vie"
-date: "2020-07-31"
+title: 'Le jeu de la vie'
+date: '2020-07-31'
 description: "Comment implémenter le jeu de la vie avec n'importe quel langage"
-tags: ["dev", "algorithmique", "tutoriel"]
-featuredImage: "cover.jpg"
+tags: ['dev', 'algorithmique', 'tutoriel']
+featuredImage: 'cover.jpg'
 ---
 
 Tu te demandes sûrement ce qu'est le Jeu de la vie. Malgré son nom, ce n'est pas un jeu à proprement parler. On n'y joue pas vraiment et il n'y a pas de notion de victoire. C'est plus un genre de simulation.

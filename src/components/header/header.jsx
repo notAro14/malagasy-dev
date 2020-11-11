@@ -1,11 +1,11 @@
-import React from "react"
-import { Link as GatsbyLink, graphql, useStaticQuery } from "gatsby"
-import Image from "gatsby-image"
+import React from 'react'
+import { Link as GatsbyLink, graphql, useStaticQuery } from 'gatsby'
+import Image from 'gatsby-image'
 
-import { Link } from "@material-ui/core"
-import Typography from "@material-ui/core/Typography"
+import { Link } from '@material-ui/core'
+import Typography from '@material-ui/core/Typography'
 
-import { NavLinkContainer, Navbar, Links } from "./header.styles"
+import { NavLinkContainer, Navbar, Links } from './header.styles'
 
 const NavLink = ({ children, to, activePage, component }) => {
   return (
@@ -38,13 +38,13 @@ export default function Header({ currentActivePage }) {
   let tags = false
 
   switch (currentActivePage) {
-    case "/about":
+    case '/about':
       about = true
       break
-    case "/tags":
+    case '/tags':
       tags = true
       break
-    case "/contact":
+    case '/contact':
       contact = true
       break
     default:
@@ -57,13 +57,13 @@ export default function Header({ currentActivePage }) {
     <Navbar>
       <Typography color="primary" variant="h5" component="h1">
         <Link
-          style={{ display: "flex", alignItems: "center" }}
+          style={{ display: 'flex', alignItems: 'center' }}
           component={GatsbyLink}
           to="/"
           underline="none"
         >
           <Image fixed={logo} alt="Malagasy Dev" />
-          <span style={{ marginLeft: "1rem" }}>MalagasyDev</span>
+          <span style={{ marginLeft: '1rem' }}>MalagasyDev</span>
           {/* <Box fontWeight={700}>MalagasyDev</Box> */}
         </Link>
       </Typography>

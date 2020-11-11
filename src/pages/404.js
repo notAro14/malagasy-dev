@@ -1,12 +1,12 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from 'react'
+import { graphql } from 'gatsby'
 
-import Img from "gatsby-image"
-import { Link as GatsbyLink } from "gatsby"
-import Link from "@material-ui/core/Link"
+import Img from 'gatsby-image'
+import { Link as GatsbyLink } from 'gatsby'
+import Link from '@material-ui/core/Link'
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 const NotFoundPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -17,7 +17,7 @@ const NotFoundPage = ({ data, location }) => {
       <h1>Oops</h1>
       <p>
         La page que tu recherches n'existe pas. Tu peux retrouver la liste de
-        tous les articles{" "}
+        tous les articles{' '}
         <Link component={GatsbyLink} to="/" color="primary">
           ici.
         </Link>

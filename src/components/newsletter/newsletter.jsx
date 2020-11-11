@@ -1,19 +1,19 @@
-import React, { useState } from "react"
-import addToMailchimp from "gatsby-plugin-mailchimp"
-import TextField from "@material-ui/core/TextField"
-import Button from "@material-ui/core/Button"
-import Typography from "@material-ui/core/Typography"
-import { NewsletterContainer } from "./newsletter.styles"
-import Dialog from "../dialog/dialog"
+import React, { useState } from 'react'
+import addToMailchimp from 'gatsby-plugin-mailchimp'
+import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button'
+import Typography from '@material-ui/core/Typography'
+import { NewsletterContainer } from './newsletter.styles'
+import Dialog from '../dialog/dialog'
 
 const Newsletter = () => {
   const [newsletter, setNewsletter] = useState({
-    email: "",
-    fName: "",
-    lName: "",
+    email: '',
+    fName: '',
+    lName: '',
   })
   const [open, setOpen] = useState(false)
-  const [mailchimpData, setMailchimpData] = useState({ result: "", msg: "" })
+  const [mailchimpData, setMailchimpData] = useState({ result: '', msg: '' })
   const handleChange = e =>
     setNewsletter({ ...newsletter, [e.target.name]: e.target.value })
 
@@ -29,7 +29,7 @@ const Newsletter = () => {
         // console.log({ data })
         const { result, msg } = data
         setMailchimpData({ result, msg })
-        setNewsletter({ email: "", fName: "", lName: "" })
+        setNewsletter({ email: '', fName: '', lName: '' })
         setOpen(true)
       })
       .catch(e => {
@@ -41,15 +41,15 @@ const Newsletter = () => {
   }
 
   return (
-    <div style={{ marginBottom: "1rem" }}>
+    <div style={{ marginBottom: '1rem' }}>
       <Dialog
         buttonText="Ok"
         modalText={
-          mailchimpData.result === "success"
-            ? "Merci pour ton inscription :)"
+          mailchimpData.result === 'success'
+            ? 'Merci pour ton inscription :)'
             : "Oops une erreur s'est produite"
         }
-        modalTitle={mailchimpData.result === "success" ? "Validée" : "Erreur"}
+        modalTitle={mailchimpData.result === 'success' ? 'Validée' : 'Erreur'}
         open={open}
         handleClose={() => setOpen(false)}
       />

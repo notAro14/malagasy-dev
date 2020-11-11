@@ -1,35 +1,35 @@
-import React from "react"
-import TextField from "@material-ui/core/TextField"
-import Button from "@material-ui/core/Button"
-import { FormContainer } from "./form.styles"
-import Dialog from "../dialog/dialog"
+import React from 'react'
+import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button'
+import { FormContainer } from './form.styles'
+import Dialog from '../dialog/dialog'
 
 const encode = data => {
   return Object.keys(data)
-    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&")
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
 }
 
 class ContactForm extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { name: "", email: "", message: "", objet: "", open: false }
+    this.state = { name: '', email: '', message: '', objet: '', open: false }
   }
 
   /* Here’s the juicy bit for posting the form submission */
 
   handleSubmit = e => {
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...this.state }),
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', ...this.state }),
     })
       .then(() => {
         this.setState({
-          name: "",
-          email: "",
-          message: "",
-          objet: "",
+          name: '',
+          email: '',
+          message: '',
+          objet: '',
           open: true,
         })
       })

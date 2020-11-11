@@ -1,8 +1,8 @@
-require("dotenv").config({
+require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-const _ = require("lodash")
+const _ = require('lodash')
 
 const path = require(`path`)
 const fetch = require(`node-fetch`)
@@ -12,7 +12,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
-  const tagTemplate = path.resolve("src/templates/tags.js")
+  const tagTemplate = path.resolve('src/templates/tags.js')
   const result = await graphql(
     `
       {

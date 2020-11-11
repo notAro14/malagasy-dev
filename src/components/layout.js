@@ -1,14 +1,14 @@
-import React from "react"
+import React from 'react'
 
-import { Container } from "@material-ui/core"
-import Header from "./header/header"
-import Footer from "./footer/footer"
+import { Container } from '@material-ui/core'
+import Header from './header/header'
+import Footer from './footer/footer'
 
-import ThemeProvider from "@material-ui/styles/ThemeProvider"
-import theme from "../theme"
+import ThemeProvider from '@material-ui/styles/ThemeProvider'
+import theme from '../theme'
 
-import GlobalStyles from "./global-styles"
-import CssBaseline from "@material-ui/core/CssBaseline"
+import GlobalStyles from './global-styles'
+import CssBaseline from '@material-ui/core/CssBaseline'
 
 const Layout = ({ location, title, children, currentActivePage }) => {
   // const rootPath = `${__PATH_PREFIX__}/`

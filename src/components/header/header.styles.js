@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const Navbar = styled.nav`
   display: flex;
@@ -22,7 +22,7 @@ export const NavLinkContainer = styled.li`
   margin: 0.1rem;
   border-radius: 5px;
   background-color: ${props =>
-    props.activePage ? "rgb(243,133,96)" : "inherit"};
+    props.activePage ? 'rgb(243,133,96)' : 'inherit'};
   transition: all ease 400ms;
   &:hover {
     background-color: rgb(243, 133, 96);
