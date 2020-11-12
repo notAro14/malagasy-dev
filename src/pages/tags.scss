@@ -1,0 +1,13 @@
+@import '../variables';
+.tag-page {
+  // height: 100vh;
+  .tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin-left: 0;
+    li {
+      margin-right: $spacing-1;
+    }
+  }
+}

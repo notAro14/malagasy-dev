@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../components/layout'
-import Typography from '@material-ui/core/Typography'
 import SEO from '../components/seo'
+import './tags.scss'
 
 // Utilities
 import kebabCase from 'lodash/kebabCase'
@@ -21,14 +21,10 @@ const TagsPage = ({
 }) => (
   <Layout currentActivePage="/tags" location={location} title={title}>
     <SEO title="Tags" />
-    <div>
-      <Typography variant="h5" component="h3" color="secondary">
-        Liste des tags
-      </Typography>
-      <Typography variant="body2" component="p" color="textPrimary">
-        Les articles regroupés par thème (tag).
-      </Typography>
-      <ul>
+    <div className="tag-page">
+      <h2>Liste des tags</h2>
+      <p>Voici les articles regroupés par tag.</p>
+      <ul className="tags-list">
         {group.map(tag => (
           <li key={tag.fieldValue}>
             <Link
