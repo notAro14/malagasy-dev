@@ -4,12 +4,6 @@ import { Container } from '@material-ui/core'
 import Header from './header/header'
 import Footer from './footer/footer'
 
-import ThemeProvider from '@material-ui/styles/ThemeProvider'
-import theme from '../theme'
-
-import GlobalStyles from './global-styles'
-import CssBaseline from '@material-ui/core/CssBaseline'
-
 const Layout = ({ location, title, children, currentActivePage }) => {
   // const rootPath = `${__PATH_PREFIX__}/`
 
@@ -20,14 +14,10 @@ const Layout = ({ location, title, children, currentActivePage }) => {
   // }
   // console.log(location)
   return (
-    <Container maxWidth="md">
-      <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        <CssBaseline />
-        <Header currentActivePage={currentActivePage} />
-        <main>{children}</main>
-        <Footer />
-      </ThemeProvider>
+    <Container maxWidth="lg">
+      <Header currentActivePage={currentActivePage} />
+      <main>{children}</main>
+      <Footer />
     </Container>
   )
 }

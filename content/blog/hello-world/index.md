@@ -5,8 +5,6 @@ description: 'Mon tout premier article, je te partage une citation.'
 featuredImage: 'cover.jpg'
 creditsUserUrl: 'https://pixabay.com/users/lucioliu-4032922/'
 creditsUser: 'lucioliu'
-creditsPlatform: 'Pixabay'
-creditsPlatformUrl: 'https://pixabay.com/'
 tags: ['philosophie']
 ---
 

@@ -16,11 +16,10 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="Blog" />
       <Bio isHomePage />
-      <hr />
+      <br />
       {posts.map(({ node }, index) => {
         return <ArticlePreview key={index} node={node} />
       })}
-      <br />
       <div
         style={{
           display: 'flex',

@@ -54,7 +54,8 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 800,
+              linkImagesToOriginal: false,
             },
           },
           {
@@ -97,10 +98,10 @@ module.exports = {
         name: `Malagasy Dev blog`,
         short_name: `MalagasyDev`,
         start_url: `/`,
-        background_color: `#303030`,
-        theme_color: `#F1EA65`,
+        background_color: `#003049`,
+        theme_color: `#fc6471`,
         display: `minimal-ui`,
-        icon: `content/assets/logo.png`,
+        icon: `content/assets/logo_transparent.png`,
       },
     },
     {

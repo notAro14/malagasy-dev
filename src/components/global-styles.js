@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components'
 const GlobalStyles = createGlobalStyle`
   a {
     /* text-decoration: none; */
-    color: #6ad0f3;
+    /*color: #6ad0f3;*/
   }
   h1,
   h2,
