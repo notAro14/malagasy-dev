@@ -64,20 +64,10 @@ const SEO = ({
               {
                 rel: 'stylesheet',
                 href:
-                  'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap',
-              },
-              {
-                rel: 'stylesheet',
-                href:
                   'https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css',
               },
             ]
           : [
-              {
-                rel: 'stylesheet',
-                href:
-                  'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap',
-              },
               {
                 rel: 'stylesheet',
                 href:

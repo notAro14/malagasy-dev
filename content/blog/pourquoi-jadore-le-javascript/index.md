@@ -5,8 +5,6 @@ description: 'Javascript est un language franchement sympathique'
 featuredImage: 'cover.jpg'
 creditsUserUrl: 'https://unsplash.com/@kimtheris'
 creditsUser: 'Sereja Ris'
-creditsPlatform: 'Unsplash'
-creditsPlatformUrl: 'https://unsplash.com/'
 tags: ['dev']
 ---
 

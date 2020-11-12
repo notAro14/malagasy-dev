@@ -1,0 +1,35 @@
+@import '../variables';
+.post {
+  background-color: $background-color-light;
+  padding: $spacing-1;
+  margin-bottom: $spacing-1;
+  border-radius: 5px;
+  .header {
+    margin-top: $spacing-1;
+    margin-bottom: $spacing-1;
+    .date {
+      font-size: $caption;
+      color: $text-secondary;
+      margin-bottom: $spacing-0;
+    }
+  }
+}
+
+.tags {
+  text-align: center;
+  margin-bottom: $spacing-1;
+  .tag {
+    text-decoration: none;
+  }
+}
+
+.links-to-other-posts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 0;
+  .link-to-other-posts {
+    text-decoration: none;
+  }
+}

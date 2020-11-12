@@ -5,8 +5,6 @@ description: 'Si toi aussi tu détestes Office et compagnie, je te montre commen
 tags: ['dev', 'productivite', 'tutoriel']
 creditsUserUrl: 'https://unsplash.com/@pedro_ag_santos/'
 creditsUser: 'Pedro Santos'
-creditsPlatform: 'Unsplash'
-creditsPlatformUrl: 'https://unsplash.com/'
 featuredImage: 'cover.jpg'
 ---
 

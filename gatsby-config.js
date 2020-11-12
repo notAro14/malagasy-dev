@@ -1,7 +1,3 @@
-require('dotenv').config({
-  path: `.env`,
-})
-
 module.exports = {
   siteMetadata: {
     title: `Malagasy Dev`,
@@ -33,16 +29,6 @@ module.exports = {
     ],
   },
   plugins: [
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     trackingId: `UA-168065651-1`,
-    //     head: true,
-    //     anonymize: true,
-    //     respectDNT: true,
-    //     // pageTransitionDelay: true,
-    //   },
-    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -64,7 +50,8 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 800,
+              linkImagesToOriginal: false,
             },
           },
           {
@@ -87,9 +74,15 @@ module.exports = {
         },
       },
     },
+    // STYLING
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        implementation: require('sass'),
+      },
+    },
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-robots-txt`,
-    `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sitemap`,
@@ -100,22 +93,13 @@ module.exports = {
         name: `Malagasy Dev blog`,
         short_name: `MalagasyDev`,
         start_url: `/`,
-        background_color: `#303030`,
-        theme_color: `#F1EA65`,
+        background_color: `#003049`,
+        theme_color: `#fc6471`,
         display: `minimal-ui`,
-        icon: `content/assets/logo.png`,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-mailchimp',
-      options: {
-        endpoint: process.env.MAILCHIMP_ENDPOINT, // string; add your MC list endpoint here; see instructions below
-        timeout: 3500, // number; the amount of time, in milliseconds, that you want to allow mailchimp to respond to your request before timing out. defaults to 3500
+        icon: `content/assets/logo_transparent.png`,
       },
     },
     `gatsby-plugin-react-helmet`,
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,
     `gatsby-plugin-netlify-cms`,
   ],

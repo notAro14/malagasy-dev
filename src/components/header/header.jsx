@@ -1,83 +1,20 @@
 import React from 'react'
-import { Link as GatsbyLink, graphql, useStaticQuery } from 'gatsby'
-import Image from 'gatsby-image'
-
-import { Link } from '@material-ui/core'
-import Typography from '@material-ui/core/Typography'
-
-import { NavLinkContainer, Navbar, Links } from './header.styles'
-
-const NavLink = ({ children, to, activePage, component }) => {
-  return (
-    <Link component={component} underline="none" to={to}>
-      <NavLinkContainer activePage={activePage}>
-        <Typography color="textPrimary" variant="subtitle2" component="h6">
-          {children}
-        </Typography>
-      </NavLinkContainer>
-    </Link>
-  )
-}
+import { Link } from 'gatsby'
 
 export default function Header({ currentActivePage }) {
-  const data = useStaticQuery(graphql`
-    query {
-      logo: file(absolutePath: { regex: "/logo_transparent.png/" }) {
-        childImageSharp {
-          fixed(width: 50, height: 50) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-    }
-  `)
-
-  const logo = data.logo.childImageSharp.fixed
-  let about = false
-  let contact = false
-  let tags = false
-
-  switch (currentActivePage) {
-    case '/about':
-      about = true
-      break
-    case '/tags':
-      tags = true
-      break
-    case '/contact':
-      contact = true
-      break
-    default:
-      tags = false
-      about = false
-      contact = false
-      break
-  }
   return (
-    <Navbar>
-      <Typography color="primary" variant="h5" component="h1">
-        <Link
-          style={{ display: 'flex', alignItems: 'center' }}
-          component={GatsbyLink}
-          to="/"
-          underline="none"
-        >
-          <Image fixed={logo} alt="Malagasy Dev" />
-          <span style={{ marginLeft: '1rem' }}>MalagasyDev</span>
-          {/* <Box fontWeight={700}>MalagasyDev</Box> */}
-        </Link>
-      </Typography>
-      <Links>
-        <NavLink activePage={tags} component={GatsbyLink} to="/tags">
-          Tags
-        </NavLink>
-        <NavLink activePage={about} component={GatsbyLink} to="/about">
-          A propos
-        </NavLink>
-        <NavLink activePage={contact} component={GatsbyLink} to="/contact">
-          Contact
-        </NavLink>
-      </Links>
-    </Navbar>
+    <nav className="navbar">
+      <Link to="/">
+        <h1 id="logo-title">Malagasy Dev</h1>
+      </Link>
+      <ul>
+        <li>
+          <Link to="/tags">Tags</Link>
+        </li>
+        <li>
+          <Link to="/about">A propos</Link>
+        </li>
+      </ul>
+    </nav>
   )
 }

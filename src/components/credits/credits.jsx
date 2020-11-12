@@ -1,31 +1,20 @@
 import React from 'react'
-import Link from '@material-ui/core/Link'
-import { Typography } from '@material-ui/core'
+import { Link } from 'gatsby'
+import './credits.scss'
 
-const Credits = ({ userName, platform, userUrl, platformUrl }) => {
+const Credits = ({ userName, userUrl }) => {
   return (
-    <Typography color="textPrimary" variant="caption" component="p">
-      Photo by{' '}
+    <span className="credits">
+      Photo de{' '}
       <Link
         color="initial"
         target="_blank"
-        underline="none"
         rel="noopener noreferrer"
-        href={userUrl}
+        to={userUrl}
       >
         {userName}
-      </Link>{' '}
-      on{' '}
-      <Link
-        color="initial"
-        underline="none"
-        target="_blank"
-        rel="noopener noreferrer"
-        href={platformUrl}
-      >
-        {platform}
       </Link>
-    </Typography>
+    </span>
   )
 }
 

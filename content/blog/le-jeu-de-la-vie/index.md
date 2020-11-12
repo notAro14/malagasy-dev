@@ -38,32 +38,32 @@ Plusieurs structures ou patterns sont connus dans le jeu de la vie. Je vais t'en
 
 Comme son nom l'indique, une structure stable est une structure qui ne change jamais au fil des générations. Il reste stable. C'est le cas notamment du Bloc, du Bateau, du Tube et de la Ruche.
 
-![Structures stables](./stable.PNG)
+![Structures stables](./stable.PNG 'Des structures stables')
 
 #### Les oscillateurs
 
 Ce sont des structures qui changent et reprennent leur forme de départ au bout de N générations. On dit que ce sont des structures périodiques. Par exemple cette structure appelée Clignotant, reprend sa forme toutes les 2 générations.
 
 <div style="text-align:center;">
-<img width="200" alt="A blinker" src="./blinker.gif" />
+<img style="max-width:50%;" src="./blinker.gif" alt="Un clignotant" title="Un clignotant">
 </div>
 
 ##### Le pulsar (période 3)
 
 <div style="text-align:center;">
-<img width="200" alt="A pulsar" src="./pulsar.gif" />
+<img style="max-width:50%;" src="./pulsar.gif" alt="Un pulsar" title="Un pulsar">
 </div>
 
 ##### La galaxie de kok (période 8)
 
 <div style="text-align:center;">
-<img width="200" alt="A kok's galaxy" src="./kok.gif" />
+<img style="max-width:50%;" src="./kok.gif" alt="La galaxie de Kok" title="La galaxie de Kok">
 </div>
 
 ##### Le pentadécathlon (période 15)
 
 <div style="text-align:center;">
-<img width="250" alt="A pentadecathlon" src="./pentadecathlon.gif" />
+<img style="max-width:50%;" src="./pentadecathlon.gif" alt="Pentadécathlon" title="Pentadécathlon">
 </div>
 
 #### Les vaisseaux
@@ -73,13 +73,13 @@ Ce sont des structures qui se déplacent d'une génération à l'autre. Les vais
 ##### Le planneur
 
 <div style="text-align:center;">
-<img width="250" alt="An ants" src="./planneur.gif" />
+<img style="max-width:50%;" src="./planneur.gif" alt="Un planneur" title="Un planneur">
 </div>
 
 ##### Le LWSS
 
 <div style="text-align:center;">
-<img width="250" alt="LWSS" src="./LWSS.gif" />
+<img style="max-width:50%;" src="./LWSS.gif" alt="LWSS" title="LWSS">
 </div>
 
 Beaucoup d'autres structures existent dans le jeu de la vie. Je t'ai montré uniquement les quelques structures typiques. Si tu veux en savoir plus, je te conseille l'excellente vidéo de la chaîne [Science étonnante](https://www.youtube.com/watch?v=S-W0NX97DB0) sur Youtube.
@@ -210,7 +210,7 @@ Mais en pratique, il faut créer une copie à partir du tableau d'origine. Tu pe
 
 Sinon pour les autres langages, regarde les librairies qui te permettent de travailler avec des structures de données immutables.
 
-## 3. Pour finir
+## III. Pour finir
 
 Coder le Jeu de la vie est un très bon exercice pour un débutant avancé. Si tu viens de commencer la programmation, je te conseille d'essayer de l'implémenter dans le langage que tu es entrain d'apprendre (quoi que si tu es arrivé jusqu'ici, c'est que tu es décidé à le faire &#128523;).
 

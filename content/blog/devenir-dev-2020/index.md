@@ -5,8 +5,6 @@ description: 'Si toi aussi tu es perdu dans la jungle des buzzwords, suis le lap
 featuredImage: 'cover.jpg'
 creditsUserUrl: 'https://unsplash.com/@kobuagency/'
 creditsUser: 'kobuagency'
-creditsPlatform: 'Unsplash'
-creditsPlatformUrl: 'https://unsplash.com/'
 tags: ['dev']
 ---
 
