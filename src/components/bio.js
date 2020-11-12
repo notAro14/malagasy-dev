@@ -72,43 +72,43 @@ const Bio = () => {
 
       <ul className="socials">
         <li className="social">
-          <Link
+          <a
             target="_blank"
             rel="noopener noreferrer"
-            to={`https://github.com/${github}`}
+            href={`https://github.com/${github}`}
           >
             <Image
               fixed={data.github.childImageSharp.fixed}
               title="Github"
               alt="Github"
             />
-          </Link>
+          </a>
         </li>
         <li className="social">
-          <Link
+          <a
             target="_blank"
             rel="noopener noreferrer"
-            to={`https://www.linkedin.com/in/${linkedin}/`}
+            href={`https://www.linkedin.com/in/${linkedin}/`}
           >
             <Image
               fixed={data.linkedin.childImageSharp.fixed}
               title="LinkedIn"
               alt="LinkedIn"
             />
-          </Link>
+          </a>
         </li>
         <li className="social">
-          <Link
+          <a
             target="_blank"
             rel="noopener noreferrer"
-            to={`https://twitter.com/${twitter}`}
+            href={`https://twitter.com/${twitter}`}
           >
             <Image
               fixed={data.twitter.childImageSharp.fixed}
               title="Twitter"
               alt="Twitter"
             />
-          </Link>
+          </a>
         </li>
         <li className="social">
           <Link to="/rss.xml">
