@@ -67,7 +67,7 @@ const Bio = () => {
           alt="Zombie Nietzschee"
           title="Zombie Nietzsche"
         />
-        <span className="caption">Suis-moi sur les réseaux</span>
+        <span className="text">Suis-moi sur les réseaux</span>
       </div>
 
       <ul className="socials">
