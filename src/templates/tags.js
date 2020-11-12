@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import Typography from '@material-ui/core/Typography'
 import ArticlePreview from '../components/article-preview/article-preview'
 
 // Components
@@ -23,32 +22,13 @@ const Tags = ({ pageContext, data, location }) => {
   return (
     <Layout location={location} title={title}>
       <SEO title={tag.replace(/^\w/, c => c.toUpperCase())} />
-      <Typography variant="h5" component="h1" color="primary">
-        {tag.replace(/^\w/, c => c.toUpperCase())}
-      </Typography>
-      <Typography variant="body2" component="p" color="textPrimary">
-        {tagHeader}
-      </Typography>
-      <hr />
-      {/* <ul>
-        {edges.map(({ node }) => {
-          const { slug } = node.fields
-          const { title } = node.frontmatter
-          return (
-            <li key={slug}>
-              <Link to={slug}>{title}</Link>
-            </li>
-          )
-        })}
-      </ul> */}
+      <h2>{tag.replace(/^\w/, c => c.toUpperCase())}</h2>
+      <p>{tagHeader}</p>
       {edges.map(({ node }) => {
         return <ArticlePreview key={node.fields.slug} node={node} />
       })}
-      {/*
-              This links to a page that does not yet exist.
-              You'll come back to it!
-            */}
-      <Link to="/tags">Tous les tags</Link>
+
+      <Link to="/tags">Voir tous les tags</Link>
     </Layout>
   )
 }
