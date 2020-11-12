@@ -28,7 +28,7 @@ En attendant, je te partage cet aphorisme de Nietzsche dans le chapitre **Opinio
 >
 > -- Parfaitement : la sagesse, c'est le murmure du solitaire sur la place tumultueuse.
 
-Allez, à la prochaine <span>&#128075;</span>.
+Allez, à la prochaine <span role="img" aria-label="bye">&#128075;</span>.
 
 <div style="text-align:center;">
 <img width="200" alt="a guy saying see you at the sea" src="./sea-ya.gif" />

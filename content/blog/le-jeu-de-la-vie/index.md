@@ -62,7 +62,9 @@ Ce sont des structures qui changent et reprennent leur forme de départ au bout 
 
 ##### Le pentadécathlon (période 15)
 
-![Un pentadécathlon](./pentadecathlon.gif 'Un pentadécathlon')
+<div style="text-align:center;">
+<img style="max-width:50%;" src="./pentadecathlon.gif" alt="Pentadécathlon" title="Pentadécathlon">
+</div>
 
 #### Les vaisseaux
 
@@ -70,11 +72,15 @@ Ce sont des structures qui se déplacent d'une génération à l'autre. Les vais
 
 ##### Le planneur
 
-![Le planneur](./planneur.git 'Le planneur')
+<div style="text-align:center;">
+<img style="max-width:50%;" src="./planneur.gif" alt="Un planneur" title="Un planneur">
+</div>
 
 ##### Le LWSS
 
-![LWSS](./LWSS.gif 'LWSS')
+<div style="text-align:center;">
+<img style="max-width:50%;" src="./LWSS.gif" alt="LWSS" title="LWSS">
+</div>
 
 Beaucoup d'autres structures existent dans le jeu de la vie. Je t'ai montré uniquement les quelques structures typiques. Si tu veux en savoir plus, je te conseille l'excellente vidéo de la chaîne [Science étonnante](https://www.youtube.com/watch?v=S-W0NX97DB0) sur Youtube.
 

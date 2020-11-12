@@ -56,7 +56,7 @@ body {
 
   img,
   figure {
-    width: 100%;
+    // width: 100%;
     margin-bottom: $spacing-1;
   }
   figcaption {
@@ -64,7 +64,8 @@ body {
     color: $secondary;
   }
   ul {
-    list-style-type: '- ';
+    // list-style-type: none;
+    margin-left: $spacing-1;
     margin-bottom: $spacing-1;
   }
   blockquote {
