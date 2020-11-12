@@ -1,15 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Hind+Vadodara:wght@400;700&family=Oleo+Script:wght@700&display=swap');
-
-$background-color: #003049;
-$background-color-light: #134864;
-$text-primary: #ffffff;
-$text-secondary: #56a3a6;
-$primary: #e3b505;
-$secondary: #fc6471;
-$body: 1.2rem;
-$caption: 0.85rem;
-$spacing-0: 0.5rem;
-$spacing-1: 1.5rem;
+@import './variables';
 
 * {
   padding: 0;
