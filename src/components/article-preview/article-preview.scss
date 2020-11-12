@@ -1,0 +1,20 @@
+@import '../../variables';
+
+.article-preview {
+  background-color: $background-color-light;
+  padding: $spacing-1;
+  margin-bottom: $spacing-1;
+  border-radius: 5px;
+  .header {
+    .date {
+      font-size: $caption;
+      color: $text-secondary;
+      margin-bottom: $spacing-0;
+    }
+  }
+  .excerpt {
+    .text {
+      margin-bottom: $spacing-0;
+    }
+  }
+}

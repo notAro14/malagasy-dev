@@ -1,8 +1,5 @@
-// Gatsby supports TypeScript natively!
 import React from 'react'
 import { graphql } from 'gatsby'
-
-import Bio from '../components/bio'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import ArticlePreview from '../components/article-preview/article-preview'
@@ -14,7 +11,6 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Blog" />
-      <Bio isHomePage />
       <br />
       {posts.map(({ node }, index) => {
         return <ArticlePreview key={index} node={node} />

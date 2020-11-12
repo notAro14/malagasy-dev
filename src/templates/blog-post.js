@@ -27,7 +27,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         image={image}
         pathname={location.pathname}
       />
-      <Bio />
       <article className="post">
         {featuredImgFluid ? <Img fluid={featuredImgFluid} /> : null}
         {post.frontmatter.creditsUserUrl ? (
@@ -36,9 +35,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             userName={post.frontmatter.creditsUser}
           />
         ) : null}
-        <header className="post-header">
-          <h1 className="post-title">{post.frontmatter.title}</h1>
-          <span className="post-date">
+        <header className="header">
+          <h1 className="title">{post.frontmatter.title}</h1>
+          <span className="date">
             {`${new Date(post.frontmatter.date).toLocaleDateString(
               'fr-FR'
             )} • Temps de lecture : ${post.timeToRead} min `}{' '}
