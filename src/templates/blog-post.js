@@ -5,6 +5,7 @@ import Bio from '../components/bio'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Credits from '../components/credits/credits'
+import DateAndRead from '../components/dateAndRead/dateAndRead'
 import './blog-post.scss'
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
@@ -17,6 +18,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const image = post.frontmatter.featuredImage
     ? post.frontmatter.featuredImage.childImageSharp.resize
     : null
+
+  const date = post.frontmatter.date
+  const timeToRead = post.timeToRead
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -37,12 +41,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         ) : null}
         <header className="header">
           <h1 className="title">{post.frontmatter.title}</h1>
-          <span className="date">
-            {`${new Date(post.frontmatter.date).toLocaleDateString(
-              'fr-FR'
-            )} • Temps de lecture : ${post.timeToRead} min `}{' '}
-            &#x1F453;
-          </span>
+          <DateAndRead date={date} timeToRead={timeToRead} />
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
       </article>

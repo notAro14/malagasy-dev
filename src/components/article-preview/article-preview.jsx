@@ -1,19 +1,17 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import './article-preview.scss'
+import DateAndRead from '../dateAndRead/dateAndRead'
 
 const ArticlePreview = ({ node }) => {
   const title = node.frontmatter.title || node.fields.slug
+  const { date } = node.frontmatter
+  const { timeToRead } = node
   return (
     <article className="article-preview" key={node.fields.slug}>
       <header className="header">
         <h2 className="title">{title}</h2>
-        <span className="date">
-          {`${new Date(node.frontmatter.date).toLocaleDateString('fr-FR')} • ${
-            node.timeToRead
-          } min `}
-          &#x1F453;
-        </span>
+        <DateAndRead date={date} timeToRead={timeToRead} />
       </header>
       <section className="excerpt">
         <p
