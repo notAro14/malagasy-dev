@@ -19,7 +19,7 @@ const TagsPage = ({
   },
   location,
 }) => (
-  <Layout currentActivePage="/tags" location={location} title={title}>
+  <Layout location={location} title={title}>
     <SEO title="Tags" />
     <div className="tag-page">
       <h2>Liste des tags</h2>
