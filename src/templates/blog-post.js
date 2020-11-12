@@ -5,7 +5,6 @@ import Bio from '../components/bio'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Credits from '../components/credits/credits'
-import Newsletter from '../components/newsletter/newsletter'
 import Box from '@material-ui/core/Box'
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
@@ -28,6 +27,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         image={image}
         pathname={location.pathname}
       />
+      <Bio />
       <article className="post">
         {featuredImgFluid ? <Img fluid={featuredImgFluid} /> : null}
         {post.frontmatter.creditsUserUrl ? (
@@ -65,19 +65,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             })
           : null}
       </div>
-      <footer
-        style={{
-          height: '800px',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'space-around',
-        }}
-      >
-        <Bio />
-        <Newsletter />
-      </footer>
-
+      <Bio />
       <nav>
         <ul
           style={{
