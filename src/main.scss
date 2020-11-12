@@ -48,28 +48,12 @@ body {
   span {
     font-family: 'Hind Vadodara', sans-serif;
     font-weight: 400;
-    &.caption {
-      font-size: $caption;
-      color: $text-secondary;
-      margin-bottom: $spacing-0;
-    }
   }
   a {
     color: $secondary;
     font-weight: 700;
-    &.tag {
-      text-decoration: none;
-    }
   }
-  article {
-    background-color: $background-color-light;
-    padding: $spacing-1;
-    margin-bottom: $spacing-1;
-    border-radius: 5px;
-    &.post {
-      padding: $spacing-1;
-    }
-  }
+
   img,
   figure {
     width: 100%;
