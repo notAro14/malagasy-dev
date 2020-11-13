@@ -5,7 +5,7 @@ description: 'Si toi aussi tu es perdu dans la jungle des buzzwords, suis le lap
 featuredImage: 'cover.jpg'
 creditsUserUrl: 'https://unsplash.com/@kobuagency/'
 creditsUser: 'kobuagency'
-tags: ['dev']
+tags: ['carriere']
 ---
 
 De plus en plus de personne souhaitent devenir développeurs. A tel point que l'on a l'impression que le numérique est saturé. Et pourtant, c'est loin d'être le cas, on parle même de <a href="https://www.francetvinfo.fr/replay-radio/c-est-mon-boulot/emploi-la-penurie-de-developpeurs-conduit-les-entreprises-a-etre-en-chasse-permanente-de-candidats_3212025.html" target="_blank" rel="noopener noreferrer">pénurie</a>.
