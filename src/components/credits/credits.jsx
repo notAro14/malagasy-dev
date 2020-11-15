@@ -1,19 +1,13 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import './credits.scss'
 
 const Credits = ({ userName, userUrl }) => {
   return (
     <span className="credits">
       Photo de{' '}
-      <Link
-        color="initial"
-        target="_blank"
-        rel="noopener noreferrer"
-        to={userUrl}
-      >
+      <a target="_blank" rel="noopener noreferrer" href={userUrl}>
         {userName}
-      </Link>
+      </a>
     </span>
   )
 }
