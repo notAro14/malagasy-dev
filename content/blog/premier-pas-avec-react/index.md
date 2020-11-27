@@ -31,4 +31,6 @@ Allez c'est parti.
 
 ## Introduction
 
-Commençons avec un petit peu d'histoire.
+Commençons avec un petit peu d'histoire. React a été développé et utilisé en interne chez Facebook et la première version publique est sortie en 2013. Aujourd'hui tout un écosystème s'est développé autour de la librairie.
+
+Pour React on parle bien de librairie et non vraiment de Frameworks car beaucoup de choix technique sont laissés à test petits soins lors du développement. Mais dans la pratique, la dénomination n'est pas très importante, ce qui compte c'est de se faire comprendre.
