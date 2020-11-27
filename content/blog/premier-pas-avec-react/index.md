@@ -76,10 +76,36 @@ Les deux choses les plus importantes ici sont
 * **React.createElement**: permet de créer un composant react. Dans l'exemple, on crée un div qui contient le texte *Hello World*
 * **ReactDOM.render**: fait le rendu du composant react sur le DOM
 
-Alors ce n'est pas la manière standard d'écrire du react. Aujourd'hui, on utilise plutôt du JSX pour créer les composants. C'est un langage similaire au XML mais pour le Javascript. En JSX, notre exemple ressemblerait à ceci
+Ce n'est pas la manière standard d'écrire du react. Aujourd'hui, on utilise plutôt du JSX pour créer les composants. C'est un langage similaire au XML mais pour le Javascript. En JSX, notre exemple ressemblerait à ceci
 
 ```javascript
 const root = document.getElementById('root')
-const HelloWorld = <div>Hello World</div>
-ReactDOM.render(<HelloWorld/>, root)
+const divElement = <div>Hello World</div>
+ReactDOM.render(divElement, root)
+```
+
+Le JSX nous permet de créer des composants react de manière déclarative. Par exemple, pour créer un Button personnalisé
+
+```javascript
+const root = document.getElementById('root')
+
+// on déclare notre composant Button
+function Button(){
+  return <button className='btn'>Appuyez ici</button>
+}
+
+// puis on l'appelle comme n'importe quel élément HTML
+const buttonElement = <Button/> 
+ReactDOM.render(buttonElement, root)
+```
+
+> Le nom des composants react (c'est-à-dire les composants personnalisés que l'on crée) doivent commencer par un majuscule pour que React puisse faire la différence entre notre composant et un composant natif HTML
+
+Mais le navigateur ne comprend (malheureusement) pas le JSX. Notre script doit être transformé (ou compilé si tu veux) pour être compréhensible par le runtime du navigateur. Pour cela, on utilise un outil qui s'appelle Babel, il suffit aussi d'importer un autre script pour l'utiliser.
+
+```html
+<!-- Script Babel -->
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<!-- Puis on indique à babel le fichier à transformer grâce à l'attribut type='text/babel' -->
+<script src='App.js' type='text/babel'></script>
 ```
