@@ -40,10 +40,6 @@ body {
     font-family: 'Hind Vadodara', sans-serif;
     font-weight: 400;
     margin-bottom: $spacing-1;
-    font-size: $body;
-    @media screen and (max-width: 768px) {
-      font-size: $caption;
-    }
   }
   span {
     font-family: 'Hind Vadodara', sans-serif;
@@ -99,5 +95,16 @@ body {
         padding-right: $spacing-1;
       }
     }
+  }
+}
+
+// set font size
+p,
+pre,
+code,
+li {
+  font-size: $body !important ;
+  @media screen and (max-width: 768px) {
+    font-size: $caption !important ;
   }
 }
