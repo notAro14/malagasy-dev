@@ -23,7 +23,7 @@ Alors oui, cela fait plusieurs mois que je n'ai pas écrit ici, mais je me suis 
 
 * connaître les bases de **HTML/CSS**
 * connaître les bases de **Javascript** (spécialement la version **ES2015** ou **ES6**)
-* savoir utiliser un outil de management de paquets ([npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/))
+* savoir utiliser un outil de gestion de paquets ([npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/))
 
 Allez c'est parti.
 
