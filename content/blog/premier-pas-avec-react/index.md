@@ -15,11 +15,9 @@ Si tu t'intéresses au développement web côté frontend tu t'apercevras vite q
 * [Vue](https://vuejs.org/) : développé par un dev indé du nom de [Evan You](https://github.com/yyx990803), d'ailleurs je te conseille ce formidable [documentaire](https://www.youtube.com/watch?v=OrxmtDw4pVI) par la chaîne Honeypot sur la création de Vue
 * [Angular](https://angular.io/) : développé par Google
 
-React et Vue sont aujourd'hui les populaires sur le marché, mais Angular reste un choix tout à fait pertinent pour faire du frontend.
+React et Vue sont aujourd'hui les plus populaires sur le marché, mais Angular reste un choix tout à fait pertinent pour faire du frontend. Dans mon job et mes projets perso, je suis particulièrement à fond sur React. 
 
-Dans mon job et mes projets perso, je suis particulièrement à fond sur React. Alors oui, cela fait plusieurs mois que je n'ai pas écrit ici, mais je me suis dit pourquoi pas reprendre doucement avec un article présentant brièvement React et comment débuter avec.
-
-D'autant plus que je compte écrire une longue série d'articles en long en large et en travers sur ce framework et tout son écosystème. Mais avant tout, pour bien profiter de cet article, je te conseille d'avoir ces quelques pré-requis:
+Alors oui, cela fait plusieurs mois que je n'ai pas écrit ici, mais je me suis dit pourquoi pas reprendre doucement avec un article présentant brièvement React et comment débuter avec. D'autant plus que je compte écrire une longue série d'articles en long en large et en travers sur ce framework et tout son écosystème. Mais avant tout, pour bien profiter de cet article, je te conseille d'avoir ces quelques pré-requis:
 
 * connaître les bases de **HTML/CSS**
 * connaître les bases de **Javascript** (spécialement la version **ES2015** ou **ES6**)
