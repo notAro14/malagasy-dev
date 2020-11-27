@@ -31,7 +31,7 @@ Commençons avec un petit peu d'histoire. React a été développé et utilisé 
 
 Pour React on parle bien de librairie et non vraiment de Framework car beaucoup de choix techniques sont laissés à test petits soins lors du développement. Mais dans la pratique, la dénomination n'est pas très importante, ce qui compte c'est de se faire comprendre.
 
-### Démarrage rapide
+### Commencer sans installation
 
 Tu peux configurer très rapidement et très simplement un projet React sans avoir à installer quoi que ce soit. Dans un simple fichier HTML, il faut ajouter les scripts suivants:
 
@@ -54,14 +54,8 @@ Importons ces scripts dans un fichier appelé *index.html*
   </head>
   <body>
     <div id="root"></div>
-    <script
-      src="https://unpkg.com/react@17/umd/react.development.js"
-      crossorigin
-    ></script>
-    <script
-      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
-      crossorigin
-    ></script>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
     <script src="App.js"></script>
   </body>
 </html>
@@ -73,11 +67,19 @@ On peut maintenant écrire dans *App.js* le script suivant
 
 ```javascript
 const root = document.getElementById('root')
-
-const divElement = React.createElement('div', {
-  className: 'container',
-  children: 'Hello World',
-})
-
+const divElement = React.createElement('div', { children: 'Hello World' })
 ReactDOM.render(divElement, root)
+```
+
+Les deux choses les plus importantes ici sont
+
+* **React.createElement**: permet de créer un composant react. Dans l'exemple, on crée un div qui contient le texte *Hello World*
+* **ReactDOM.render**: fait le rendu du composant react sur le DOM
+
+Alors ce n'est pas la manière standard d'écrire du react. Aujourd'hui, on utilise plutôt du JSX pour créer les composants. C'est un langage similaire au XML mais pour le Javascript. En JSX, notre exemple ressemblerait à ceci
+
+```javascript
+const root = document.getElementById('root')
+const HelloWorld = <div>Hello World</div>
+ReactDOM.render(<HelloWorld/>, root)
 ```
