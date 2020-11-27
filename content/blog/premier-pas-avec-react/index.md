@@ -33,7 +33,7 @@ Commençons avec un petit peu d'histoire. React a été développé et utilisé 
 
 Pour React on parle bien de librairie et non vraiment de Framework car beaucoup de choix techniques sont laissés à test petits soins lors du développement. Mais dans la pratique, la dénomination n'est pas très importante, ce qui compte c'est de se faire comprendre.
 
-### Commencer sans installation
+## Tester React
 
 Tu peux configurer très rapidement et très simplement un projet React sans avoir à installer quoi que ce soit. Dans un simple fichier HTML, il faut ajouter les scripts suivants:
 
@@ -127,3 +127,31 @@ Mais le navigateur ne comprend (malheureusement) pas le JSX. Notre script doit �
   </body>
 </html>
 ```
+
+```javascript
+// App.js
+const root = document.getElementById('root')
+function Title() {
+  return <h1>React app</h1>
+}
+function Text() {
+  return <p>Hello world</p>
+}
+function App() {
+  return (
+    <div>
+      <Title />
+      <Text />
+    </div>
+  )
+}
+ReactDOM.render(<App />, root)
+```
+
+Le JSX est transformé en React.createElement et d'ailleurs tu peux utiliser ce [site](https://babeljs.io/repl#?browsers=defaults%2C%20not%20ie%2011%2C%20not%20ie_mob%2011&build=&builtIns=false&spec=false&loose=false&code_lz=Q&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=env%2Creact%2Cstage-2&prettier=false&targets=&version=7.12.9&externalPlugins=) si tu veux voir en quoi exactement ton code JSX ressemble après la transformation.
+
+## Installation
+
+Comme tu as vu, il suffit de 3 scripts (React, ReactDOM et Babel) à ajouter à ton HTML pour s'essayer à React. Mais cette méthode n'est pas faite pour la production. En pratique on va plutôt passer par une installation via npm de tous les paquets dont on aura besoin pour configurer notre projet React.
+
+Il existe plusieurs moyens de configurer un projet React mais le plus facile est d'utiliser un outil développé par Facebook aussi qui s'appelle [create-react-app](https://create-react-app.dev/).
