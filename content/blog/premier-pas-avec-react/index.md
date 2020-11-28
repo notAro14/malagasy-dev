@@ -64,6 +64,8 @@ Importons ces scripts dans un fichier appelé *index.html*
 </html>
 ```
 
+### Créer un élément avec React.createElement
+
 Comme tu l'as peut-être remarqué, j'ai ajouté un div avec un id *root* et un autre script *App.js*. Notre application sera mis dans le div qui nous sert de conteneur et *App.js* contiendra le code de notre application React.
 
 On peut maintenant écrire dans *App.js* le script suivant
@@ -88,6 +90,8 @@ const root = document.getElementById('root')
 const divElement = <div>Hello World</div>
 ReactDOM.render(divElement, root)
 ```
+
+### JSX
 
 Le JSX nous permet de créer des composants react de manière déclarative. Par exemple, pour créer un Button personnalisé
 
@@ -154,7 +158,9 @@ Le JSX est transformé en React.createElement et d'ailleurs tu peux utiliser ce 
 
 Comme tu as vu, il suffit de 3 scripts (React, ReactDOM et Babel) à ajouter à ton HTML pour s'essayer à React. Mais cette méthode n'est pas faite pour la production. En pratique on va plutôt passer par une installation via npm de tous les paquets dont on aura besoin pour configurer notre projet React.
 
-Il existe plusieurs moyens de configurer un projet React mais le plus facile est d'utiliser un outil qui s'appelle [create-react-app](https://create-react-app.dev/) (développé aussi par Facebook). Pour utiliser *create-react-app*, il faut au préalable que node soit installé. Tu peux l'installer [ici](https://nodejs.org/en/download/) (assure-toi de prendre une version >=10). Il te faut aussi un gestionnaire de paquets: [npm](https://www.npmjs.com/)(installé avec node) ou [yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable).
+### Create-react-app (CRA)
+
+Il existe plusieurs moyens de configurer un projet React mais le plus facile est d'utiliser un outil qui s'appelle [create-react-app](https://create-react-app.dev/) (CRA est aussi développé par Facebook). Pour utiliser *CRA*, il faut au préalable que node soit installé. Tu peux l'installer [ici](https://nodejs.org/en/download/) (assure-toi de prendre une version >=10). Il te faut aussi un gestionnaire de paquets: [npm](https://www.npmjs.com/)(installé avec node) ou [yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable).
 
 Puis dans un terminal dans le dossier de ton choix:
 
@@ -180,7 +186,7 @@ npm start
 
 ![Premier écran de create-react-app](react.png "Premier écran de create-react-app")
 
-Par défaut, *create-react-app* va utiliser *yarn* comme gestionnaire de paquets s'il est installé sur ta machine. Sinon tu peux explicitement indiqué *npm* à la création du projet:
+Par défaut, *CRA* va utiliser *yarn* comme gestionnaire de paquets s'il est installé sur ta machine. Sinon tu peux explicitement indiqué *npm* à la création du projet:
 
 ```bash
 npx create-react-app mon-application --use-npm
