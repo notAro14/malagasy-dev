@@ -315,6 +315,7 @@ Puis dans *src/components/App.js*, on importe notre composant *Counter*
 import React from 'react'
 import Counter from './Counter'
 
+// n'oublie pas d'exporter ta fonction pour qu'on puisse l'importer depuis un autre fichier
 export default function App() {
   return (
     <div className='app'>
