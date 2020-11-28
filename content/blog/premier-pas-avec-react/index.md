@@ -154,4 +154,7 @@ Le JSX est transformé en React.createElement et d'ailleurs tu peux utiliser ce 
 
 Comme tu as vu, il suffit de 3 scripts (React, ReactDOM et Babel) à ajouter à ton HTML pour s'essayer à React. Mais cette méthode n'est pas faite pour la production. En pratique on va plutôt passer par une installation via npm de tous les paquets dont on aura besoin pour configurer notre projet React.
 
-Il existe plusieurs moyens de configurer un projet React mais le plus facile est d'utiliser un outil développé par Facebook aussi qui s'appelle [create-react-app](https://create-react-app.dev/).
+Il existe plusieurs moyens de configurer un projet React mais le plus facile est d'utiliser un outil qui s'appelle [create-react-app](https://create-react-app.dev/) (développé aussi par Facebook). Pour utiliser *create-react-app*, il faut au préalable que node soit installé. Tu peux l'installer [ici](https://nodejs.org/en/download/) (assure-toi de prendre une version >=10). Puis dans un terminal dans le dossier de ton choix:
+
+
+npx create-react-app nom-app
