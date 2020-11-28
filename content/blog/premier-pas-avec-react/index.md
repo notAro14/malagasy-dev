@@ -324,3 +324,21 @@ export default function App() {
   )
 }
 ```
+
+Notre compteur est dans le fichier *src/components/Counter.js*, commençons simplement avec ce code:
+
+```jsx
+// src/components/Counter.js
+
+import React from 'react'
+
+export default function Counter() {
+  return (
+    <div className='counter'>
+      <h2>Compteur : 0</h2>
+      <button>+</button>
+      <button>-</button>
+    </div>
+  )
+}
+```
