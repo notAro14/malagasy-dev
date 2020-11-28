@@ -228,7 +228,7 @@ Puis avec *yarn start* ou *npm start* (si l'application n'est pas encore lancée
 
 ## Composition d'un projet React
 
-Comme tu peux le voir dans *src/index.js*, on retrouve des termes familiers. La différence ici avec notre exemple plus haut dans cet article, est qu'on importe **React** et **ReactDOM** pour écrire du code react. Le fichier *src/index.js* sera le point d'entrée de notre application et c'est lui qui est injecté dans le fichier HTML.
+Comme tu peux le voir dans *src/index.js*, on retrouve des termes familiers. La différence ici avec notre exemple plus haut dans cet article, est qu'on importe **React** et **ReactDOM** directement (adieu les imports de scripts depuis un CDN). Le fichier *src/index.js* sera le point d'entrée de notre application et c'est lui qui est injecté dans le fichier HTML.
 
 D'ailleurs en parlant de fichier HTML, tu te demandes sûrement il est où ce fichier. Et bien il se trouve dans le dossier *public* sous le nom *index.html*
 
@@ -279,3 +279,7 @@ D'ailleurs en parlant de fichier HTML, tu te demandes sûrement il est où ce fi
   </body>
 </html>
 ```
+
+### Exemple avec un simple compteur
+
+Maintenant que notre projet est installé et configuré, créons une petite application basique avec le fameux compteur.
