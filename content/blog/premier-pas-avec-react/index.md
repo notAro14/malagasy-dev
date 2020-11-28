@@ -307,6 +307,33 @@ const root = document.getElementById('root')
 ReactDOM.render(<App />, root)
 ```
 
+```css
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.counter {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+```
+
 Puis dans *src/components/App.js*, on importe notre composant *Counter*
 
 ```jsx
