@@ -82,7 +82,7 @@ Les deux choses les plus importantes ici sont
 
 Ce n'est pas la manière standard d'écrire du react. Aujourd'hui, on utilise plutôt du JSX pour créer les composants. C'est un langage similaire au XML mais pour le Javascript. En JSX, notre exemple ressemblerait à ceci
 
-```javascript
+```jsx
 // App.js
 const root = document.getElementById('root')
 const divElement = <div>Hello World</div>
@@ -91,7 +91,7 @@ ReactDOM.render(divElement, root)
 
 Le JSX nous permet de créer des composants react de manière déclarative. Par exemple, pour créer un Button personnalisé
 
-```javascript
+```jsx
 // App.js
 const root = document.getElementById('root')
 // on déclare notre composant Button
@@ -128,7 +128,7 @@ Mais le navigateur ne comprend (malheureusement) pas le JSX. Notre script doit �
 </html>
 ```
 
-```javascript
+```jsx
 // App.js
 const root = document.getElementById('root')
 function Title() {
