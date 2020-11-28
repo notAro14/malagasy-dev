@@ -191,3 +191,25 @@ Par défaut, *CRA* va utiliser *yarn* comme gestionnaire de paquets s'il est ins
 ```bash
 npx create-react-app mon-application --use-npm
 ```
+
+Le dossier créé par \*CRA\* se présente comme ci-dessous
+
+![Les fichiers créés par CRA](cra-files.png "Les fichiers créés par CRA")
+
+Pour l'instant, tu peux effacer tout les fichiers dans le dossier *src* et créer un nouveau fichier *index.js* contenant le code suivant:
+
+```jsx
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+function App() {
+  return (
+    <div>
+      <h1>Hello World</h1>
+    </div>
+  )
+}
+
+const root = document.getElementById('root')
+ReactDOM.render(<App />, root)
+``
