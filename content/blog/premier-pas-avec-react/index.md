@@ -1,5 +1,5 @@
 ---
-title: Premier pas avec React
+title: Premiers pas avec React
 date: 2020-11-27T17:15:48.527Z
 description: React est un framework très populaire pour le développement en
   Frontend. Je te montre comment débuter avec.
