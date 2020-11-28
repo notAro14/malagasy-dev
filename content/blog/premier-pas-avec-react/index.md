@@ -48,6 +48,7 @@ Importons ces scripts dans un fichier appelé *index.html*
 
 ```html
 <!-- index.html -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -72,6 +73,7 @@ On peut maintenant écrire dans *App.js* le script suivant
 
 ```javascript
 // App.js
+
 const root = document.getElementById('root')
 const divElement = React.createElement('div', { children: 'Hello World' })
 ReactDOM.render(divElement, root)
@@ -86,6 +88,7 @@ Ce n'est pas la manière standard d'écrire du react. Aujourd'hui, on utilise pl
 
 ```jsx
 // App.js
+
 const root = document.getElementById('root')
 const divElement = <div>Hello World</div>
 ReactDOM.render(divElement, root)
@@ -97,6 +100,7 @@ Le JSX nous permet de créer des composants react de manière déclarative. Par 
 
 ```jsx
 // App.js
+
 const root = document.getElementById('root')
 // on déclare notre composant Button
 function Button(){
@@ -113,6 +117,7 @@ Mais le navigateur ne comprend (malheureusement) pas le JSX. Notre script doit �
 
 ```html
 <!-- index.html -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -134,6 +139,7 @@ Mais le navigateur ne comprend (malheureusement) pas le JSX. Notre script doit �
 
 ```jsx
 // App.js
+
 const root = document.getElementById('root')
 function Title() {
   return <h1>React app</h1>
@@ -200,6 +206,7 @@ Pour l'instant, tu peux effacer tous les fichiers présents dans le dossier *src
 
 ```jsx
 // src/index.js
+
 import React from 'react'
 import ReactDOM from 'react-dom'
 
@@ -271,5 +278,4 @@ D'ailleurs en parlant de fichier HTML, tu te demandes sûrement il est où ce fi
     -->
   </body>
 </html>
-
 ```
