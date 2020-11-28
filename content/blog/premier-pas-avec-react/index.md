@@ -11,19 +11,20 @@ creditsUserUrl: https://www.pexels.com/fr-fr/@pixabay
 creditsUser: Pixabay
 featuredImage: cover.jpg
 ---
+
 Si tu t'intéresses au développement web côté frontend, tu t'apercevras vite que l'écosystème est dominé par 3 frameworks/librairies:
 
-* [React](https://reactjs.org/) : développé par Facebook
-* [Vue](https://vuejs.org/) : développé par un dev indé du nom de [Evan You](https://github.com/yyx990803), d'ailleurs je te conseille ce formidable [documentaire](https://www.youtube.com/watch?v=OrxmtDw4pVI) de la chaîne YouTube Honeypot sur la création de Vue
-* [Angular](https://angular.io/) : développé par Google
+- [React](https://reactjs.org/) : développé par Facebook
+- [Vue](https://vuejs.org/) : développé par un dev indé du nom de [Evan You](https://github.com/yyx990803), d'ailleurs je te conseille ce formidable [documentaire](https://www.youtube.com/watch?v=OrxmtDw4pVI) de la chaîne YouTube Honeypot sur la création de Vue
+- [Angular](https://angular.io/) : développé par Google
 
-React et Vue sont aujourd'hui les plus populaires sur le marché, mais Angular reste un choix tout à fait pertinent pour faire du frontend. Dans mon job et mes projets perso, je suis particulièrement à fond sur React. 
+React et Vue sont aujourd'hui les plus populaires sur le marché, mais Angular reste un choix tout à fait pertinent pour faire du frontend. Dans mon job et mes projets perso, je suis particulièrement à fond sur React.
 
 Alors oui, cela fait plusieurs mois que je n'ai pas écrit ici, mais je me suis dit pourquoi pas reprendre doucement avec un article présentant brièvement React et comment débuter avec. D'autant plus que je compte écrire une longue série d'articles sur ce framework et tout son écosystème. Mais avant tout, pour bien profiter de cet article, je te conseille d'avoir ces quelques pré-requis:
 
-* connaître les bases de **HTML/CSS**
-* connaître les bases de **Javascript** (spécialement la version **ES2015** ou **ES6**)
-* savoir utiliser un outil de gestion de paquets ([npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/))
+- connaître les bases de **HTML/CSS**
+- connaître les bases de **Javascript** (spécialement la version **ES2015** ou **ES6**)
+- savoir utiliser un outil de gestion de paquets ([npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/))
 
 Allez c'est parti.
 
@@ -38,13 +39,19 @@ Pour React on parle bien de librairie et non vraiment de Framework car beaucoup 
 Tu peux configurer très rapidement et très simplement un projet React sans avoir à installer quoi que ce soit. Dans un simple fichier HTML, il faut ajouter les scripts suivants:
 
 ```html
-<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+<script
+  src="https://unpkg.com/react@17/umd/react.development.js"
+  crossorigin
+></script>
+<script
+  src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+  crossorigin
+></script>
 ```
 
 > On importe deux scripts (un pour **React** et un autre pour **ReactDOM**) car React peut aussi être utilisé pour le développement mobile avec [React Native](https://reactnative.dev/). ReactDom étant pour le web.
 
-Importons ces scripts dans un fichier appelé *index.html*
+Importons ces scripts dans un fichier appelé _index.html_
 
 ```html
 <!-- index.html -->
@@ -58,8 +65,14 @@ Importons ces scripts dans un fichier appelé *index.html*
   </head>
   <body>
     <div id="root"></div>
-    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
     <script src="App.js"></script>
   </body>
 </html>
@@ -67,9 +80,9 @@ Importons ces scripts dans un fichier appelé *index.html*
 
 ### Créer un élément avec React.createElement
 
-Comme tu l'as peut-être remarqué, j'ai ajouté un div avec un id *root* et un autre script *App.js*. Notre application sera mis dans le div qui nous sert de conteneur et *App.js* contiendra le code de notre application React.
+Comme tu l'as peut-être remarqué, j'ai ajouté un div avec un id _root_ et un autre script _App.js_. Notre application sera mis dans le div qui nous sert de conteneur et _App.js_ contiendra le code de notre application React.
 
-On peut maintenant écrire dans *App.js* le script suivant
+On peut maintenant écrire dans _App.js_ le script suivant
 
 ```javascript
 // App.js
@@ -81,8 +94,8 @@ ReactDOM.render(divElement, root)
 
 Les deux choses les plus importantes ici sont
 
-* **React.createElement**: permet de créer un composant react. Dans l'exemple, on crée un div qui contient le texte *Hello World*
-* **ReactDOM.render**: fait le rendu du composant react sur le DOM
+- **React.createElement**: permet de créer un composant react. Dans l'exemple, on crée un div qui contient le texte _Hello World_
+- **ReactDOM.render**: fait le rendu du composant react sur le DOM
 
 Ce n'est pas la manière standard d'écrire du react. Aujourd'hui, on utilise plutôt du JSX pour créer les composants. C'est un langage similaire au XML mais pour le Javascript. En JSX, notre exemple ressemblerait à ceci
 
@@ -103,11 +116,11 @@ Le JSX nous permet de créer des composants react de manière déclarative. Par 
 
 const root = document.getElementById('root')
 // on déclare notre composant Button
-function Button(){
-  return <button className='btn'>Appuyez ici</button>
+function Button() {
+  return <button className="btn">Appuyez ici</button>
 }
 // puis on l'appelle comme n'importe quel élément HTML
-const buttonElement = <Button/> 
+const buttonElement = <Button />
 ReactDOM.render(buttonElement, root)
 ```
 
@@ -127,12 +140,18 @@ Mais le navigateur ne comprend (malheureusement) pas le JSX. Notre script doit �
   </head>
   <body>
     <div id="root"></div>
-    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
     <!-- Script Babel -->
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <!-- Puis on indique à babel le fichier à transformer grâce à l'attribut type='text/babel' -->
-    <script src='App.js' type='text/babel'></script>
+    <script src="App.js" type="text/babel"></script>
   </body>
 </html>
 ```
@@ -166,7 +185,7 @@ Comme tu l'as vu, il suffit de 3 scripts (React, ReactDOM et Babel) à ajouter �
 
 ### Create-react-app (CRA)
 
-Il existe plusieurs moyens de configurer un projet React mais le plus facile est d'utiliser un outil qui s'appelle [create-react-app](https://create-react-app.dev/) (CRA est aussi développé par Facebook). Pour utiliser *CRA*, il faut au préalable que node soit installé. Tu peux l'installer [ici](https://nodejs.org/en/download/) (assure-toi de prendre une version >=10). Il te faut aussi un gestionnaire de paquets: [npm](https://www.npmjs.com/)(installé avec node) ou [yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable).
+Il existe plusieurs moyens de configurer un projet React mais le plus facile est d'utiliser un outil qui s'appelle [create-react-app](https://create-react-app.dev/) (CRA est aussi développé par Facebook). Pour utiliser _CRA_, il faut au préalable que node soit installé. Tu peux l'installer [ici](https://nodejs.org/en/download/) (assure-toi de prendre une version >=10). Il te faut aussi un gestionnaire de paquets: [npm](https://www.npmjs.com/)(installé avec node) ou [yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable).
 
 Puis dans un terminal dans le dossier de ton choix:
 
@@ -174,7 +193,7 @@ Puis dans un terminal dans le dossier de ton choix:
 npx create-react-app mon-application
 ```
 
-Un dossier *mon-application* se crée alors, tu peux y naviguer dedans avec:
+Un dossier _mon-application_ se crée alors, tu peux y naviguer dedans avec:
 
 ```bash
 cd mon-application
@@ -190,9 +209,9 @@ yarn start
 npm start
 ```
 
-![Premier écran de create-react-app](react.png "Premier écran de create-react-app")
+![Premier écran de create-react-app](react.png 'Premier écran de create-react-app')
 
-Par défaut, *CRA* va utiliser *yarn* comme gestionnaire de paquets s'il est installé sur ta machine. Sinon tu peux explicitement indiqué *npm* à la création du projet:
+Par défaut, _CRA_ va utiliser _yarn_ comme gestionnaire de paquets s'il est installé sur ta machine. Sinon tu peux explicitement indiqué _npm_ à la création du projet:
 
 ```bash
 npx create-react-app mon-application --use-npm
@@ -200,9 +219,9 @@ npx create-react-app mon-application --use-npm
 
 Le dossier créé par \*CRA\* se présente comme ci-dessous
 
-![Les fichiers créés par CRA](cra-files.png "Les fichiers créés par CRA")
+![Les fichiers créés par CRA](cra-files.png 'Les fichiers créés par CRA')
 
-Pour l'instant, tu peux effacer tous les fichiers présents dans le dossier *src* et créer un nouveau fichier *index.js* contenant le code suivant:
+Pour l'instant, tu peux effacer tous les fichiers présents dans le dossier _src_ et créer un nouveau fichier _index.js_ contenant le code suivant:
 
 ```jsx
 // src/index.js
@@ -222,15 +241,15 @@ const root = document.getElementById('root')
 ReactDOM.render(<App />, root)
 ```
 
-Puis avec *yarn start* ou *npm start* (si l'application n'est pas encore lancée) tu obtiens l'écran suivant:
+Puis avec _yarn start_ ou _npm start_ (si l'application n'est pas encore lancée) tu obtiens l'écran suivant:
 
-![Ecran Hello World](hello-world.png "Ecran Hello World")
+![Ecran Hello World](hello-world.png 'Ecran Hello World')
 
 ## Composition d'un projet React
 
-Comme tu peux le voir dans *src/index.js*, on retrouve des termes familiers. La différence ici avec notre exemple plus haut dans cet article, est qu'on importe **React** et **ReactDOM** directement (adieu les imports de scripts depuis un CDN). Le fichier *src/index.js* sera le point d'entrée de notre application et c'est lui qui est injecté dans le fichier HTML.
+Comme tu peux le voir dans _src/index.js_, on retrouve des termes familiers. La différence ici avec notre exemple plus haut dans cet article, est qu'on importe **React** et **ReactDOM** directement (adieu les imports de scripts depuis un CDN). Le fichier _src/index.js_ sera le point d'entrée de notre application et c'est lui qui est injecté dans le fichier HTML.
 
-D'ailleurs en parlant de fichier HTML, tu te demandes sûrement il est où ce fichier. Et bien il se trouve dans le dossier *public* sous le nom *index.html*
+D'ailleurs en parlant de fichier HTML, tu te demandes sûrement il est où ce fichier. Et bien il se trouve dans le dossier _public_ sous le nom _index.html_
 
 ```html
 <!-- public/index.html -->
@@ -293,7 +312,7 @@ src
   |- Counter.js
 ```
 
-On importe notre application et le style dans *index.js*
+On importe notre application et le style dans _index.js_
 
 ```jsx
 // src/index.js
@@ -336,7 +355,7 @@ html {
 }
 ```
 
-Puis dans *src/components/App.js*, on importe notre composant *Counter*
+Puis dans _src/components/App.js_, on importe notre composant _Counter_
 
 ```jsx
 // src/components/App.js
@@ -347,14 +366,14 @@ import Counter from './Counter'
 // n'oublie pas d'exporter ta fonction pour qu'on puisse l'importer depuis un autre fichier
 export default function App() {
   return (
-    <div className='app'>
+    <div className="app">
       <Counter />
     </div>
   )
 }
 ```
 
-Notre compteur est dans le fichier *src/components/Counter.js*, commençons simplement avec ce code:
+Notre compteur est dans le fichier _src/components/Counter.js_, commençons simplement avec ce code:
 
 ```jsx
 // src/components/Counter.js
@@ -363,7 +382,7 @@ import React from 'react'
 
 export default function Counter() {
   return (
-    <div className='counter'>
+    <div className="counter">
       <h2>Compteur : 0</h2>
       <button>+</button>
       <button>-</button>
@@ -372,17 +391,17 @@ export default function Counter() {
 }
 ```
 
-![Compteur](counter.png "Compteur")
+![Compteur](counter.png 'Compteur')
 
 Pour l'instant ce code ne fait rien de spécial à part afficher le compteur, mais il n'est pas encore fonctionnel. Pour que le compteur marche, il nous faut:
 
-* stocker la valeur du compteur,
-* une fonction *increment()* pour incrémenter cette valeur
-* une fonction *decrement()* pour la décrementer
+- stocker la valeur du compteur,
+- une fonction _increment()_ pour incrémenter cette valeur
+- une fonction _decrement()_ pour la décrementer
 
 #### React.useState
 
-Dans React, on peut utiliser la fonction *useState* pour stocker des valeurs et les changer. *useState* fait partie des fonctions internes à React qu'on appelle *hook*, il existe notamment différents *hooks* avec chacun leur rôle. Le hook useState s'utilise de la manière suivante:
+Dans React, on peut utiliser la fonction _useState_ pour stocker des valeurs et les changer. _useState_ fait partie des fonctions internes à React qu'on appelle _hook_, il existe notamment différents _hooks_ avec chacun leur rôle. Le hook useState s'utilise de la manière suivante:
 
 ```jsx
 const initialValue = 0
@@ -391,9 +410,9 @@ const value = React.useState(initialValue)
 const [count, setCount] = value
 ```
 
-> *value* est un tableau contenant notre valeur et la fonction qui nous servira à modifier cette valeur.
+> _value_ est un tableau contenant notre valeur et la fonction qui nous servira à modifier cette valeur.
 
-Grâce à ce hook on peut maintenant écrire nos fonctions *increment* et *decrement*
+Grâce à ce hook on peut maintenant écrire nos fonctions _increment_ et _decrement_
 
 ```jsx
 const initialValue = 0
@@ -418,9 +437,9 @@ export default function Counter() {
   const [count, setCount] = React.useState(0)
   const increment = () => setCount(count + 1)
   const decrement = () => setCount(count - 1)
-  
+
   return (
-    <div className='counter'>
+    <div className="counter">
       {/* en jsx, les expressions entre accolades sont des expressions javascript  */}
       <h2>Compteur : {count}</h2>
       <button onClick={increment}>+</button>
@@ -433,7 +452,7 @@ export default function Counter() {
 Enfin pour utiliser la valeur de notre compteur et l'afficher à l'écran on l'indique dans notre JSX entre accolades.
 
 <div style="text-align:center;">
-<img width="350" alt="Compteur GIF" src="./counter.gif" />
+<img width="250" alt="Compteur GIF" src="./counter.gif" />
 </div>
 
 ## Conclusion
