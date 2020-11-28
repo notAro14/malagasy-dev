@@ -435,3 +435,7 @@ Enfin pour utiliser la valeur de notre compteur et l'afficher à l'écran on l'i
 <div style="text-align:center;">
 <img width="350" alt="Compteur GIF" src="./counter.gif" />
 </div>
+
+## Conclusion
+
+Voilà, tu sais maintenant comment débuter rapidement avec React. Je te conseille d'approfondir plus avec la doc officielle car je n'ai fait que survoler les notions dans les grandes lignes. Je te dis à la prochaine.
