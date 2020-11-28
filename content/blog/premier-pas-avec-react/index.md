@@ -433,5 +433,5 @@ export default function Counter() {
 Enfin pour utiliser la valeur de notre compteur et l'afficher à l'écran on l'indique dans notre JSX entre accolades.
 
 <div style="text-align:center;">
-<img width="200" alt="Compteur GIF" src="./counter.gif" />
+<img width="350" alt="Compteur GIF" src="./counter.gif" />
 </div>
