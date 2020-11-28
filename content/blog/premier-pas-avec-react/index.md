@@ -308,6 +308,8 @@ ReactDOM.render(<App />, root)
 ```
 
 ```css
+/* src/style.css */
+
 * {
   margin: 0;
   padding: 0;
@@ -369,3 +371,63 @@ export default function Counter() {
   )
 }
 ```
+
+![Compteur](counter.png "Compteur")
+
+Pour l'instant ce code ne fait rien de spécial à part afficher le compteur, mais il n'est pas encore fonctionnel. Pour que le compteur marche, il nous faut:
+
+* stocker la valeur du compteur,
+* une fonction *increment()* pour incrémenter cette valeur
+* une fonction *decrement()* pour la décrementer
+
+#### React.useState
+
+Dans React, on peut utiliser la fonction *useState* pour stocker des valeurs et les changer. *useState* fait partie des fonctions internes à React qu'on appelle *hook*, il existe notamment différents *hooks* avec chacun leur rôle. Le hook useState s'utilise de la manière suivante:
+
+```jsx
+const initialValue = 0
+const value = React.useState(initialValue)
+// ES6 : déstructuration de tableau
+const [count, setCount] = value
+```
+
+> *value* est un tableau contenant notre valeur et la fonction qui nous servira à modifier cette valeur.
+
+Grâce à ce hook on peut maintenant écrire nos fonctions *increment* et *decrement*
+
+```jsx
+const initialValue = 0
+const value = React.useState(initialValue)
+// ES6 : déstructuration de tableau
+const [count, setCount] = value
+
+const increment = () => setCount(count + 1)
+const decrement = () => setCount(count - 1)
+```
+
+Ces fonctions peuvent maintenant être attachés aux boutons + et - grâce à l'attribut **onClick** du composant **button**.
+
+> En JSX, on retrouve la majorité des attributs en HTML mais nommés en [camelCase](https://en.wikipedia.org/wiki/Camel_case)
+
+```jsx
+// src/components/Counter.js
+
+import React from 'react'
+
+export default function Counter() {
+  const [count, setCount] = React.useState(0)
+  const increment = () => setCount(count + 1)
+  const decrement = () => setCount(count - 1)
+  
+  return (
+    <div className='counter'>
+      {/* en jsx, les expressions entre accolades sont des expressions javascript  */}
+      <h2>Compteur : {count}</h2>
+      <button onClick={increment}>+</button>
+      <button onClick={decrement}>-</button>
+    </div>
+  )
+}
+```
+
+Enfin pour utiliser la valeur de notre compteur et l'afficher à l'écran on l'indique dans notre JSX entre accolades.
