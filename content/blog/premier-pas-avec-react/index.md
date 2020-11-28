@@ -282,4 +282,5 @@ D'ailleurs en parlant de fichier HTML, tu te demandes sûrement il est où ce fi
 
 ### Exemple avec un simple compteur
 
-Maintenant que notre projet est installé et configuré, créons une petite application basique avec le fameux compteur.
+Maintenant que notre projet est installé et configuré, créons une petite application basique de compteur.
+
