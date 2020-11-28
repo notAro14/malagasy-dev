@@ -217,7 +217,7 @@ Par défaut, _CRA_ va utiliser _yarn_ comme gestionnaire de paquets s'il est ins
 npx create-react-app mon-application --use-npm
 ```
 
-Le dossier créé par \*CRA\* se présente comme ci-dessous
+Le dossier créé par _CRA_ se présente comme ci-dessous
 
 ![Les fichiers créés par CRA](cra-files.png 'Les fichiers créés par CRA')
 
