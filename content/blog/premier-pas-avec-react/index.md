@@ -196,7 +196,7 @@ Le dossier créé par \*CRA\* se présente comme ci-dessous
 
 ![Les fichiers créés par CRA](cra-files.png "Les fichiers créés par CRA")
 
-Pour l'instant, tu peux effacer tout les fichiers dans le dossier *src* et créer un nouveau fichier *index.js* contenant le code suivant:
+Pour l'instant, tu peux effacer tous les fichiers présents dans le dossier *src* et créer un nouveau fichier *index.js* contenant le code suivant:
 
 ```jsx
 import React from 'react'
@@ -212,4 +212,8 @@ function App() {
 
 const root = document.getElementById('root')
 ReactDOM.render(<App />, root)
-``
+```
+
+Puis avec *yarn start* ou *npm start* (si l'application n'est pas encore lancée) tu obtiens l'écran suivant:
+
+![Ecran Hello World](hello-world.png "Ecran Hello World")
