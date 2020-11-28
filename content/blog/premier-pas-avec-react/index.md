@@ -284,3 +284,13 @@ D'ailleurs en parlant de fichier HTML, tu te demandes sûrement il est où ce fi
 
 Maintenant que notre projet est installé et configuré, créons une petite application basique de compteur.
 
+Notre application aura cette structure de fichier:
+
+```text
+src
+|- index.js
+|- style.css
+|- components
+  |- App.js
+  |- Counter.js
+```
