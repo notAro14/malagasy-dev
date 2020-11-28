@@ -282,9 +282,7 @@ D'ailleurs en parlant de fichier HTML, tu te demandes sûrement il est où ce fi
 
 ### Exemple avec un simple compteur
 
-Maintenant que notre projet est installé et configuré, créons une petite application basique de compteur.
-
-Notre application aura cette structure de fichier:
+Maintenant que notre projet est installé et configuré, créons une petite application basique de compteur. Notre application aura cette structure de fichier:
 
 ```text
 src
@@ -293,4 +291,35 @@ src
 |- components
   |- App.js
   |- Counter.js
+```
+
+On importe notre application et le style dans *index.js*
+
+```jsx
+// src/index.js
+
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './components/App'
+import './style.css'
+
+const root = document.getElementById('root')
+ReactDOM.render(<App />, root)
+```
+
+Puis dans *src/components/App.js*, on importe notre composant *Counter*
+
+```jsx
+// src/components/App.js
+
+import React from 'react'
+import Counter from './Counter'
+
+export default function App() {
+  return (
+    <div className='app'>
+      <Counter />
+    </div>
+  )
+}
 ```
