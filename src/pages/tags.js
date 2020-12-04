@@ -23,7 +23,8 @@ const TagsPage = ({
     <SEO title="Tags" />
     <div className="tag-page">
       <h2>Liste des tags</h2>
-      <p>Voici les articles regroupés par tag.</p>
+      {/* <p>:w
+      .</p> */}
       <ul className="tags-list">
         {group.map(tag => (
           <li key={tag.fieldValue}>
@@ -31,7 +32,7 @@ const TagsPage = ({
               style={{ textDecoration: 'none' }}
               to={`/tags/${kebabCase(tag.fieldValue)}/`}
             >
-              {tag.fieldValue} ({tag.totalCount})
+              #{tag.fieldValue} ({tag.totalCount})
             </Link>
           </li>
         ))}

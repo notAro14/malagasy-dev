@@ -11,7 +11,7 @@ html {
 }
 body {
   background-color: $background-color;
-  color: #ffffff;
+  color: $text-primary;
   font-family: 'Hind Vadodara', sans-serif;
   h1 {
     font-family: 'Oleo Script', cursive;
@@ -22,24 +22,28 @@ body {
       color: $secondary;
     }
   }
-  h2 {
-    font-family: 'Domine', serif;
-    color: $primary;
-    font-weight: 700;
-  }
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: 'Domine', serif;
-    color: $primary;
-    font-weight: 500;
+
+  @for $j from 2 to 6 {
+    h#{$j} {
+      margin: $spacing-3 0 $spacing-3 0;
+      font-family: 'Domine', serif;
+      color: $primary;
+      border-bottom: 1px solid $primary;
+      padding-bottom: $spacing-1;
+      font-weight: 500;
+    }
   }
 
   p {
     font-family: 'Hind Vadodara', sans-serif;
     font-weight: 400;
-    margin-bottom: $spacing-1;
+    margin-bottom: $spacing-2;
+    line-height: 1.8;
+    font-size: $body;
+    @media screen and (max-width: 768px) {
+      font-size: $caption;
+      // line-height: 1;
+    }
   }
   span {
     font-family: 'Hind Vadodara', sans-serif;
@@ -51,9 +55,11 @@ body {
   }
 
   img,
-  figure {
+  figure,
+  .gatsby-highlight {
     // width: 100%;
-    margin-bottom: $spacing-1;
+    margin-bottom: $spacing-2;
+    border-radius: 10px;
   }
   figcaption {
     text-align: center;
@@ -63,10 +69,17 @@ body {
     // list-style-type: none;
     margin-left: $spacing-1;
     margin-bottom: $spacing-1;
+    li {
+      font-size: $body;
+      @media screen and (max-width: 768px) {
+        font-size: $caption;
+        margin-bottom: $spacing-0;
+      }
+    }
   }
   blockquote {
     background-color: $background-color;
-    padding: $spacing-0;
+    padding: $spacing-2;
     border-radius: 5px;
     margin-bottom: $spacing-1;
     & p {
@@ -92,19 +105,14 @@ body {
       list-style-type: none;
       display: flex;
       li {
-        padding-right: $spacing-1;
+        padding: $spacing-1;
       }
     }
   }
 }
 
 // set font size
-p,
 pre,
-code,
-li {
-  font-size: $body !important ;
-  @media screen and (max-width: 768px) {
-    font-size: $caption !important ;
-  }
+code {
+  font-size: $caption !important;
 }

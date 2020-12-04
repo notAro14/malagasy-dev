@@ -7,7 +7,7 @@ import Footer from './footer/footer'
 
 const Layout = ({ children, currentActivePage }) => {
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="md">
       <Header currentActivePage={currentActivePage} />
       <Bio />
       <main>{children}</main>

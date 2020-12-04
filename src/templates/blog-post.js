@@ -46,15 +46,11 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
       </article>
       <div className="tags">
-        Tags :
         {post.frontmatter.tags
           ? post.frontmatter.tags.map((tag, index) => {
-              let separator = ','
-              if (index === 0) separator = ''
-
               return (
                 <Link className="tag" key={tag} to={`/tags/${tag}`}>
-                  {separator + ' ' + tag}
+                  #{tag}
                 </Link>
               )
             })
