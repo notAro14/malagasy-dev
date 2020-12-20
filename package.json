@@ -59,7 +59,7 @@
     "url": "git@github.com:notAro14/malagasy-dev.git"
   },
   "scripts": {
-    "maj": "yarn upgrade-interactive --latest",
+    "update:interactive": "yarn upgrade-interactive --latest",
     "build": "gatsby build",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "develop": "gatsby develop",
