@@ -2,7 +2,7 @@
 title: 'Le jeu de la vie'
 date: '2020-07-31'
 description: "Comment implémenter le jeu de la vie avec n'importe quel langage"
-tags: ['algorithme']
+tags: ['Algorithmique']
 featuredImage: 'cover.jpg'
 ---
 

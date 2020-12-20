@@ -4,9 +4,8 @@ date: 2020-11-27T17:15:48.527Z
 description: React est un framework très populaire pour le développement en
   Frontend. Je te montre comment débuter avec.
 tags:
-  - react
-  - javascript
-  - frontend
+  - React
+  - Frontend
 creditsUserUrl: https://www.pexels.com/fr-fr/@pixabay
 creditsUser: Pixabay
 featuredImage: cover.jpg
