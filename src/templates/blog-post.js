@@ -7,6 +7,7 @@ import SEO from '../components/seo'
 import Credits from '../components/credits/credits'
 import DateAndRead from '../components/dateAndRead/dateAndRead'
 import './blog-post.scss'
+import kebabCase from 'lodash/kebabCase'
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -49,7 +50,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         {post.frontmatter.tags
           ? post.frontmatter.tags.map((tag, index) => {
               return (
-                <Link className="tag" key={tag} to={`/tags/${tag}`}>
+                <Link className="tag" key={tag} to={`/tags/${kebabCase(tag)}`}>
                   #{tag}
                 </Link>
               )

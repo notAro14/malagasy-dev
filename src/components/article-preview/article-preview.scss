@@ -15,6 +15,13 @@
       margin: $spacing-0 0 $spacing-0 0;
     }
   }
+  .tags-preview {
+    display: flex;
+    a {
+      margin-right: $spacing-0;
+      text-decoration: none;
+    }
+  }
   .excerpt {
     .text {
       margin-bottom: $spacing-0;
