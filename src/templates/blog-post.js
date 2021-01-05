@@ -41,14 +41,19 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           />
         ) : null}
         <header className="header">
-          <h1 className="title">{post.frontmatter.title}</h1>
+          <h1 className="title">
+            {post.frontmatter.title}{' '}
+            <span role="img" aria-label="plant growth">
+              {post.frontmatter.growth}
+            </span>
+          </h1>
           <DateAndRead date={date} timeToRead={timeToRead} />
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
       </article>
       <div className="tags">
         {post.frontmatter.tags
-          ? post.frontmatter.tags.map((tag, index) => {
+          ? post.frontmatter.tags.map(tag => {
               return (
                 <Link className="tag" key={tag} to={`/tags/${kebabCase(tag)}`}>
                   #{tag}
@@ -108,6 +113,7 @@ export const pageQuery = graphql`
       frontmatter {
         tags
         title
+        growth
         date(formatString: "MMMM DD, YYYY")
         description
         featuredImage {

@@ -9,6 +9,7 @@ tags:
 creditsUserUrl: https://www.pexels.com/fr-fr/@pixabay
 creditsUser: Pixabay
 featuredImage: cover.jpg
+growth: '🪴'
 ---
 
 Si tu t'intéresses au développement web côté frontend, tu t'apercevras vite que l'écosystème est dominé par 3 frameworks/librairies:

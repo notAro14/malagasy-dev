@@ -6,6 +6,7 @@ tags: ['Productivité']
 creditsUserUrl: 'https://unsplash.com/@pedro_ag_santos/'
 creditsUser: 'Pedro Santos'
 featuredImage: 'cover.jpg'
+growth: '🌳'
 ---
 
 Salut à toi, jeune développeur !
