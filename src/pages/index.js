@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Layout from '../components/layout/layout'
+import SEO from '../components/seo/seo'
 import ArticlePreview from '../components/article-preview/article-preview'
 
 const BlogIndex = ({ data, location }) => {
