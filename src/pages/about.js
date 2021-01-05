@@ -44,19 +44,19 @@ const About = () => {
               <span role="img" aria-label="seed">
                 🌱
               </span>{' '}
-              - à ce stade, la note est un premier jet, une première idée
+              - premier jet
             </li>
             <li>
               <span role="img" aria-label="plant">
-                🪴
+                🌿
               </span>{' '}
-              - la note est plus müre mais est encore susceptible d&apos;évoluer
+              - réflexion mûre mais susceptible d&apos;évoluer
             </li>
             <li>
               <span role="img" aria-label="tree">
                 🌳
               </span>{' '}
-              - le stade le plus avancé, la réflexion me satisfait pleinement.
+              - la réflexion me satisfait pleinement
             </li>
           </ul>
         </p>
