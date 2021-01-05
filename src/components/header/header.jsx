@@ -9,7 +9,7 @@ export default function Header({ currentActivePage }) {
       </Link>
       <ul>
         <li>
-          <Link to="/tags">Tags</Link>
+          <Link to="/tags">Catégories</Link>
         </li>
         <li>
           <Link to="/about">A propos</Link>

@@ -2,10 +2,11 @@
 title: 'Convertir des fichiers avec Pandoc'
 date: '2020-07-12'
 description: 'Si toi aussi tu détestes Office et compagnie, je te montre comment convertir du markdown en Word'
-tags: ['productivite']
+tags: ['Productivité']
 creditsUserUrl: 'https://unsplash.com/@pedro_ag_santos/'
 creditsUser: 'Pedro Santos'
 featuredImage: 'cover.jpg'
+growth: '🌳'
 ---
 
 Salut à toi, jeune développeur !

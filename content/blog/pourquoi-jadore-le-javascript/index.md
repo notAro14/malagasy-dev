@@ -5,7 +5,8 @@ description: 'Javascript est un language franchement sympathique'
 featuredImage: 'cover.jpg'
 creditsUserUrl: 'https://unsplash.com/@kimtheris'
 creditsUser: 'Sereja Ris'
-tags: ['javascript']
+tags: ['Javascript']
+growth: '🌳'
 ---
 
 > English version -> [Why I love Javascript](https://dev.to/notaro14/why-i-love-javascript-1mb4)

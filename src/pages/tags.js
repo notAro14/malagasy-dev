@@ -22,9 +22,7 @@ const TagsPage = ({
   <Layout location={location} title={title}>
     <SEO title="Tags" />
     <div className="tag-page">
-      <h2>Liste des tags</h2>
-      {/* <p>:w
-      .</p> */}
+      <h2>Toutes les catégories</h2>
       <ul className="tags-list">
         {group.map(tag => (
           <li key={tag.fieldValue}>

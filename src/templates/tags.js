@@ -15,9 +15,9 @@ const Tags = ({ pageContext, data, location }) => {
   } = data
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
-  const tagHeader = `${totalCount} article${
+  const tagHeader = `${totalCount} note${totalCount === 1 ? '' : 's'} trouvée${
     totalCount === 1 ? '' : 's'
-  } trouvé${totalCount === 1 ? '' : 's'}`
+  }`
 
   return (
     <Layout location={location} title={title}>
@@ -28,7 +28,7 @@ const Tags = ({ pageContext, data, location }) => {
         return <ArticlePreview key={node.fields.slug} node={node} />
       })}
 
-      <Link to="/tags">Voir tous les tags</Link>
+      <Link to="/tags">Voir toutes les catégories</Link>
     </Layout>
   )
 }
@@ -83,6 +83,7 @@ export const pageQuery = graphql`
             date
             title
             description
+            growth
           }
         }
       }

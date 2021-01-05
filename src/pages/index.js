@@ -12,16 +12,11 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="Blog" />
       <br />
+      <h2>Ordre chronologique</h2>
+      <p>Liste des notes selon leur ordre de création</p>
       {posts.map(({ node }, index) => {
         return <ArticlePreview key={index} node={node} />
       })}
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-        }}
-      ></div>
     </Layout>
   )
 }
@@ -48,6 +43,7 @@ export const pageQuery = graphql`
             date
             title
             description
+            growth
           }
         }
       }
