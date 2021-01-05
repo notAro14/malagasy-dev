@@ -5,8 +5,8 @@ import Img from 'gatsby-image'
 import { Link as GatsbyLink } from 'gatsby'
 import Link from '@material-ui/core/Link'
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Layout from '../components/layout/layout'
+import SEO from '../components/seo/seo'
 
 const NotFoundPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title

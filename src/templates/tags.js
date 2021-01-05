@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Layout from '../components/layout/layout'
+import SEO from '../components/seo/seo'
 import ArticlePreview from '../components/article-preview/article-preview'
 
 // Components

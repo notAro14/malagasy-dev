@@ -1,14 +1,14 @@
 import React from 'react'
 
 import { Container } from '@material-ui/core'
-import Header from './header/header'
-import Bio from './bio'
-import Footer from './footer/footer'
+import Header from '../header/header'
+import Bio from '../bio/bio'
+import Footer from '../footer/footer'
 
-const Layout = ({ children, currentActivePage }) => {
+const Layout = ({ children }) => {
   return (
     <Container maxWidth="md">
-      <Header currentActivePage={currentActivePage} />
+      <Header />
       <Bio />
       <main>{children}</main>
       <Footer />

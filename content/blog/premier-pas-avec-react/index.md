@@ -6,9 +6,9 @@ description: React est un framework très populaire pour le développement en
 tags:
   - React
   - Frontend
-creditsUserUrl: https://www.pexels.com/fr-fr/@pixabay
-creditsUser: Pixabay
-featuredImage: cover.jpg
+creditsUserUrl: https://commons.wikimedia.org/wiki/File:React-icon.svg
+creditsUser: Facebook
+featuredImage: cover.png
 growth: '🌿'
 ---
 
