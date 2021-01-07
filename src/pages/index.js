@@ -3,20 +3,40 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout/layout'
 import SEO from '../components/seo/seo'
 import ArticlePreview from '../components/article-preview/article-preview'
+import SearchInput from '../components/searchinput/searchInput'
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMarkdownRemark.edges
+  const allPosts = data.allMarkdownRemark.edges
+  const [search, setSearch] = React.useState('')
+  const filteredPosts = allPosts.filter(post => {
+    const title = post.node.frontmatter.title.toLowerCase()
+    return title.includes(search)
+  })
+  const posts = search ? filteredPosts : allPosts
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Blog" />
-      <br />
-      <h2>Ordre chronologique</h2>
-      <p>Liste des notes selon leur ordre de création</p>
-      {posts.map(({ node }, index) => {
-        return <ArticlePreview key={index} node={node} />
-      })}
+      <SearchInput
+        placeholder="React, Javascript, Material UI ..."
+        onChange={evt => {
+          setSearch(evt.target.value.toLowerCase())
+        }}
+      >
+        Rechercher
+      </SearchInput>
+
+      <h2>{search ? 'Résultats' : 'Les articles par Ordre chronologique'}</h2>
+      {posts
+        .filter(post => {
+          return post.node.frontmatter.title
+            .toLowerCase()
+            .includes(search.toLowerCase())
+        })
+        .map(({ node }, index) => {
+          return <ArticlePreview key={index} node={node} />
+        })}
     </Layout>
   )
 }
