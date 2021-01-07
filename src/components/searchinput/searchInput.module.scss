@@ -1,5 +1,9 @@
 @import '../../variables';
 
+.formControl {
+  width: 100%;
+}
+
 .input {
   font-size: $body;
   padding: 0.75rem;

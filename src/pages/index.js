@@ -4,6 +4,7 @@ import Layout from '../components/layout/layout'
 import SEO from '../components/seo/seo'
 import ArticlePreview from '../components/article-preview/article-preview'
 import SearchInput from '../components/searchinput/searchInput'
+import SearchForm from '../components/searchForm/searchForm'
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -18,14 +19,22 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Blog" />
-      <SearchInput
-        placeholder="React, Javascript, Material UI ..."
-        onChange={evt => {
-          setSearch(evt.target.value.toLowerCase())
+      <SearchForm
+        onSubmit={evt => {
+          evt.preventDefault()
+          setSearch(evt.target[0].value)
         }}
       >
-        Rechercher
-      </SearchInput>
+        <SearchInput
+          id="rechercher"
+          placeholder="React, Javascript, Material UI ..."
+          onChange={evt => {
+            setSearch(evt.target.value.toLowerCase())
+          }}
+        >
+          Rechercher
+        </SearchInput>
+      </SearchForm>
 
       <h2>{search ? 'Résultats' : 'Les articles par Ordre chronologique'}</h2>
       {posts
