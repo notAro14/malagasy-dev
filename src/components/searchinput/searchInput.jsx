@@ -1,12 +1,14 @@
 import React from 'react'
 import styles from './searchInput.module.scss'
 
-const SearchInput = ({ id, children, ...restOfProps }) => {
+const SearchInput = ({ id = 'GIVE ME A LABEL', children, ...restOfProps }) => {
   return (
-    <label htmlFor={id}>
-      <span className={styles.label}>{children}</span>
+    <div className={styles.formControl}>
+      <label htmlFor={id} className={styles.label}>
+        {children}
+      </label>
       <input id={id} {...restOfProps} className={styles.input} />
-    </label>
+    </div>
   )
 }
 
