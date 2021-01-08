@@ -7,7 +7,7 @@ const SearchInput = ({ id = 'GIVE ME A LABEL', children, ...restOfProps }) => {
       <label htmlFor={id} className={styles.label}>
         {children}
       </label>
-      <input id={id} {...restOfProps} className={styles.input} />
+      <input name={id} id={id} {...restOfProps} className={styles.input} />
     </div>
   )
 }

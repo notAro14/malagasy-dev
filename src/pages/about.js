@@ -10,8 +10,8 @@ const About = () => {
       <main className="about-page">
         <h2>Digital Garden</h2>
         <p>
-          Ce blog me sert comme moyen d&apos;expression mais aussi je m'&apos;en
-          sers pour stocker mes idées et mes réflexions. Il peut contenir des
+          Ce blog me sert de moyen d&apos;expression mais aussi d&apos;endroit
+          pour stocker mes idées et mes réflexions. Il peut contenir des
           tutoriels, des résumés de livres, des réflexions sur divers sujets ou
           des notes plus "expérimentales".
         </p>
@@ -27,7 +27,7 @@ const About = () => {
           ). Je travaille chaque note à son rythme, donc, à l&apos;inverse
           d&apos;un blog classique, le but n'est pas de respecter une
           périodicité de publication (j&apos;ai essayé, ce n&apos;est clairement
-          pas pour moi). Le principeest d&apos;y aller à mon rythme, en suivant
+          pas pour moi). Le principe est d&apos;y aller à mon rythme, en suivant
           le fil de mes réflexions du moment.
         </p>
         <p>

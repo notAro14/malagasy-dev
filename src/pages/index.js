@@ -5,16 +5,22 @@ import SEO from '../components/seo/seo'
 import ArticlePreview from '../components/article-preview/article-preview'
 import SearchInput from '../components/searchinput/searchInput'
 import SearchForm from '../components/searchForm/searchForm'
+import Button from '../components/button/button'
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const allPosts = data.allMarkdownRemark.edges
+
   const [search, setSearch] = React.useState('')
+  const [query, setQuery] = React.useState('')
+
   const filteredPosts = allPosts.filter(post => {
     const title = post.node.frontmatter.title.toLowerCase()
-    return title.includes(search)
+    return title.includes(query.toLowerCase())
   })
-  const posts = search ? filteredPosts : allPosts
+  const posts = query ? filteredPosts : allPosts
+
+  const resultsRef = React.useRef()
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -22,30 +28,50 @@ const BlogIndex = ({ data, location }) => {
       <SearchForm
         onSubmit={evt => {
           evt.preventDefault()
-          setSearch(evt.target[0].value)
+          setQuery(evt.target.elements.search.value)
+          setSearch('')
+          resultsRef.current.scrollIntoView()
         }}
       >
         <SearchInput
-          id="rechercher"
+          id="search"
           placeholder="React, Javascript, Material UI ..."
+          value={search}
           onChange={evt => {
-            setSearch(evt.target.value.toLowerCase())
+            setSearch(evt.target.value)
+            setQuery(evt.target.value)
           }}
         >
           Rechercher
         </SearchInput>
       </SearchForm>
-
-      <h2>{search ? 'Résultats' : 'Les articles par Ordre chronologique'}</h2>
-      {posts
-        .filter(post => {
-          return post.node.frontmatter.title
-            .toLowerCase()
-            .includes(search.toLowerCase())
-        })
-        .map(({ node }, index) => {
-          return <ArticlePreview key={index} node={node} />
-        })}
+      {query ? (
+        <>
+          <h2>{`Résultats pour "${query}"`}</h2>
+          <Button
+            type="button"
+            onClick={() => {
+              setQuery('')
+              setSearch('')
+            }}
+          >
+            Retour
+          </Button>
+        </>
+      ) : (
+        <h2>Toutes les notes par Ordre chronologique</h2>
+      )}
+      <div ref={resultsRef}>
+        {posts
+          .filter(post => {
+            return post.node.frontmatter.title
+              .toLowerCase()
+              .includes(search.toLowerCase())
+          })
+          .map(({ node }, index) => {
+            return <ArticlePreview key={index} node={node} />
+          })}
+      </div>
     </Layout>
   )
 }
