@@ -22,29 +22,31 @@ const BlogIndex = ({ data, location }) => {
 
   const resultsRef = React.useRef()
 
-  return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title="Blog" />
-      <SearchForm
-        onSubmit={evt => {
-          evt.preventDefault()
-          setQuery(evt.target.elements.search.value)
-          setSearch('')
-          resultsRef.current.scrollIntoView()
+  const SearchBar = () => (
+    <SearchForm
+      onSubmit={evt => {
+        evt.preventDefault()
+        setQuery(evt.target.elements.search.value)
+        setSearch('')
+        resultsRef.current.scrollIntoView()
+      }}
+    >
+      <SearchInput
+        id="search"
+        placeholder="React, Javascript, Material UI ..."
+        value={search}
+        onChange={evt => {
+          setSearch(evt.target.value)
+          setQuery(evt.target.value)
         }}
       >
-        <SearchInput
-          id="search"
-          placeholder="React, Javascript, Material UI ..."
-          value={search}
-          onChange={evt => {
-            setSearch(evt.target.value)
-            setQuery(evt.target.value)
-          }}
-        >
-          Rechercher
-        </SearchInput>
-      </SearchForm>
+        Rechercher
+      </SearchInput>
+    </SearchForm>
+  )
+
+  const ArticleResults = () => (
+    <>
       {query ? (
         <>
           <h2>{`Résultats pour "${query}"`}</h2>
@@ -72,6 +74,14 @@ const BlogIndex = ({ data, location }) => {
             return <ArticlePreview key={index} node={node} />
           })}
       </div>
+    </>
+  )
+
+  return (
+    <Layout location={location} title={siteTitle}>
+      <SEO title="Blog" />
+      <SearchBar />
+      <ArticleResults />
     </Layout>
   )
 }
