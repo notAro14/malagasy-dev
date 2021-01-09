@@ -14,3 +14,16 @@
     border-color: $secondary;
   }
 }
+
+.submitButton {
+  padding: 0.5rem;
+  // align-self: flex-end;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  background-color: $secondary;
+  color: $text-primary;
+  // width: 100px;
+  &:hover {
+    cursor: pointer;
+  }
+}
