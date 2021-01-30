@@ -1,21 +1,18 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
-import Img from 'gatsby-image'
-import Bio from '../components/bio/bio'
+import { graphql } from 'gatsby'
+
+import DateAndRead from '../components/dateAndRead/dateAndRead'
 import Layout from '../components/layout/layout'
 import SEO from '../components/seo/seo'
-import Credits from '../components/credits/credits'
-import DateAndRead from '../components/dateAndRead/dateAndRead'
-import './blog-post.scss'
-import kebabCase from 'lodash/kebabCase'
+import Title from '../components/title/title'
+import LinksToOtherPosts from '../components/links-to-other-posts/links-to-other-posts'
+import Tags from '../components/tags/tags'
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
-  const featuredImgFluid = post.frontmatter.featuredImage
-    ? post.frontmatter.featuredImage.childImageSharp.fluid
-    : null
+
   const image = post.frontmatter.featuredImage
     ? post.frontmatter.featuredImage.childImageSharp.resize
     : null
@@ -32,63 +29,20 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         image={image}
         pathname={location.pathname}
       />
-      <article className="post">
-        {featuredImgFluid ? <Img fluid={featuredImgFluid} /> : null}
-        {post.frontmatter.creditsUserUrl ? (
-          <Credits
-            userUrl={post.frontmatter.creditsUserUrl}
-            userName={post.frontmatter.creditsUser}
-          />
-        ) : null}
-        <header className="header">
-          <h1 className="title">
+      <article>
+        <header>
+          {post.frontmatter.tags ? <Tags tags={post.frontmatter.tags} /> : null}
+          <Title>
             {post.frontmatter.title}{' '}
             <span role="img" aria-label="plant growth">
               {post.frontmatter.growth}
             </span>
-          </h1>
+          </Title>
           <DateAndRead date={date} timeToRead={timeToRead} />
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
       </article>
-      <div className="tags">
-        {post.frontmatter.tags
-          ? post.frontmatter.tags.map(tag => {
-              return (
-                <Link className="tag" key={tag} to={`/tags/${kebabCase(tag)}`}>
-                  #{tag}
-                </Link>
-              )
-            })
-          : null}
-      </div>
-      <nav>
-        <ul className="links-to-other-posts">
-          <li>
-            {previous && (
-              <Link
-                className="link-to-other-posts"
-                to={previous.fields.slug}
-                rel="prev"
-              >
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link
-                className="link-to-other-posts"
-                to={next.fields.slug}
-                rel="next"
-              >
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
-      <Bio />
+      <LinksToOtherPosts previous={previous} next={next} />
     </Layout>
   )
 }

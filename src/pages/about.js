@@ -1,74 +1,64 @@
 import React from 'react'
 import Layout from '../components/layout/layout'
 import SEO from '../components/seo/seo'
-import './about.scss'
+import Title from '../components/title/title'
+import Paragraph from '../components/paragraph/paragraph'
+import ExternalLink from '../components/externalLink/externalLink'
+import { List, ListItem } from '../components/list-item/list-item'
 
 const About = () => {
   return (
     <Layout>
       <SEO title="A propos" />
-      <main className="about-page">
-        <h2>Digital Garden</h2>
-        <p>
+      <main>
+        <Title>Digital Garden</Title>
+        <Paragraph>
           Ce blog me sert de moyen d&apos;expression mais aussi d&apos;endroit
           pour stocker mes idées et mes réflexions. Il peut contenir des
           tutoriels, des résumés de livres, des réflexions sur divers sujets ou
           des notes plus "expérimentales".
-        </p>
-        <p>
+        </Paragraph>
+        <Paragraph>
           Imagine ce blog comme une sorte de Jardin Numérique (ou{' '}
-          <a
-            href="https://joelhooks.com/digital-garden"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <ExternalLink to="https://joelhooks.com/digital-garden">
             Digital Garden.
-          </a>
+          </ExternalLink>
           ). Je travaille chaque note à son rythme, donc, à l&apos;inverse
           d&apos;un blog classique, le but n'est pas de respecter une
           périodicité de publication (j&apos;ai essayé, ce n&apos;est clairement
           pas pour moi). Le principe est d&apos;y aller à mon rythme, en suivant
           le fil de mes réflexions du moment.
-        </p>
-        <p>
+        </Paragraph>
+        <Paragraph>
           Tout comme dans un jardin, chaque note grandit, évolue ou reste au
-          stade de simple graine (PS: c&apos;est qu&apos;une analogie, je ne
+          stade de simple graine. C&apos;est qu&apos;une analogie, je ne
           m&apos;y connaît rien en jardinage{' '}
           <span role="img" aria-label="embarassed smiley">
             😅
           </span>
-          ). Pour l&apos;instant, voici comment je catégorise ces notes du moins
+        </Paragraph>
+        <Paragraph>
+          Pour l&apos;instant, voici comment je catégorise ces notes du moins
           aboutie au plus aboutie
-          <ul className="plants">
-            <li>
-              <span role="img" aria-label="seed">
-                🌱
-              </span>{' '}
-              - premier jet
-            </li>
-            <li>
-              <span role="img" aria-label="plant">
-                🌿
-              </span>{' '}
-              - réflexion mûre mais susceptible d&apos;évoluer
-            </li>
-            <li>
-              <span role="img" aria-label="tree">
-                🌳
-              </span>{' '}
-              - la réflexion me satisfait pleinement
-            </li>
-          </ul>
-        </p>
-        <h2>Qui suis-je</h2>
-        <div>
-          <p>
-            Je m&apos;appelle Aro, je suis développeur Web Frontend en React.
-            Mais avant ça, j'étais Ingénieur en informatique industrielle
-            pendant 2 ans (je développais des logiciels desktop spécialisés dans
-            les systèmes de mesure et de contrôle en industrie)
-          </p>
-        </div>
+        </Paragraph>
+        <List>
+          <ListItem icon="🌱" iconLabel="seed">
+            Premier jet
+          </ListItem>
+          <ListItem icon="🌿" iconLabel="plant">
+            Réflexion mûre mais susceptible d&apos;évoluer
+          </ListItem>
+          <ListItem icon="🌳" iconLabel="tree">
+            La réflexion me satisfait pleinement
+          </ListItem>
+        </List>
+        <Title>Qui suis-je</Title>
+        <Paragraph>
+          Je m&apos;appelle <em>Aro</em>, je suis développeur Web Frontend en
+          React. Mais avant ça, j'étais Ingénieur en informatique industrielle
+          pendant 2 ans (je développais des logiciels desktop spécialisés dans
+          les systèmes de mesure et de contrôle en industrie)
+        </Paragraph>
       </main>
     </Layout>
   )

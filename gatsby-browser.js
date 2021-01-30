@@ -3,4 +3,4 @@
 // import 'prismjs/themes/prism-coy.css'
 // import 'prismjs/themes/prism-funky.css'
 import 'prismjs/themes/prism-okaidia.css'
-import './src/main.scss'
+import './src/font.css'
