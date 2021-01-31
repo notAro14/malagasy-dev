@@ -10,13 +10,12 @@ const DateAndReadContainer = styled.p`
   padding: 0.85rem 0;
 `
 
-const DateAndRead = ({ date, timeToRead }) => {
+const DateAndRead = ({ date }) => {
   return (
     <DateAndReadContainer>
-      {`${format(new Date(date), 'dd MMMM yyyy', {
+      {`🗓 ${format(new Date(date), 'dd MMMM yyyy', {
         locale: fr,
-      })} • ${timeToRead} min `}
-      &#x1F453;
+      })}`}
     </DateAndReadContainer>
   )
 }

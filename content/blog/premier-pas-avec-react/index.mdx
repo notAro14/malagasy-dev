@@ -1,0 +1,662 @@
+---
+title: Premiers pas avec React
+date: 2020-11-27T17:15:48.527Z
+description: React est un framework très populaire pour le développement en
+  Frontend. Je te montre comment débuter avec.
+tags:
+  - React
+  - Frontend
+creditsUserUrl: https://commons.wikimedia.org/wiki/File:React-icon.svg
+creditsUser: Facebook
+featuredImage: cover.png
+growth: '🌿'
+---
+
+<Paragraph>
+  Si tu t'intéresses au développement web côté frontend, tu t'apercevras vite
+  que l'écosystème est dominé par 3 frameworks/librairies:
+</Paragraph>
+
+<List>
+  <ListItem>
+    <ExternalLink to="https://reactjs.org/">React</ExternalLink> développé par
+    Facebook
+  </ListItem>
+  <ListItem>
+    <ExternalLink to="https://vuejs.org/">Vue</ExternalLink> développé par un
+    dev indé du nom de Evan You
+  </ListItem>
+  <ListItem>
+    <ExternalLink to="https://angular.io/">Angular</ExternalLink> développé par
+    Google
+  </ListItem>
+</List>
+
+<Paragraph>
+  React et Vue sont aujourd'hui les plus populaires sur le marché, mais Angular
+  reste un choix tout à fait pertinent pour faire du frontend. Dans mon job et
+  mes projets perso, je suis particulièrement à fond sur React.
+</Paragraph>
+
+<Paragraph>
+  Alors oui, cela fait plusieurs mois que je n'ai pas écrit ici, mais je me suis
+  dit pourquoi pas reprendre doucement avec un article présentant brièvement
+  React et comment débuter avec. D'autant plus que je compte écrire une longue
+  série d'articles sur ce framework et tout son écosystème.
+</Paragraph>
+
+<Paragraph>
+  Mais avant tout, pour bien profiter de cet article, je te conseille d'avoir
+  ces quelques pré-requis:
+</Paragraph>
+
+<List>
+  <ListItem icon="📌" iconLabel="pin">
+    connaître les bases de <em>HTML/CSS</em>
+  </ListItem>
+  <ListItem icon="📌" iconLabel="pin">
+    connaître les bases de <em>Javascript</em> spécialement la version{' '}
+    <em>ES6</em>
+  </ListItem>
+  <ListItem icon="📌" iconLabel="pin">
+    savoir utiliser un outil de gestion de paquets{' '}
+    <ExternalLink to="https://www.npmjs.com/">npm</ExternalLink> ou{' '}
+    <ExternalLink to="https://yarnpkg.com/">yarn</ExternalLink>
+  </ListItem>
+</List>
+
+<Paragraph>Allez c'est parti.</Paragraph>
+
+<ArticleTitle as="h2">Introduction</ArticleTitle>
+
+<Paragraph>
+  Commençons avec un petit peu d'histoire. React a été développé et utilisé en
+  interne chez Facebook. La première version publique est sortie en 2013.
+  Aujourd'hui tout un écosystème s'est développé autour de la librairie.
+</Paragraph>
+
+<Paragraph>
+  Pour React on parle bien de librairie et non vraiment de Framework car
+  beaucoup de choix techniques sont laissés à tes petits soins lors du
+  développement. Mais dans la pratique, la dénomination n'est pas très
+  importante, ce qui compte c'est de se faire comprendre.
+</Paragraph>
+
+<ArticleTitle as="h2">Tester React</ArticleTitle>
+
+<Paragraph>
+  Tu peux configurer très rapidement et très simplement un projet React sans
+  avoir à installer quoi que ce soit. Dans un simple fichier HTML, il faut
+  ajouter les scripts suivants:
+</Paragraph>
+
+```html
+<script
+  src="https://unpkg.com/react@17/umd/react.development.js"
+  crossorigin
+></script>
+<script
+  src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+  crossorigin
+></script>
+```
+
+<Callout icon="💡" iconLabel="bulb">
+  <Paragraph>
+    On importe deux scripts, un pour <em>React</em> et un autre pour{' '}
+    <em>ReactDOM</em>, car React peut aussi être utilisé pour le développement
+    mobile avec{' '}
+    <ExternalLink to="https://reactnative.dev/">React Native</ExternalLink>.
+    ReactDom étant pour le web.
+  </Paragraph>
+</Callout>
+
+<Paragraph>
+  Importons ces scripts dans un fichier appelé <em>index.html</em>
+</Paragraph>
+
+```html
+<!-- index.html -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Débuter avec React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="App.js"></script>
+  </body>
+</html>
+```
+
+<ArticleTitle as="h3">Créer un élément avec React.createElement</ArticleTitle>
+
+<Paragraph>
+  Comme tu l'as peut-être remarqué, j'ai ajouté un div avec un id <em>root</em>{' '}
+  et un autre script <em>App.js</em>. Notre application sera mis dans le div qui
+  nous sert de conteneur et <em>App.js</em> contiendra le code de notre
+  application React.
+</Paragraph>
+
+<Paragraph>
+  On peut maintenant écrire dans <em>App.js</em> le script suivant
+</Paragraph>
+
+```javascript
+// App.js
+
+const root = document.getElementById('root')
+const divElement = React.createElement('div', { children: 'Hello World' })
+ReactDOM.render(divElement, root)
+```
+
+<Paragraph>Les deux choses les plus importantes ici sont</Paragraph>
+
+<List>
+  <ListItem icon="📌" iconLabel="pin">
+    <em>React.createElement</em> permet de créer un composant react. Dans
+    l'exemple, on crée un div qui contient le texte _Hello World_
+  </ListItem>
+  <ListItem icon="📌" iconLabel="pin">
+    <em>ReactDOM.render</em> fait le rendu du composant react sur le DOM
+  </ListItem>
+</List>
+
+<Paragraph>
+  Ce n'est pas la manière standard d'écrire du react. Aujourd'hui, on utilise
+  plutôt du JSX pour créer les composants. C'est un langage similaire au XML
+  mais pour le Javascript. En JSX, notre exemple ressemblerait à ceci
+</Paragraph>
+
+```jsx
+// App.js
+
+const root = document.getElementById('root')
+const divElement = <div>Hello World</div>
+ReactDOM.render(divElement, root)
+```
+
+<ArticleTitle as="h3">JSX</ArticleTitle>
+
+<Paragraph>
+  Le JSX nous permet de créer des composants react de manière déclarative. Par
+  exemple, pour créer un Button personnalisé
+</Paragraph>
+
+```jsx
+// App.js
+
+const root = document.getElementById('root')
+// on déclare notre composant Button
+function Button() {
+  return <button className="btn">Appuyez ici</button>
+}
+// puis on l'appelle comme n'importe quel élément HTML
+const buttonElement = <Button />
+ReactDOM.render(buttonElement, root)
+```
+
+<Callout>
+  <Paragraph>
+    Le nom des composants react (c'est-à-dire les composants personnalisés que
+    l'on crée) doivent commencer par un majuscule pour que React puisse faire la
+    différence entre notre composant et un composant natif HTML
+  </Paragraph>
+</Callout>
+
+<Paragraph>
+  Mais le navigateur ne comprend (malheureusement) pas le JSX. Notre script doit
+  être transformé (ou transpilé) pour être compréhensible par le runtime du
+  navigateur. Pour cela, on utilise un outil qui s'appelle <em>Babel</em>, il
+  suffit aussi d'importer un autre script pour l'utiliser.
+</Paragraph>
+
+```html
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Débuter avec React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <!-- Script Babel -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <!-- Puis on indique à babel le fichier à transformer grâce à l'attribut type='text/babel' -->
+    <script src="App.js" type="text/babel"></script>
+  </body>
+</html>
+```
+
+```jsx
+// App.js
+
+const root = document.getElementById('root')
+function Title() {
+  return <h1>React app</h1>
+}
+function Text() {
+  return <p>Hello world</p>
+}
+function App() {
+  return (
+    <div>
+      <Title />
+      <Text />
+    </div>
+  )
+}
+ReactDOM.render(<App />, root)
+```
+
+<Paragraph>
+  Le JSX est transformé en React.createElement et d'ailleurs tu peux utiliser ce{' '}
+  <ExternalLink to="https://babeljs.io/repl#?browsers=defaults%2C%20not%20ie%2011%2C%20not%20ie_mob%2011&build=&builtIns=false&spec=false&loose=false&code_lz=Q&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=env%2Creact%2Cstage-2&prettier=false&targets=&version=7.12.9&externalPlugins=">
+    site
+  </ExternalLink>{' '}
+  si tu veux voir en quoi exactement ton code JSX ressemble après la
+  transformation.
+</Paragraph>
+
+<ArticleTitle as="h2">Installation</ArticleTitle>
+
+<Paragraph>
+  Comme tu l'as vu, il suffit de 3 scripts (React, ReactDOM et Babel) à ajouter
+  à ton HTML pour s'essayer à React. Mais cette méthode n'est pas faite pour la
+  production. En pratique on va plutôt passer par une installation via npm de
+  tous les paquets dont on aura besoin pour configurer notre projet React.
+</Paragraph>
+
+<ArticleTitle>Create-react-app (CRA)</ArticleTitle>
+
+<Paragraph>
+  Il existe plusieurs moyens de configurer un projet React mais le plus facile
+  est d'utiliser un outil qui s'appelle{' '}
+  <ExternalLink to="https://create-react-app.dev/">
+    create-react-app
+  </ExternalLink>{' '}
+  (<em>CRA</em> est aussi développé par Facebook). Pour utiliser <em>CRA</em>,
+  il faut au préalable que <em>node</em> >= 10 soit installé ainsi que{' '}
+  <em>npm</em> ou <em>yarn</em>
+</Paragraph>
+
+<Paragraph>Puis dans un terminal dans le dossier de ton choix:</Paragraph>
+
+```bash
+npx create-react-app mon-application
+```
+
+<Paragraph>
+  Un dossier <em>mon-application</em> se crée alors, tu peux y naviguer dedans
+  avec:
+</Paragraph>
+
+```bash
+cd mon-application
+```
+
+<Paragraph>Ensuite pour lancer l'application:</Paragraph>
+
+```bash
+yarn start
+
+# ou
+
+npm start
+```
+
+![Premier écran de create-react-app](react.png 'Premier écran de create-react-app')
+
+<Paragraph>
+  Par défaut, CRA va utiliser yarn comme gestionnaire de paquets s'il est
+  installé sur ta machine. Sinon tu peux explicitement indiqué npm à la création
+  du projet:
+</Paragraph>
+
+```bash
+npx create-react-app mon-application --use-npm
+```
+
+<Paragraph>Le dossier créé par CRA se présente comme ci-dessous</Paragraph>
+
+![Les fichiers créés par CRA](cra-files.png 'Les fichiers créés par CRA')
+
+<Paragraph>
+  Pour l'instant, tu peux effacer tous les fichiers présents dans le dossier
+  <em>src</em> et créer un nouveau fichier <em>index.js</em> contenant le code suivant:
+</Paragraph>
+
+```jsx
+// src/index.js
+
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+function App() {
+  return (
+    <div>
+      <h1>Hello World</h1>
+    </div>
+  )
+}
+
+const root = document.getElementById('root')
+ReactDOM.render(<App />, root)
+```
+
+<Paragraph>
+  Puis avec <em>yarn start</em> ou <em>npm start</em> (si l'application n'est
+  pas encore lancée) tu obtiens l'écran suivant:
+</Paragraph>
+
+![Ecran Hello World](hello-world.png 'Ecran Hello World')
+
+<ArticleTitle as="h2"> Composition d'un projet React</ArticleTitle>
+
+<Paragraph>
+  Comme tu peux le voir dans _src/index.js_, on retrouve des termes familiers.
+  La différence ici avec notre exemple plus haut dans cet article, est qu'on
+  importe React et ReactDOM directement (adieu les imports de scripts depuis un
+  CDN). Le fichier <em>src/index.js</em> sera le point d'entrée de notre
+  application et c'est lui qui est <em>injecté dans le fichier HTML</em>
+</Paragraph>
+
+<Paragraph>
+  D'ailleurs en parlant de fichier HTML, tu te demandes sûrement il est où ce
+  fichier. Et bien il se trouve sous <em>./public/index.html</em>
+</Paragraph>
+
+```html
+<!-- public/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>
+```
+
+<ArticleTitle as="h2">Exemple avec un simple compteur</ArticleTitle>
+
+<Paragraph>
+  Maintenant que notre projet est installé et configuré, créons une petite
+  application basique de compteur. Notre application aura cette structure de
+  fichier:
+</Paragraph>
+
+```text
+src
+|- index.js
+|- style.css
+|- components
+  |- App.js
+  |- Counter.js
+```
+
+<Paragraph>
+  On importe notre application et le style dans <em>index.js</em>
+</Paragraph>
+
+```jsx
+// src/index.js
+
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './components/App'
+import './style.css'
+
+const root = document.getElementById('root')
+ReactDOM.render(<App />, root)
+```
+
+```css
+/* src/style.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.counter {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+```
+
+<Paragraph>
+  Puis dans <em>./src/components/App.js</em>, on importe notre composant
+  <em>Counter</em>
+</Paragraph>
+
+```jsx
+// src/components/App.js
+
+import React from 'react'
+import Counter from './Counter'
+
+// n'oublie pas d'exporter ta fonction pour qu'on puisse l'importer depuis un autre fichier
+export default function App() {
+  return (
+    <div className="app">
+      <Counter />
+    </div>
+  )
+}
+```
+
+<Paragraph>
+  Notre compteur est dans le fichier <em>src/components/Counter.js</em>,
+  commençons simplement avec ce code:
+</Paragraph>
+
+```jsx
+// src/components/Counter.js
+
+import React from 'react'
+
+export default function Counter() {
+  return (
+    <div className="counter">
+      <h2>Compteur : 0</h2>
+      <button>+</button>
+      <button>-</button>
+    </div>
+  )
+}
+```
+
+![Compteur](counter.png 'Compteur')
+
+<Paragraph>
+  Pour l'instant ce code ne fait rien de spécial à part afficher le compteur,
+  mais il n'est pas encore fonctionnel. Pour que le compteur marche, il nous
+  faut:
+</Paragraph>
+
+<List>
+  <ListItem icon="📌" iconLabel="pin">
+    stocker la valeur du compteur
+  </ListItem>
+  <ListItem icon="📌" iconLabel="pin">
+    une fonction <em>increment()</em> pour incrémenter cette valeur
+  </ListItem>
+  <ListItem icon="📌" iconLabel="pin">
+    une fonction <em>decrement()</em> pour la décrementer
+  </ListItem>
+</List>
+
+<ArticleTitle>React.useState</ArticleTitle>
+
+<Paragraph>
+  Dans React, on peut utiliser la fonction _useState_ pour stocker des valeurs
+  et les changer. _useState_ fait partie des fonctions internes à React qu'on
+  appelle <em>hook</em>, il existe notamment différents <em>hooks</em> avec
+  chacun leur rôle. Le hook useState s'utilise de la manière suivante:
+</Paragraph>
+
+```jsx
+const initialValue = 0
+const value = React.useState(initialValue)
+// ES6 : déstructuration de tableau
+const [count, setCount] = value
+```
+
+<Callout icon="💡" iconLabel="bulb">
+  <Paragraph>
+    <em>value</em> est un tableau contenant notre valeur et la fonction qui nous
+    servira à modifier cette valeur.
+  </Paragraph>
+</Callout>
+
+<Paragraph>
+  Grâce à ce hook on peut maintenant écrire nos fonctions _increment_ et
+  _decrement_
+</Paragraph>
+
+```jsx
+const initialValue = 0
+const value = React.useState(initialValue)
+// ES6 : déstructuration de tableau
+const [count, setCount] = value
+
+const increment = () => setCount(count + 1)
+const decrement = () => setCount(count - 1)
+```
+
+<Paragraph>
+  Ces fonctions peuvent maintenant être attachés aux boutons <em>+</em> et{' '}
+  <em>-</em> grâce à l'attribut <em>onClick</em> du composant <em>button</em>.
+</Paragraph>
+
+<Callout>
+  En <em>JSX</em>, on retrouve la majorité des attributs en HTML mais nommés en{' '}
+  <ExternalLink to="https://en.wikipedia.org/wiki/Camel_case">
+    camelCase
+  </ExternalLink>
+</Callout>
+
+```jsx
+// src/components/Counter.js
+
+import React from 'react'
+
+export default function Counter() {
+  const [count, setCount] = React.useState(0)
+  const increment = () => setCount(count + 1)
+  const decrement = () => setCount(count - 1)
+
+  return (
+    <div className="counter">
+      {/* en jsx, les expressions entre accolades sont des expressions javascript  */}
+      <h2>Compteur : {count}</h2>
+      <button onClick={increment}>+</button>
+      <button onClick={decrement}>-</button>
+    </div>
+  )
+}
+```
+
+<Paragraph>
+  Enfin pour utiliser la valeur de notre compteur et l'afficher à l'écran on
+  l'indique dans notre JSX entre accolades.
+</Paragraph>
+
+<iframe
+  height="400"
+  style="width: 100%;"
+  scrolling="no"
+  title="xxRbZER"
+  src="https://codepen.io/notAro/embed/xxRbZER?height=265&theme-id=dark&default-tab=js,result"
+  frameborder="no"
+  loading="lazy"
+  allowtransparency="true"
+  allowfullscreen="true"
+>
+  See the Pen <a href="https://codepen.io/notAro/pen/xxRbZER">xxRbZER</a> by Aro
+  Andriamaro (<a href="https://codepen.io/notAro">@notAro</a>) on{' '}
+  <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+<ArticleTitle as="h2">Conclusion</ArticleTitle>
+
+<Paragraph>
+  Voilà, tu sais maintenant comment débuter rapidement avec React. Je te
+  conseille d'approfondir plus avec la doc officielle car je n'ai fait que
+  survoler les notions dans les grandes lignes. Je te dis à la prochaine.
+</Paragraph>

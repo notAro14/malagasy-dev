@@ -16,18 +16,18 @@ const About = () => {
           Ce blog me sert de moyen d&apos;expression mais aussi d&apos;endroit
           pour stocker mes idées et mes réflexions. Il peut contenir des
           tutoriels, des résumés de livres, des réflexions sur divers sujets ou
-          des notes plus "expérimentales".
+          des notes plus <em>expérimentales</em>
         </Paragraph>
         <Paragraph>
-          Imagine ce blog comme une sorte de Jardin Numérique (ou{' '}
+          Imagine ce blog comme une sorte de <em>Jardin Numérique</em> (ou{' '}
           <ExternalLink to="https://joelhooks.com/digital-garden">
             Digital Garden.
           </ExternalLink>
           ). Je travaille chaque note à son rythme, donc, à l&apos;inverse
-          d&apos;un blog classique, le but n'est pas de respecter une
-          périodicité de publication (j&apos;ai essayé, ce n&apos;est clairement
-          pas pour moi). Le principe est d&apos;y aller à mon rythme, en suivant
-          le fil de mes réflexions du moment.
+          d&apos;un blog classique,{' '}
+          <em>le but n'est pas de respecter une périodicité de publication</em>.
+          Le principe est d&apos;y aller à mon rythme, en suivant le fil de mes
+          réflexions du moment.
         </Paragraph>
         <Paragraph>
           Tout comme dans un jardin, chaque note grandit, évolue ou reste au
@@ -55,9 +55,9 @@ const About = () => {
         <Title>Qui suis-je</Title>
         <Paragraph>
           Je m&apos;appelle <em>Aro</em>, je suis développeur Web Frontend en
-          React. Mais avant ça, j'étais Ingénieur en informatique industrielle
-          pendant 2 ans (je développais des logiciels desktop spécialisés dans
-          les systèmes de mesure et de contrôle en industrie)
+          <em>React</em>. Avant le Web, j'étais Ingénieur en informatique
+          industrielle pendant 2 ans dans le domaine des systèmes de mesure et
+          de contrôle.
         </Paragraph>
       </main>
     </Layout>

@@ -14,6 +14,7 @@ const Paragraph = styled.p`
     color: ${props => props.theme.color.primary};
     font-family: 'Caveat', cursive;
     font-size: 1.4rem;
+    padding: 0 0.5rem;
   }
 `
 

@@ -1,10 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export const List = styled.ul`
-  padding: 1.1rem;
+const CalloutContainer = styled.blockquote`
   background-color: ${props => props.theme.color.bgColorLight};
   border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
   em {
     color: ${props => props.theme.color.primary};
     font-family: 'Caveat', cursive;
@@ -12,20 +14,19 @@ export const List = styled.ul`
     padding: 0 0.25rem;
   }
 `
-const ListItemIcon = styled.span`
+const CalloutIcon = styled.span`
   padding-right: 1rem;
 `
-const ListItemContainer = styled.li`
-  padding: 0.5rem;
-`
 
-export const ListItem = ({ icon, iconLabel, children }) => (
-  <ListItemContainer>
+const Callout = ({ icon, iconLabel, children }) => (
+  <CalloutContainer>
     {icon ? (
-      <ListItemIcon role="img" aria-label={iconLabel}>
+      <CalloutIcon role="img" aria-label={iconLabel}>
         {icon}
-      </ListItemIcon>
+      </CalloutIcon>
     ) : null}
-    <span>{children}</span>
-  </ListItemContainer>
+    {children}
+  </CalloutContainer>
 )
+
+export default Callout

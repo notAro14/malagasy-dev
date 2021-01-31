@@ -7,7 +7,7 @@ import Title from '../components/title/title'
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
-  const allPosts = data.allMarkdownRemark.edges
+  const allPosts = data.allMdx.edges
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -27,7 +27,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           timeToRead

@@ -15,7 +15,7 @@ const Tags = ({ pageContext, data, location }) => {
     },
   } = data
   const { tag } = pageContext
-  const { edges, totalCount } = data.allMarkdownRemark
+  const { edges, totalCount } = data.allMdx
   const tagHeader = `${totalCount} note${totalCount === 1 ? '' : 's'} trouvée${
     totalCount === 1 ? '' : 's'
   }`
@@ -64,7 +64,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(
+    allMdx(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { tags: { in: [$tag] } } }

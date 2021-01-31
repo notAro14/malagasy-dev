@@ -7,4 +7,9 @@ const Title = styled.h2`
   padding: 1rem 0;
 `
 
+export const ArticleTitle = styled.h2`
+  font-weight: 900;
+  padding: 1rem 0;
+`
+
 export default Title
