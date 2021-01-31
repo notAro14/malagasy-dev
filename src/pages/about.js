@@ -20,7 +20,7 @@ const About = () => {
         </Paragraph>
         <Paragraph>
           Imagine ce blog comme une sorte de <em>Jardin Numérique</em> (ou{' '}
-          <ExternalLink to="https://joelhooks.com/digital-garden">
+          <ExternalLink href="https://joelhooks.com/digital-garden">
             Digital Garden.
           </ExternalLink>
           ). Je travaille chaque note à son rythme, donc, à l&apos;inverse

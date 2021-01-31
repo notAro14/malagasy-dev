@@ -12,10 +12,8 @@ featuredImage: cover.png
 growth: '🌿'
 ---
 
-<Paragraph>
-  Si tu t'intéresses au développement web côté frontend, tu t'apercevras vite
-  que l'écosystème est dominé par 3 frameworks/librairies:
-</Paragraph>
+Si tu t'intéresses au développement web côté frontend, tu t'apercevras vite
+que l'écosystème est dominé par 3 frameworks/librairies:
 
 <List>
   <ListItem>
@@ -32,23 +30,17 @@ growth: '🌿'
   </ListItem>
 </List>
 
-<Paragraph>
-  React et Vue sont aujourd'hui les plus populaires sur le marché, mais Angular
-  reste un choix tout à fait pertinent pour faire du frontend. Dans mon job et
-  mes projets perso, je suis particulièrement à fond sur React.
-</Paragraph>
+React et Vue sont aujourd'hui les plus populaires sur le marché, mais Angular
+reste un choix tout à fait pertinent pour faire du frontend. Dans mon job et
+mes projets perso, je suis particulièrement à fond sur React.
 
-<Paragraph>
-  Alors oui, cela fait plusieurs mois que je n'ai pas écrit ici, mais je me suis
-  dit pourquoi pas reprendre doucement avec un article présentant brièvement
-  React et comment débuter avec. D'autant plus que je compte écrire une longue
-  série d'articles sur ce framework et tout son écosystème.
-</Paragraph>
+Alors oui, cela fait plusieurs mois que je n'ai pas écrit ici, mais je me suis
+dit pourquoi pas reprendre doucement avec un article présentant brièvement
+React et comment débuter avec. D'autant plus que je compte écrire une longue
+série d'articles sur ce framework et tout son écosystème.
 
-<Paragraph>
-  Mais avant tout, pour bien profiter de cet article, je te conseille d'avoir
-  ces quelques pré-requis:
-</Paragraph>
+Mais avant tout, pour bien profiter de cet article, je te conseille d'avoir
+ces quelques pré-requis:
 
 <List>
   <ListItem icon="📌" iconLabel="pin">
@@ -65,30 +57,24 @@ growth: '🌿'
   </ListItem>
 </List>
 
-<Paragraph>Allez c'est parti.</Paragraph>
+Allez c'est parti.
 
-<ArticleTitle as="h2">Introduction</ArticleTitle>
+## Introduction
 
-<Paragraph>
-  Commençons avec un petit peu d'histoire. React a été développé et utilisé en
-  interne chez Facebook. La première version publique est sortie en 2013.
-  Aujourd'hui tout un écosystème s'est développé autour de la librairie.
-</Paragraph>
+Commençons avec un petit peu d'histoire. React a été développé et utilisé en
+interne chez Facebook. La première version publique est sortie en 2013.
+Aujourd'hui tout un écosystème s'est développé autour de la librairie.
 
-<Paragraph>
-  Pour React on parle bien de librairie et non vraiment de Framework car
-  beaucoup de choix techniques sont laissés à tes petits soins lors du
-  développement. Mais dans la pratique, la dénomination n'est pas très
-  importante, ce qui compte c'est de se faire comprendre.
-</Paragraph>
+Pour React on parle bien de librairie et non vraiment de Framework car
+beaucoup de choix techniques sont laissés à tes petits soins lors du
+développement. Mais dans la pratique, la dénomination n'est pas très
+importante, ce qui compte c'est de se faire comprendre.
 
-<ArticleTitle as="h2">Tester React</ArticleTitle>
+## Tester React
 
-<Paragraph>
-  Tu peux configurer très rapidement et très simplement un projet React sans
-  avoir à installer quoi que ce soit. Dans un simple fichier HTML, il faut
-  ajouter les scripts suivants:
-</Paragraph>
+Tu peux configurer très rapidement et très simplement un projet React sans
+avoir à installer quoi que ce soit. Dans un simple fichier HTML, il faut
+ajouter les scripts suivants:
 
 ```html
 <script
@@ -111,9 +97,7 @@ growth: '🌿'
   </Paragraph>
 </Callout>
 
-<Paragraph>
-  Importons ces scripts dans un fichier appelé <em>index.html</em>
-</Paragraph>
+Importons ces scripts dans un fichier appelé <em>index.html</em>
 
 ```html
 <!-- index.html -->
@@ -141,18 +125,14 @@ growth: '🌿'
 </html>
 ```
 
-<ArticleTitle as="h3">Créer un élément avec React.createElement</ArticleTitle>
+### Créer un élément avec React.createElement
 
-<Paragraph>
-  Comme tu l'as peut-être remarqué, j'ai ajouté un div avec un id <em>root</em>{' '}
-  et un autre script <em>App.js</em>. Notre application sera mis dans le div qui
-  nous sert de conteneur et <em>App.js</em> contiendra le code de notre
-  application React.
-</Paragraph>
+Comme tu l'as peut-être remarqué, j'ai ajouté un div avec un id <em>root</em>
+et un autre script <em>App.js</em>. Notre application sera mis dans le div qui
+nous sert de conteneur et <em>App.js</em> contiendra le code de notre
+application React.
 
-<Paragraph>
-  On peut maintenant écrire dans <em>App.js</em> le script suivant
-</Paragraph>
+On peut maintenant écrire dans <em>App.js</em> le script suivant
 
 ```javascript
 // App.js
@@ -162,7 +142,7 @@ const divElement = React.createElement('div', { children: 'Hello World' })
 ReactDOM.render(divElement, root)
 ```
 
-<Paragraph>Les deux choses les plus importantes ici sont</Paragraph>
+Les deux choses les plus importantes ici sont
 
 <List>
   <ListItem icon="📌" iconLabel="pin">
@@ -174,11 +154,9 @@ ReactDOM.render(divElement, root)
   </ListItem>
 </List>
 
-<Paragraph>
-  Ce n'est pas la manière standard d'écrire du react. Aujourd'hui, on utilise
-  plutôt du JSX pour créer les composants. C'est un langage similaire au XML
-  mais pour le Javascript. En JSX, notre exemple ressemblerait à ceci
-</Paragraph>
+Ce n'est pas la manière standard d'écrire du react. Aujourd'hui, on utilise
+plutôt du JSX pour créer les composants. C'est un langage similaire au XML
+mais pour le Javascript. En JSX, notre exemple ressemblerait à ceci
 
 ```jsx
 // App.js
@@ -188,12 +166,10 @@ const divElement = <div>Hello World</div>
 ReactDOM.render(divElement, root)
 ```
 
-<ArticleTitle as="h3">JSX</ArticleTitle>
+### JSX
 
-<Paragraph>
-  Le JSX nous permet de créer des composants react de manière déclarative. Par
-  exemple, pour créer un Button personnalisé
-</Paragraph>
+Le JSX nous permet de créer des composants react de manière déclarative. Par
+exemple, pour créer un Button personnalisé
 
 ```jsx
 // App.js
@@ -216,12 +192,10 @@ ReactDOM.render(buttonElement, root)
   </Paragraph>
 </Callout>
 
-<Paragraph>
-  Mais le navigateur ne comprend (malheureusement) pas le JSX. Notre script doit
-  être transformé (ou transpilé) pour être compréhensible par le runtime du
-  navigateur. Pour cela, on utilise un outil qui s'appelle <em>Babel</em>, il
-  suffit aussi d'importer un autre script pour l'utiliser.
-</Paragraph>
+Mais le navigateur ne comprend (malheureusement) pas le JSX. Notre script doit
+être transformé (ou transpilé) pour être compréhensible par le runtime du
+navigateur. Pour cela, on utilise un outil qui s'appelle <em>Babel</em>, il
+suffit aussi d'importer un autre script pour l'utiliser.
 
 ```html
 <!-- index.html -->
@@ -281,16 +255,14 @@ ReactDOM.render(<App />, root)
   transformation.
 </Paragraph>
 
-<ArticleTitle as="h2">Installation</ArticleTitle>
+## Installation
 
-<Paragraph>
-  Comme tu l'as vu, il suffit de 3 scripts (React, ReactDOM et Babel) à ajouter
-  à ton HTML pour s'essayer à React. Mais cette méthode n'est pas faite pour la
-  production. En pratique on va plutôt passer par une installation via npm de
-  tous les paquets dont on aura besoin pour configurer notre projet React.
-</Paragraph>
+Comme tu l'as vu, il suffit de 3 scripts (React, ReactDOM et Babel) à ajouter
+à ton HTML pour s'essayer à React. Mais cette méthode n'est pas faite pour la
+production. En pratique on va plutôt passer par une installation via npm de
+tous les paquets dont on aura besoin pour configurer notre projet React.
 
-<ArticleTitle>Create-react-app (CRA)</ArticleTitle>
+## Create-react-app (CRA)
 
 <Paragraph>
   Il existe plusieurs moyens de configurer un projet React mais le plus facile
@@ -303,22 +275,20 @@ ReactDOM.render(<App />, root)
   <em>npm</em> ou <em>yarn</em>
 </Paragraph>
 
-<Paragraph>Puis dans un terminal dans le dossier de ton choix:</Paragraph>
+Puis dans un terminal dans le dossier de ton choix:
 
 ```bash
 npx create-react-app mon-application
 ```
 
-<Paragraph>
-  Un dossier <em>mon-application</em> se crée alors, tu peux y naviguer dedans
-  avec:
-</Paragraph>
+Un dossier <em>mon-application</em> se crée alors, tu peux y naviguer dedans
+avec:
 
 ```bash
 cd mon-application
 ```
 
-<Paragraph>Ensuite pour lancer l'application:</Paragraph>
+Ensuite pour lancer l'application:
 
 ```bash
 yarn start
@@ -330,24 +300,23 @@ npm start
 
 ![Premier écran de create-react-app](react.png 'Premier écran de create-react-app')
 
-<Paragraph>
-  Par défaut, CRA va utiliser yarn comme gestionnaire de paquets s'il est
-  installé sur ta machine. Sinon tu peux explicitement indiqué npm à la création
-  du projet:
-</Paragraph>
+Par défaut, CRA va utiliser yarn comme gestionnaire de paquets s'il est
+installé sur ta machine. Sinon tu peux explicitement indiqué npm à la création
+du projet:
 
 ```bash
 npx create-react-app mon-application --use-npm
 ```
 
-<Paragraph>Le dossier créé par CRA se présente comme ci-dessous</Paragraph>
+Le dossier créé par CRA se présente comme ci-dessous
 
 ![Les fichiers créés par CRA](cra-files.png 'Les fichiers créés par CRA')
 
-<Paragraph>
-  Pour l'instant, tu peux effacer tous les fichiers présents dans le dossier
-  <em>src</em> et créer un nouveau fichier <em>index.js</em> contenant le code suivant:
-</Paragraph>
+Pour l'instant, tu peux effacer tous les fichiers présents dans le dossier
+
+{' '}
+
+<em>src</em> et créer un nouveau fichier <em>index.js</em> contenant le code suivant:
 
 ```jsx
 // src/index.js
@@ -367,27 +336,21 @@ const root = document.getElementById('root')
 ReactDOM.render(<App />, root)
 ```
 
-<Paragraph>
-  Puis avec <em>yarn start</em> ou <em>npm start</em> (si l'application n'est
-  pas encore lancée) tu obtiens l'écran suivant:
-</Paragraph>
+Puis avec <em>yarn start</em> ou <em>npm start</em> (si l'application n'est
+pas encore lancée) tu obtiens l'écran suivant:
 
 ![Ecran Hello World](hello-world.png 'Ecran Hello World')
 
-<ArticleTitle as="h2"> Composition d'un projet React</ArticleTitle>
+## Composition d'un projet React
 
-<Paragraph>
-  Comme tu peux le voir dans _src/index.js_, on retrouve des termes familiers.
-  La différence ici avec notre exemple plus haut dans cet article, est qu'on
-  importe React et ReactDOM directement (adieu les imports de scripts depuis un
-  CDN). Le fichier <em>src/index.js</em> sera le point d'entrée de notre
-  application et c'est lui qui est <em>injecté dans le fichier HTML</em>
-</Paragraph>
+Comme tu peux le voir dans _src/index.js_, on retrouve des termes familiers.
+La différence ici avec notre exemple plus haut dans cet article, est qu'on
+importe React et ReactDOM directement (adieu les imports de scripts depuis un
+CDN). Le fichier <em>src/index.js</em> sera le point d'entrée de notre
+application et c'est lui qui est <em>injecté dans le fichier HTML</em>
 
-<Paragraph>
-  D'ailleurs en parlant de fichier HTML, tu te demandes sûrement il est où ce
-  fichier. Et bien il se trouve sous <em>./public/index.html</em>
-</Paragraph>
+D'ailleurs en parlant de fichier HTML, tu te demandes sûrement il est où ce
+fichier. Et bien il se trouve sous <em>./public/index.html</em>
 
 ```html
 <!-- public/index.html -->
@@ -437,13 +400,11 @@ ReactDOM.render(<App />, root)
 </html>
 ```
 
-<ArticleTitle as="h2">Exemple avec un simple compteur</ArticleTitle>
+## Exemple avec un simple compteur
 
-<Paragraph>
-  Maintenant que notre projet est installé et configuré, créons une petite
-  application basique de compteur. Notre application aura cette structure de
-  fichier:
-</Paragraph>
+Maintenant que notre projet est installé et configuré, créons une petite
+application basique de compteur. Notre application aura cette structure de
+fichier:
 
 ```text
 src
@@ -454,9 +415,7 @@ src
   |- Counter.js
 ```
 
-<Paragraph>
-  On importe notre application et le style dans <em>index.js</em>
-</Paragraph>
+On importe notre application et le style dans <em>index.js</em>
 
 ```jsx
 // src/index.js
@@ -499,10 +458,11 @@ html {
 }
 ```
 
-<Paragraph>
-  Puis dans <em>./src/components/App.js</em>, on importe notre composant
-  <em>Counter</em>
-</Paragraph>
+Puis dans <em>./src/components/App.js</em>, on importe notre composant
+
+{' '}
+
+<em>Counter</em>
 
 ```jsx
 // src/components/App.js
@@ -520,10 +480,8 @@ export default function App() {
 }
 ```
 
-<Paragraph>
-  Notre compteur est dans le fichier <em>src/components/Counter.js</em>,
-  commençons simplement avec ce code:
-</Paragraph>
+Notre compteur est dans le fichier <em>src/components/Counter.js</em>,
+commençons simplement avec ce code:
 
 ```jsx
 // src/components/Counter.js
@@ -543,32 +501,20 @@ export default function Counter() {
 
 ![Compteur](counter.png 'Compteur')
 
-<Paragraph>
-  Pour l'instant ce code ne fait rien de spécial à part afficher le compteur,
-  mais il n'est pas encore fonctionnel. Pour que le compteur marche, il nous
-  faut:
-</Paragraph>
+Pour l'instant ce code ne fait rien de spécial à part afficher le compteur,
+mais il n'est pas encore fonctionnel. Pour que le compteur marche, il nous
+faut:
 
-<List>
-  <ListItem icon="📌" iconLabel="pin">
-    stocker la valeur du compteur
-  </ListItem>
-  <ListItem icon="📌" iconLabel="pin">
-    une fonction <em>increment()</em> pour incrémenter cette valeur
-  </ListItem>
-  <ListItem icon="📌" iconLabel="pin">
-    une fonction <em>decrement()</em> pour la décrementer
-  </ListItem>
-</List>
+- stocker la valeur du compteur
+- une fonction <em>increment()</em> pour incrémenter cette valeur
+- une fonction <em>decrement()</em> pour la décrementer
 
-<ArticleTitle>React.useState</ArticleTitle>
+## React.useState
 
-<Paragraph>
-  Dans React, on peut utiliser la fonction _useState_ pour stocker des valeurs
-  et les changer. _useState_ fait partie des fonctions internes à React qu'on
-  appelle <em>hook</em>, il existe notamment différents <em>hooks</em> avec
-  chacun leur rôle. Le hook useState s'utilise de la manière suivante:
-</Paragraph>
+Dans React, on peut utiliser la fonction _useState_ pour stocker des valeurs
+et les changer. _useState_ fait partie des fonctions internes à React qu'on
+appelle <em>hook</em>, il existe notamment différents <em>hooks</em> avec
+chacun leur rôle. Le hook useState s'utilise de la manière suivante:
 
 ```jsx
 const initialValue = 0
@@ -577,17 +523,10 @@ const value = React.useState(initialValue)
 const [count, setCount] = value
 ```
 
-<Callout icon="💡" iconLabel="bulb">
-  <Paragraph>
-    <em>value</em> est un tableau contenant notre valeur et la fonction qui nous
-    servira à modifier cette valeur.
-  </Paragraph>
-</Callout>
+> _value_ est un tableau contenant notre valeur et la fonction qui nous servira à modifier cette valeur.
 
-<Paragraph>
-  Grâce à ce hook on peut maintenant écrire nos fonctions _increment_ et
-  _decrement_
-</Paragraph>
+Grâce à ce hook on peut maintenant écrire nos fonctions _increment_ et
+_decrement_
 
 ```jsx
 const initialValue = 0
@@ -599,10 +538,11 @@ const increment = () => setCount(count + 1)
 const decrement = () => setCount(count - 1)
 ```
 
-<Paragraph>
-  Ces fonctions peuvent maintenant être attachés aux boutons <em>+</em> et{' '}
-  <em>-</em> grâce à l'attribut <em>onClick</em> du composant <em>button</em>.
-</Paragraph>
+Ces fonctions peuvent maintenant être attachés aux boutons <em>+</em> et{' '}
+
+{' '}
+
+<em>-</em> grâce à l'attribut <em>onClick</em> du composant <em>button</em>.
 
 <Callout>
   En <em>JSX</em>, on retrouve la majorité des attributs en HTML mais nommés en{' '}
@@ -632,10 +572,8 @@ export default function Counter() {
 }
 ```
 
-<Paragraph>
-  Enfin pour utiliser la valeur de notre compteur et l'afficher à l'écran on
-  l'indique dans notre JSX entre accolades.
-</Paragraph>
+Enfin pour utiliser la valeur de notre compteur et l'afficher à l'écran on
+l'indique dans notre JSX entre accolades.
 
 <iframe
   height="400"
@@ -653,10 +591,8 @@ export default function Counter() {
   <a href="https://codepen.io">CodePen</a>.
 </iframe>
 
-<ArticleTitle as="h2">Conclusion</ArticleTitle>
+## Conclusion
 
-<Paragraph>
-  Voilà, tu sais maintenant comment débuter rapidement avec React. Je te
-  conseille d'approfondir plus avec la doc officielle car je n'ai fait que
-  survoler les notions dans les grandes lignes. Je te dis à la prochaine.
-</Paragraph>
+Voilà, tu sais maintenant comment débuter rapidement avec React. Je te
+conseille d'approfondir plus avec la doc officielle car je n'ai fait que
+survoler les notions dans les grandes lignes. Je te dis à la prochaine.

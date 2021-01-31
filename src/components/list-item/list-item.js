@@ -26,6 +26,6 @@ export const ListItem = ({ icon, iconLabel, children }) => (
         {icon}
       </ListItemIcon>
     ) : null}
-    <span>{children}</span>
+    {children}
   </ListItemContainer>
 )

@@ -10,20 +10,23 @@ import { Container, Main } from './layout.styles'
 import GlobalStyles from '../../GlobalStyles'
 import theme from '../../Theme'
 
-import Title, { ArticleTitle } from '../title/title'
+import Title, { Heading } from '../title/title'
 import Paragraph from '../paragraph/paragraph'
 import ExternalLink from '../externalLink/externalLink'
 import { List, ListItem } from '../list-item/list-item'
 import Callout from '../callout/callout'
 
-const shortcodes = {
-  ArticleTitle,
-  Callout,
-  ExternalLink,
-  Paragraph,
-  List,
-  ListItem,
-  Title,
+const components = {
+  a: ExternalLink,
+  blockquote: props => <Callout icon="💡" iconLabel="bulb" {...props} />,
+  h2: Heading,
+  h3: props => <Heading as="h3" {...props} />,
+  h4: props => <Heading as="h4" {...props} />,
+  h5: props => <Heading as="h5" {...props} />,
+  h6: props => <Heading as="h6" {...props} />,
+  ul: List,
+  li: props => <ListItem icon="📌" iconLabel="pin" {...props} />,
+  p: Paragraph,
 }
 
 const Layout = ({ children }) => {
@@ -33,7 +36,7 @@ const Layout = ({ children }) => {
       <Container>
         <Header />
         <Bio />
-        <MDXProvider components={shortcodes}>
+        <MDXProvider components={components}>
           <Main>{children}</Main>
         </MDXProvider>
         <Footer />

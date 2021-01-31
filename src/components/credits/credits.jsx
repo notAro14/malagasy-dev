@@ -6,7 +6,7 @@ import './credits.scss'
 const Credits = ({ userName, userUrl }) => {
   return (
     <Paragraph as="span">
-      Photo de <ExternalLink to={userUrl}>{userName}</ExternalLink>
+      Photo de <ExternalLink href={userUrl}>{userName}</ExternalLink>
     </Paragraph>
   )
 }

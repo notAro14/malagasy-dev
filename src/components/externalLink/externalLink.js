@@ -5,8 +5,8 @@ const ExternalLinkContainer = styled.a`
   color: ${props => props.theme.color.secondary};
 `
 
-const ExternalLink = ({ children, to }) => (
-  <ExternalLinkContainer href={to} target="_blank" rel="noopener noreferrer">
+const ExternalLink = ({ children, href }) => (
+  <ExternalLinkContainer href={href} target="_blank" rel="noopener noreferrer">
     {children}
   </ExternalLinkContainer>
 )
