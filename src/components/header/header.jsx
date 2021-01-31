@@ -1,20 +1,23 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import {
+  Link,
+  Logo,
+  NavbarContainer,
+  NavigationLink,
+  NavigationLinks,
+} from './header.style'
 
 export default function Header() {
   return (
-    <nav className="navbar">
-      <Link to="/">
-        <h1 id="logo-title">Malagasy Dev</h1>
-      </Link>
-      <ul>
-        <li>
-          <Link to="/tags">Catégories</Link>
-        </li>
-        <li>
+    <NavbarContainer>
+      <Logo>
+        <Link to="/">Malagasy Dev</Link>
+      </Logo>
+      <NavigationLinks>
+        <NavigationLink>
           <Link to="/about">A propos</Link>
-        </li>
-      </ul>
-    </nav>
+        </NavigationLink>
+      </NavigationLinks>
+    </NavbarContainer>
   )
 }

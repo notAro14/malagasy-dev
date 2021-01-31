@@ -2,11 +2,11 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Img from 'gatsby-image'
-import { Link as GatsbyLink } from 'gatsby'
-import Link from '@material-ui/core/Link'
 
 import Layout from '../components/layout/layout'
 import SEO from '../components/seo/seo'
+import Title from '../components/title/title'
+import Paragraph from '../components/paragraph/paragraph'
 
 const NotFoundPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -14,14 +14,8 @@ const NotFoundPage = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="404: Not Found" />
-      <h1>Oops</h1>
-      <p>
-        La page que tu recherches n'existe pas. Tu peux retrouver la liste de
-        tous les articles{' '}
-        <Link component={GatsbyLink} to="/" color="primary">
-          ici.
-        </Link>
-      </p>
+      <Title>Oops</Title>
+      <Paragraph>La page que tu recherches n'existe pas.</Paragraph>
       <Img fluid={data.file.childImageSharp.fluid} alt="not found page" />
     </Layout>
   )

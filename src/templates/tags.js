@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link, graphql } from 'gatsby'
+
+import Title from '../components/title/title'
+import Paragraph from '../components/paragraph/paragraph'
 import Layout from '../components/layout/layout'
 import SEO from '../components/seo/seo'
 import ArticlePreview from '../components/article-preview/article-preview'
-
-// Components
-import { Link, graphql } from 'gatsby'
 
 const Tags = ({ pageContext, data, location }) => {
   const {
@@ -14,7 +15,7 @@ const Tags = ({ pageContext, data, location }) => {
     },
   } = data
   const { tag } = pageContext
-  const { edges, totalCount } = data.allMarkdownRemark
+  const { edges, totalCount } = data.allMdx
   const tagHeader = `${totalCount} note${totalCount === 1 ? '' : 's'} trouvée${
     totalCount === 1 ? '' : 's'
   }`
@@ -22,13 +23,11 @@ const Tags = ({ pageContext, data, location }) => {
   return (
     <Layout location={location} title={title}>
       <SEO title={tag.replace(/^\w/, c => c.toUpperCase())} />
-      <h2>{tag.replace(/^\w/, c => c.toUpperCase())}</h2>
-      <p>{tagHeader}</p>
+      <Title>{tag.replace(/^\w/, c => c.toUpperCase())}</Title>
+      <Paragraph>{tagHeader}</Paragraph>
       {edges.map(({ node }) => {
         return <ArticlePreview key={node.fields.slug} node={node} />
       })}
-
-      <Link to="/tags">Voir toutes les catégories</Link>
     </Layout>
   )
 }
@@ -65,7 +64,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(
+    allMdx(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { tags: { in: [$tag] } } }

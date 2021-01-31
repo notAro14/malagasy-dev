@@ -1,126 +1,67 @@
 import React from 'react'
-import { useStaticQuery, graphql, Link } from 'gatsby'
+import { Link } from 'gatsby'
 import Image from 'gatsby-image'
-import './bio.scss'
+
+import useBioQuery from './bio.query'
+import { BioContainer, BioContent, BioContentText, Socials } from './bio.styles'
 
 const Bio = () => {
-  const data = useStaticQuery(graphql`
-    query BioQuery {
-      avatar: file(absolutePath: { regex: "/avatar.png/" }) {
-        childImageSharp {
-          fixed(width: 80, height: 80) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      github: file(absolutePath: { regex: "/icons8-github-48.png/" }) {
-        childImageSharp {
-          fixed(width: 35) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      linkedin: file(absolutePath: { regex: "/icons8-linkedin-48.png/" }) {
-        childImageSharp {
-          fixed(width: 35) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      twitter: file(absolutePath: { regex: "/icons8-twitter-48.png/" }) {
-        childImageSharp {
-          fixed(width: 35) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      rss: file(absolutePath: { regex: "/icons8-rss-48.png/" }) {
-        childImageSharp {
-          fixed(width: 35) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      site {
-        siteMetadata {
-          author {
-            summary
-          }
-          social {
-            twitter
-            github
-            linkedin
-          }
-        }
-      }
-    }
-  `)
+  const data = useBioQuery()
 
   const {
     social: { twitter, github, linkedin },
   } = data.site.siteMetadata
+
+  const socials = [
+    {
+      id: github,
+      href: `https://github.com/${github}`,
+      logo: data.github.childImageSharp.fixed,
+    },
+    {
+      id: linkedin,
+      href: `https://www.linkedin.com/in/${linkedin}/`,
+      logo: data.linkedin.childImageSharp.fixed,
+    },
+    {
+      id: twitter,
+      href: `https://twitter.com/${twitter}`,
+      logo: data.twitter.childImageSharp.fixed,
+    },
+    {
+      id: 'RSS',
+      href: null,
+      to: '/rss.xml',
+      logo: data.rss.childImageSharp.fixed,
+    },
+  ]
   return (
-    <div className="bio">
-      <div className="content">
+    <BioContainer>
+      <BioContent>
         <Image
           fixed={data.avatar.childImageSharp.fixed}
           alt="Zombie Nietzschee"
           title="Zombie Nietzsche"
         />
-        <span className="text">Suis-moi sur les réseaux</span>
-      </div>
+        <BioContentText>Suis-moi sur les réseaux</BioContentText>
+      </BioContent>
 
-      <ul className="socials">
-        <li className="social">
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href={`https://github.com/${github}`}
-          >
-            <Image
-              fixed={data.github.childImageSharp.fixed}
-              title="Github"
-              alt="Github"
-            />
-          </a>
-        </li>
-        <li className="social">
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href={`https://www.linkedin.com/in/${linkedin}/`}
-          >
-            <Image
-              fixed={data.linkedin.childImageSharp.fixed}
-              title="LinkedIn"
-              alt="LinkedIn"
-            />
-          </a>
-        </li>
-        <li className="social">
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href={`https://twitter.com/${twitter}`}
-          >
-            <Image
-              fixed={data.twitter.childImageSharp.fixed}
-              title="Twitter"
-              alt="Twitter"
-            />
-          </a>
-        </li>
-        <li className="social">
-          <Link to="/rss.xml">
-            <Image
-              fixed={data.rss.childImageSharp.fixed}
-              title="RSS"
-              alt="RSS"
-            />
-          </Link>
-        </li>
-      </ul>
-    </div>
+      <Socials>
+        {socials.map(({ id, href, logo, to }) => (
+          <li key={id}>
+            {href ? (
+              <a href={href} target="_blank" rel="noopener noreferrer">
+                <Image fixed={logo} title={id} alt={id} />
+              </a>
+            ) : (
+              <Link to={to}>
+                <Image fixed={logo} title={id} alt={id} />
+              </Link>
+            )}
+          </li>
+        ))}
+      </Socials>
+    </BioContainer>
   )
 }
 

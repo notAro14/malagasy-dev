@@ -1,17 +1,17 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import styles from './article-preview.module.scss'
+
+import { Article, Link } from './article-preview.styles'
 
 const ArticlePreview = ({ node }) => {
   const title = node.frontmatter.title || node.fields.slug
   const { growth } = node.frontmatter
   return (
-    <article className={styles.article}>
+    <Article>
       <span role="img" aria-label="plant growth">
         {growth}
-      </span>{' '}
+      </span>
       <Link to={node.fields.slug}>{title}</Link>
-    </article>
+    </Article>
   )
 }
 
