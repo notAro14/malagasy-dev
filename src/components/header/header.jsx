@@ -10,9 +10,7 @@ import {
 export default function Header() {
   return (
     <NavbarContainer>
-      <Logo>
-        <Link to="/">Malagasy Dev</Link>
-      </Logo>
+      <Logo to="/">Malagasy Dev</Logo>
       <NavigationLinks>
         <NavigationLink>
           <Link to="/about">A propos</Link>

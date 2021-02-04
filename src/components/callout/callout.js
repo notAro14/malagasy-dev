@@ -7,7 +7,8 @@ const CalloutContainer = styled.blockquote`
   display: flex;
   align-items: center;
   padding: 1rem;
-  em {
+  em,
+  strong {
     color: ${props => props.theme.color.primary};
     font-family: 'Caveat', cursive;
     font-size: 1.1rem;

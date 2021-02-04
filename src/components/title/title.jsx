@@ -1,15 +1,13 @@
 import styled from 'styled-components'
 
-const Title = styled.h2`
-  border-bottom: 1px solid;
-  color: ${props => props.theme.color.primary};
-  font-weight: 400;
-  padding: 1rem 0;
-`
-
-export const Heading = styled.h2`
+export const Heading = styled.h1`
+  font-size: ${({ theme: { font }, as }) => font[as]};
   font-weight: 900;
-  padding: 1rem 0;
+  padding: 1rem 0 0.5rem 0;
+`
+const Title = styled(Heading)`
+  color: ${props => props.theme.color.primary};
+  font-size: ${({ theme: { font } }) => font.h1};
 `
 
 export default Title

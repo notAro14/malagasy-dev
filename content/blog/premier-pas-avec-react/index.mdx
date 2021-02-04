@@ -15,20 +15,9 @@ growth: '🌿'
 Si tu t'intéresses au développement web côté frontend, tu t'apercevras vite
 que l'écosystème est dominé par 3 frameworks/librairies:
 
-<List>
-  <ListItem>
-    <ExternalLink to="https://reactjs.org/">React</ExternalLink> développé par
-    Facebook
-  </ListItem>
-  <ListItem>
-    <ExternalLink to="https://vuejs.org/">Vue</ExternalLink> développé par un
-    dev indé du nom de Evan You
-  </ListItem>
-  <ListItem>
-    <ExternalLink to="https://angular.io/">Angular</ExternalLink> développé par
-    Google
-  </ListItem>
-</List>
+- [React](https://reactjs.org/) (Facebook)
+- [Vue](https://vuejs.org/) (Evan You)
+- [Angular](https://angular.io/) (Google)
 
 React et Vue sont aujourd'hui les plus populaires sur le marché, mais Angular
 reste un choix tout à fait pertinent pour faire du frontend. Dans mon job et
@@ -42,20 +31,9 @@ série d'articles sur ce framework et tout son écosystème.
 Mais avant tout, pour bien profiter de cet article, je te conseille d'avoir
 ces quelques pré-requis:
 
-<List>
-  <ListItem icon="📌" iconLabel="pin">
-    connaître les bases de <em>HTML/CSS</em>
-  </ListItem>
-  <ListItem icon="📌" iconLabel="pin">
-    connaître les bases de <em>Javascript</em> spécialement la version{' '}
-    <em>ES6</em>
-  </ListItem>
-  <ListItem icon="📌" iconLabel="pin">
-    savoir utiliser un outil de gestion de paquets{' '}
-    <ExternalLink to="https://www.npmjs.com/">npm</ExternalLink> ou{' '}
-    <ExternalLink to="https://yarnpkg.com/">yarn</ExternalLink>
-  </ListItem>
-</List>
+- connaître les bases de _HTML/CSS_
+- connaître les bases de _Javascript_ spécialement la version _ES6_
+- savoir utiliser un outil de gestion de paquets [npm](https://www.npmjs.com/)" ou [yarn](https://yarnpkg.com/)
 
 Allez c'est parti.
 
@@ -87,17 +65,9 @@ ajouter les scripts suivants:
 ></script>
 ```
 
-<Callout icon="💡" iconLabel="bulb">
-  <Paragraph>
-    On importe deux scripts, un pour <em>React</em> et un autre pour{' '}
-    <em>ReactDOM</em>, car React peut aussi être utilisé pour le développement
-    mobile avec{' '}
-    <ExternalLink to="https://reactnative.dev/">React Native</ExternalLink>.
-    ReactDom étant pour le web.
-  </Paragraph>
-</Callout>
+> On importe deux scripts, un pour _React_ et un autre pour _ReactDOM_, car React peut aussi être utilisé pour le développement mobile avec [React Native](https://reactnative.dev/). ReactDom étant pour le web.
 
-Importons ces scripts dans un fichier appelé <em>index.html</em>
+Importons ces scripts dans un fichier appelé _index.html_
 
 ```html
 <!-- index.html -->
@@ -127,12 +97,12 @@ Importons ces scripts dans un fichier appelé <em>index.html</em>
 
 ### Créer un élément avec React.createElement
 
-Comme tu l'as peut-être remarqué, j'ai ajouté un div avec un id <em>root</em>
-et un autre script <em>App.js</em>. Notre application sera mis dans le div qui
-nous sert de conteneur et <em>App.js</em> contiendra le code de notre
+Comme tu l'as peut-être remarqué, j'ai ajouté un div avec un id _root_
+et un autre script _App.js_ Notre application sera mis dans le div qui
+nous sert de conteneur et _App.js_ contiendra le code de notre
 application React.
 
-On peut maintenant écrire dans <em>App.js</em> le script suivant
+On peut maintenant écrire dans _App.js_ le script suivant
 
 ```javascript
 // App.js
@@ -144,15 +114,9 @@ ReactDOM.render(divElement, root)
 
 Les deux choses les plus importantes ici sont
 
-<List>
-  <ListItem icon="📌" iconLabel="pin">
-    <em>React.createElement</em> permet de créer un composant react. Dans
-    l'exemple, on crée un div qui contient le texte _Hello World_
-  </ListItem>
-  <ListItem icon="📌" iconLabel="pin">
-    <em>ReactDOM.render</em> fait le rendu du composant react sur le DOM
-  </ListItem>
-</List>
+- _React.createElement_ permet de créer un composant react. Dans
+  l'exemple, on crée un div qui contient le texte _Hello World_
+- _ReactDOM.render_ fait le rendu du composant react sur le DOM
 
 Ce n'est pas la manière standard d'écrire du react. Aujourd'hui, on utilise
 plutôt du JSX pour créer les composants. C'est un langage similaire au XML
@@ -184,17 +148,11 @@ const buttonElement = <Button />
 ReactDOM.render(buttonElement, root)
 ```
 
-<Callout>
-  <Paragraph>
-    Le nom des composants react (c'est-à-dire les composants personnalisés que
-    l'on crée) doivent commencer par un majuscule pour que React puisse faire la
-    différence entre notre composant et un composant natif HTML
-  </Paragraph>
-</Callout>
+> Le nom des composants react (c'est-à-dire les composants personnalisés que l'on crée) doivent commencer par un majuscule pour que React puisse faire ladifférence entre notre composant et un composant natif HTML
 
 Mais le navigateur ne comprend (malheureusement) pas le JSX. Notre script doit
 être transformé (ou transpilé) pour être compréhensible par le runtime du
-navigateur. Pour cela, on utilise un outil qui s'appelle <em>Babel</em>, il
+navigateur. Pour cela, on utilise un outil qui s'appelle _Babel_, il
 suffit aussi d'importer un autre script pour l'utiliser.
 
 ```html
@@ -246,14 +204,7 @@ function App() {
 ReactDOM.render(<App />, root)
 ```
 
-<Paragraph>
-  Le JSX est transformé en React.createElement et d'ailleurs tu peux utiliser ce{' '}
-  <ExternalLink to="https://babeljs.io/repl#?browsers=defaults%2C%20not%20ie%2011%2C%20not%20ie_mob%2011&build=&builtIns=false&spec=false&loose=false&code_lz=Q&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=env%2Creact%2Cstage-2&prettier=false&targets=&version=7.12.9&externalPlugins=">
-    site
-  </ExternalLink>{' '}
-  si tu veux voir en quoi exactement ton code JSX ressemble après la
-  transformation.
-</Paragraph>
+> Le JSX est transformé en React.createElement et d'ailleurs tu peux utiliser ce [site](https://babeljs.io/repl#?browsers=defaults%2C%20not%20ie%2011%2C%20not%20ie_mob%2011&build=&builtIns=false&spec=false&loose=false&code_lz=Q&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=env%2Creact%2Cstage-2&prettier=false&targets=&version=7.12.9&externalPlugins=) si tu veux voir en quoi exactement ton code JSX ressemble après la transformation.
 
 ## Installation
 
@@ -264,16 +215,10 @@ tous les paquets dont on aura besoin pour configurer notre projet React.
 
 ## Create-react-app (CRA)
 
-<Paragraph>
-  Il existe plusieurs moyens de configurer un projet React mais le plus facile
-  est d'utiliser un outil qui s'appelle{' '}
-  <ExternalLink to="https://create-react-app.dev/">
-    create-react-app
-  </ExternalLink>{' '}
-  (<em>CRA</em> est aussi développé par Facebook). Pour utiliser <em>CRA</em>,
-  il faut au préalable que <em>node</em> >= 10 soit installé ainsi que{' '}
-  <em>npm</em> ou <em>yarn</em>
-</Paragraph>
+Il existe plusieurs moyens de configurer un projet React mais le plus facile
+est d'utiliser un outil qui s'appelle [create-react-app](https://create-react-app.dev/)
+(_CRA_ est aussi développé par Facebook). Pour utiliser _CRA_,
+il faut au préalable que _node_ >= 10 soit installé ainsi que _npm_ ou _yarn_
 
 Puis dans un terminal dans le dossier de ton choix:
 
@@ -281,7 +226,7 @@ Puis dans un terminal dans le dossier de ton choix:
 npx create-react-app mon-application
 ```
 
-Un dossier <em>mon-application</em> se crée alors, tu peux y naviguer dedans
+Un dossier _mon-application_ se crée alors, tu peux y naviguer dedans
 avec:
 
 ```bash
@@ -312,11 +257,7 @@ Le dossier créé par CRA se présente comme ci-dessous
 
 ![Les fichiers créés par CRA](cra-files.png 'Les fichiers créés par CRA')
 
-Pour l'instant, tu peux effacer tous les fichiers présents dans le dossier
-
-{' '}
-
-<em>src</em> et créer un nouveau fichier <em>index.js</em> contenant le code suivant:
+Pour l'instant, tu peux effacer tous les fichiers présents dans le dossier _src_ et créer un nouveau fichier _index.js_ contenant le code suivant:
 
 ```jsx
 // src/index.js
@@ -336,7 +277,7 @@ const root = document.getElementById('root')
 ReactDOM.render(<App />, root)
 ```
 
-Puis avec <em>yarn start</em> ou <em>npm start</em> (si l'application n'est
+Puis avec _yarn start_ ou _npm start_ (si l'application n'est
 pas encore lancée) tu obtiens l'écran suivant:
 
 ![Ecran Hello World](hello-world.png 'Ecran Hello World')
@@ -346,11 +287,11 @@ pas encore lancée) tu obtiens l'écran suivant:
 Comme tu peux le voir dans _src/index.js_, on retrouve des termes familiers.
 La différence ici avec notre exemple plus haut dans cet article, est qu'on
 importe React et ReactDOM directement (adieu les imports de scripts depuis un
-CDN). Le fichier <em>src/index.js</em> sera le point d'entrée de notre
-application et c'est lui qui est <em>injecté dans le fichier HTML</em>
+CDN). Le fichier _src/index.js_ sera le point d'entrée de notre
+application et c'est lui qui est _injecté_ dans le fichier HTML\*
 
 D'ailleurs en parlant de fichier HTML, tu te demandes sûrement il est où ce
-fichier. Et bien il se trouve sous <em>./public/index.html</em>
+fichier. Et bien il se trouve sous _./public/index.html_
 
 ```html
 <!-- public/index.html -->
@@ -415,7 +356,7 @@ src
   |- Counter.js
 ```
 
-On importe notre application et le style dans <em>index.js</em>
+On importe notre application et le style dans _index.js_
 
 ```jsx
 // src/index.js
@@ -458,11 +399,7 @@ html {
 }
 ```
 
-Puis dans <em>./src/components/App.js</em>, on importe notre composant
-
-{' '}
-
-<em>Counter</em>
+Puis dans _./src/components/App.js_, on importe notre composant _Counter_
 
 ```jsx
 // src/components/App.js
@@ -480,8 +417,7 @@ export default function App() {
 }
 ```
 
-Notre compteur est dans le fichier <em>src/components/Counter.js</em>,
-commençons simplement avec ce code:
+Notre compteur est dans le fichier _src/components/Counter.js_, commençons simplement avec ce code:
 
 ```jsx
 // src/components/Counter.js
@@ -506,14 +442,14 @@ mais il n'est pas encore fonctionnel. Pour que le compteur marche, il nous
 faut:
 
 - stocker la valeur du compteur
-- une fonction <em>increment()</em> pour incrémenter cette valeur
-- une fonction <em>decrement()</em> pour la décrementer
+- une fonction _increment()_ pour incrémenter cette valeur
+- une fonction _decrement()_ pour la décrementer
 
 ## React.useState
 
 Dans React, on peut utiliser la fonction _useState_ pour stocker des valeurs
 et les changer. _useState_ fait partie des fonctions internes à React qu'on
-appelle <em>hook</em>, il existe notamment différents <em>hooks</em> avec
+appelle _hook_, il existe notamment différents _hooks_ avec
 chacun leur rôle. Le hook useState s'utilise de la manière suivante:
 
 ```jsx
@@ -538,18 +474,9 @@ const increment = () => setCount(count + 1)
 const decrement = () => setCount(count - 1)
 ```
 
-Ces fonctions peuvent maintenant être attachés aux boutons <em>+</em> et{' '}
+Ces fonctions peuvent maintenant être attachés aux boutons _+_ et _-_ grâce à l'attribut _onClick_ du composant _button_.
 
-{' '}
-
-<em>-</em> grâce à l'attribut <em>onClick</em> du composant <em>button</em>.
-
-<Callout>
-  En <em>JSX</em>, on retrouve la majorité des attributs en HTML mais nommés en{' '}
-  <ExternalLink to="https://en.wikipedia.org/wiki/Camel_case">
-    camelCase
-  </ExternalLink>
-</Callout>
+> En _JSX_, on retrouve la majorité des attributs en HTML mais nommés en [camelCase](https://en.wikipedia.org/wiki/Camel_case)
 
 ```jsx
 // src/components/Counter.js

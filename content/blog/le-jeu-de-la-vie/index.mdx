@@ -11,7 +11,7 @@ Tu te demandes sûrement ce qu'est le Jeu de la vie. Malgré son nom, ce n'est p
 
 Plus exactement, le jeu de la vie est un automate cellulaire inventé par un mathématicien britanique du nom de John Conway dans les années 70. L'automate va évoluer selon l'état de départ que l'on va lui donner. C'est la seule interaction que l'on aura avec lui, ensuite il évoluera tout seul selon un ensemble de règles très simple.
 
-> &#128204; Tu peux tester le jeu de la vie sur ce [site](https://game-of-life-bay.vercel.app/) (pour les plus curieux, je l'ai développé en React en utilisant les hooks).
+> Live Demo : [Le Jeu de la Vie](https://game-of-life-bay.vercel.app/)
 
 ## I. Le Jeu de la vie
 
@@ -33,7 +33,7 @@ Tu vas voir qu'avec ces 3 règles, des choses étonnantes vont se produire.
 
 Plusieurs structures ou patterns sont connus dans le jeu de la vie. Je vais t'en présenter ici quelques uns des plus célèbres.
 
-> &#128204; Pour découvrir de nouvelles structures, le plus simple est de remplir les cases aléatoirement et de voir où est-ce que ça va mener.
+> Pour découvrir de nouvelles structures, le plus simple est de remplir les cases aléatoirement et de voir où est-ce que ça va mener.
 
 #### Les structures stables
 
@@ -45,27 +45,19 @@ Comme son nom l'indique, une structure stable est une structure qui ne change ja
 
 Ce sont des structures qui changent et reprennent leur forme de départ au bout de N générations. On dit que ce sont des structures périodiques. Par exemple cette structure appelée Clignotant, reprend sa forme toutes les 2 générations.
 
-<div style="text-align:center;">
-<img style="max-width:50%;" src="./blinker.gif" alt="Un clignotant" title="Un clignotant">
-</div>
+![clignotant](./blinker.gif 'clignotant')
 
 ##### Le pulsar (période 3)
 
-<div style="text-align:center;">
-<img style="max-width:50%;" src="./pulsar.gif" alt="Un pulsar" title="Un pulsar">
-</div>
+![pulsar](./pulsar.gif 'pulsar')
 
 ##### La galaxie de kok (période 8)
 
-<div style="text-align:center;">
-<img style="max-width:50%;" src="./kok.gif" alt="La galaxie de Kok" title="La galaxie de Kok">
-</div>
+![galaxie de kok](./kok.gif 'galaxie de kok')
 
 ##### Le pentadécathlon (période 15)
 
-<div style="text-align:center;">
-<img style="max-width:50%;" src="./pentadecathlon.gif" alt="Pentadécathlon" title="Pentadécathlon">
-</div>
+![pentadecathlon](./pentadecathlon.gif 'pentadecathlon')
 
 #### Les vaisseaux
 
@@ -73,15 +65,11 @@ Ce sont des structures qui se déplacent d'une génération à l'autre. Les vais
 
 ##### Le planneur
 
-<div style="text-align:center;">
-<img style="max-width:50%;" src="./planneur.gif" alt="Un planneur" title="Un planneur">
-</div>
+![planneur](./planneur.gif 'planneur')
 
 ##### Le LWSS
 
-<div style="text-align:center;">
-<img style="max-width:50%;" src="./LWSS.gif" alt="LWSS" title="LWSS">
-</div>
+![LWSS](./LWSS.gif 'LWSS')
 
 Beaucoup d'autres structures existent dans le jeu de la vie. Je t'ai montré uniquement les quelques structures typiques. Si tu veux en savoir plus, je te conseille l'excellente vidéo de la chaîne [Science étonnante](https://www.youtube.com/watch?v=S-W0NX97DB0) sur Youtube.
 
@@ -116,7 +104,7 @@ Il est important d'appliquer la décision de vie ou de mort d'une cellule qu'à 
 
 A la fin de l'analyse, la copie deviendra la prochaine génération, et on recommence. Cela donne alors cet algorithme:
 
-> &#128204; La phase de copie du tableau d'origine n'est pas illustrée dans l'algorithme pour faciliter la lisibilité
+> La phase de copie du tableau d'origine n'est pas illustrée dans l'algorithme pour faciliter la lisibilité
 
 ```text
 tab = [[0,1,0],[1,1,0],[0,1,1]]

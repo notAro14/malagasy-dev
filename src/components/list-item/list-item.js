@@ -5,7 +5,8 @@ export const List = styled.ul`
   padding: 1.1rem;
   background-color: ${props => props.theme.color.bgColorLight};
   border-radius: 5px;
-  em {
+  em,
+  strong {
     color: ${props => props.theme.color.primary};
     font-family: 'Caveat', cursive;
     font-size: 1.1rem;

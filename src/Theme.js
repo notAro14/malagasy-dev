@@ -8,11 +8,15 @@ const theme = {
     textSecondary: '#56a3a6',
   },
   font: {
-    body: '1rem',
+    body: '1.5rem',
+    bodyMobile: '1.2rem',
     caption: '0.85rem',
     main: 'Source Sans Pro',
     alt: 'Caveat',
-    title: '1.5rem',
+    h1: '2.3rem',
+    h2: '2rem',
+    h3: '1.7rem',
+    h4: '1.6rem',
   },
 }
 
