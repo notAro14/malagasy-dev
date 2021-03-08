@@ -4,7 +4,6 @@ import styled from 'styled-components'
 export const List = styled.ul`
   padding: 1.1rem;
   background-color: ${props => props.theme.color.bgColorLight};
-  border-radius: 5px;
   em,
   strong {
     color: ${props => props.theme.color.primary};
@@ -18,6 +17,7 @@ const ListItemIcon = styled.span`
 `
 const ListItemContainer = styled.li`
   padding: 0.5rem;
+  font-size: ${props => props.theme.font.callout};
 `
 
 export const ListItem = ({ icon, iconLabel, children }) => (

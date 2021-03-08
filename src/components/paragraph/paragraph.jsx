@@ -5,6 +5,7 @@ const Paragraph = styled.p`
   font-size: ${({ theme: { font } }) => font.body};
   font-weight: 400;
   padding: 1rem 0;
+  text-align: justify;
 
   @media (max-width: 768px) {
     font-size: ${({ theme: { font } }) => font.bodyMobile};

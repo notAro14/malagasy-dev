@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import Paragraph from '../paragraph/paragraph'
 
 const CalloutContainer = styled.blockquote`
   background-color: ${props => props.theme.color.bgColorLight};
-  border-radius: 5px;
   display: flex;
   align-items: center;
   padding: 1rem;
@@ -13,6 +13,9 @@ const CalloutContainer = styled.blockquote`
     font-family: 'Caveat', cursive;
     font-size: 1.1rem;
     padding: 0 0.25rem;
+  }
+  ${Paragraph} {
+    font-size: ${props => props.theme.font.callout};
   }
 `
 const CalloutIcon = styled.span`

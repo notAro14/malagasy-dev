@@ -10,6 +10,7 @@ const theme = {
   font: {
     body: '1.5rem',
     bodyMobile: '1.2rem',
+    callout: '1.2rem',
     caption: '0.85rem',
     main: 'Source Sans Pro',
     alt: 'Caveat',
