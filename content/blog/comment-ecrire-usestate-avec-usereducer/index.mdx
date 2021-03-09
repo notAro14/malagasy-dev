@@ -1,0 +1,96 @@
+---
+title: 'Comment écrire useState avec useReducer'
+date: '2021-03-12'
+description: 'Implémenter useState avec useReducer'
+tags:
+  - React
+  - Frontend
+  - Hooks
+creditsUserUrl: https://commons.wikimedia.org/wiki/File:React-icon.svg
+creditsUser: Facebook
+featuredImage: cover.png
+growth: '🌳'
+---
+
+Aujourd'hui je vais te montrer un petit truc assez sympa que j'ai découvert grâce à un article de [Kent C. Dodds](https://kentcdodds.com/blog/how-to-implement-usestate-with-usereducer). Comme tu l'as remarqué dans le titre, il est possible d'écrire notre propre `useState` grâce à `useReducer`.
+
+L'article ci-dessus est plutôt explicatif et très bien fait donc je t'invite vivement à aller le lire après 😉
+
+## Résumé (TLDR;)
+
+⬇⬇⬇ Pour les plus pressés 😏 et adeptes du `Ctrl-C / Ctrl-V` ⬇⬇⬇
+
+```jsx
+import { useReducer } from 'react'
+
+const reducer = (state, action) =>
+  typeof action === 'function' ? action(state) : action
+
+const useState = initialValue => useReducer(reducer, initialValue)
+export default useState
+```
+
+## useState
+
+Pour rappel, `useState` permet de gérer l'état d'un composant fonctionnel
+
+```jsx
+const TextField = () => {
+  const [value, setValue] = React.useState('')
+  return <input value={value} onChange={evt => setValue(evt.target.value)} />
+}
+```
+
+Il prend un argument optionnel qui permet d'initialiser la valeur de l'état et retourne un tableau contenant l'état (`value`) et la fonction de mise-à-jour de celui-ci (`setValue`)
+
+> Tu peux nommer l'état et la fonction de mise à jour comme tu veux, par exemple `banane` et `setBanane`
+
+La fonction de mise-à-jour de l'état prend à son tour un argument qui deviendra la prochaine valeur de l'état. A noter que cet argument peut prendre la forme d'une fonction (callback). Dans ce cas, le callback prend comme argument la valeur précédente de l'état.
+
+```jsx
+const Counter = () => {
+  const [count, setCount] = React.useState(0)
+  const handleClick = () => {
+    // le callback prend comme paramètre la valeur précédente de `count`
+    const cb = prevCount => prevCount + 1
+    setCount(cb)
+  }
+  return <p onClick={handleClick}>{count}</p>
+}
+```
+
+> Cette façon de mettre à jour l'état avec un callback est une bonne pratique lorsque la valeur suivante dépend de la précédente
+
+Enfin, il est possible aussi d'initialiser la valeur de l'état en mode lazy si l'initialisation prend beaucoup de temps. Je m'explique.
+
+```jsx
+const Component = () => {
+  const initialStateValue = veryExpensiveInit()
+  const [state, setState] = useState(initialStateValue)
+  return // .....
+}
+```
+
+`veryExpensiveInit` est une fonction qui prend énormément de temps pour s'exécuter. Cela a pour conséquence de ralentir le rendu du composant.
+
+A chaque mis-à-jour et re-rendu du composant, `initialStateValue` est re-calculé même s'il n'est pas utilisé par `useState` puisqu'on n'a besoin de la valeur initiale qu'au tout premier rendu.
+
+Vient alors l'initialisation en mode _lazy_. Il consiste à envoyer en paramètre à `useState` une fonction qui appelle `veryExpensiveInit`
+
+React se charge ainsi d'appeler cette fonction uniquement si le composant est à son tout premier rendu.
+
+```jsx
+const Component = () => {
+  // `veryExpensiveInit` ne sera exécuté
+  // que si le composant est affiché pour la première fois
+  const [state, setState] = useState(() => veryExpensiveInit())
+  return // .....
+}
+```
+
+En résumé, si nous voulons ré-implémenter `useState` , les fonctionnalités à respecter sont
+
+- initialisation optionnelle de l'état
+- mise-à-jour de l'état avec une nouvelle valeur
+- mise-à-jour de l'état à partir de la valeur précédente
+- initialisation en mode _lazy_
