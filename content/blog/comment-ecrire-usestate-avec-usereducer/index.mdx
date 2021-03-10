@@ -18,19 +18,23 @@ L'article ci-dessus est plutôt explicatif et très bien fait donc je t'invite v
 
 ## Résumé (TLDR;)
 
-⬇⬇⬇ Pour les plus pressés 😏 et adeptes du `Ctrl-C / Ctrl-V` ⬇⬇⬇
+Pour les plus pressés 😏 et adeptes du `Ctrl-C / Ctrl-V`
 
-```jsx
+```js
 import { useReducer } from 'react'
 
-const reducer = (state, action) =>
-  typeof action === 'function' ? action(state) : action
+const reducer = (state, newState) =>
+  typeof newState === 'function' ? newState(state) : newState
 
-const useState = initialValue => useReducer(reducer, initialValue)
+const initializer = initialValue =>
+  typeof initialValue === 'function' ? initialValue() : initialValue
+
+const useState = initialValue => useReducer(reducer, initialValue, initializer)
+
 export default useState
 ```
 
-## useState
+## useState - Rappel
 
 Pour rappel, `useState` permet de gérer l'état d'un composant fonctionnel
 
@@ -63,7 +67,7 @@ const Counter = () => {
 
 Enfin, il est possible aussi d'initialiser la valeur de l'état en mode lazy si l'initialisation prend beaucoup de temps. Je m'explique.
 
-```jsx
+```js
 const Component = () => {
   const initialStateValue = veryExpensiveInit()
   const [state, setState] = useState(initialStateValue)
@@ -71,15 +75,15 @@ const Component = () => {
 }
 ```
 
-`veryExpensiveInit` est une fonction qui prend énormément de temps pour s'exécuter. Cela a pour conséquence de ralentir le rendu du composant.
+`veryExpensiveInit` est une fonction qui prend énormément de temps à exécuter. Cela a pour conséquence de ralentir le rendu du composant.
 
-A chaque mis-à-jour et re-rendu du composant, `initialStateValue` est re-calculé même s'il n'est pas utilisé par `useState` puisqu'on n'a besoin de la valeur initiale qu'au tout premier rendu.
+A chaque mise-à-jour et re-rendu du composant, `initialStateValue` est re-calculé même s'il n'est pas utilisé par `useState` puisqu'on n'a besoin de la valeur initiale qu'au tout premier rendu.
 
 Vient alors l'initialisation en mode _lazy_. Il consiste à envoyer en paramètre à `useState` une fonction qui appelle `veryExpensiveInit`
 
 React se charge ainsi d'appeler cette fonction uniquement si le composant est à son tout premier rendu.
 
-```jsx
+```js
 const Component = () => {
   // `veryExpensiveInit` ne sera exécuté
   // que si le composant est affiché pour la première fois
@@ -90,7 +94,150 @@ const Component = () => {
 
 En résumé, si nous voulons ré-implémenter `useState` , les fonctionnalités à respecter sont
 
-- initialisation optionnelle de l'état
-- mise-à-jour de l'état avec une nouvelle valeur
-- mise-à-jour de l'état à partir de la valeur précédente
-- initialisation en mode _lazy_
+- initialisation et mise-à-jour de l'état avec une nouvelle valeur
+- mise-à-jour de l'état avec une fonction callback
+- initialisation en mode "lazy"
+
+## useReducer - Alternative à useState
+
+`useReducer` est un hook qui permet aussi de gérer l'état d'un composant. Il est préférable de l'utiliser si le composant requiert une logique plus complexe.
+
+Il reçoit deux arguments:
+
+- une fonction `reducer` de la forme `(state, action) => newState`
+- une valeur initiale de l'état
+
+Et retourne un tableau de 2 éléments:
+
+- la valeur de l'état
+- la fonction de mise-à-jour de l'état que l'on appelle conventionnellement `dispatch`
+
+Remarque
+
+> `action` est l'argument que l'on passe à la fonction `dispatch` pour mettre à jour l'état
+
+### Exemple avec un Compteur (oui encore un enième compteur 😏)
+
+```jsx
+import { useReducer } from 'react'
+
+const reducer = (state, action) => {
+  switch (action) {
+    case 'INCREMENT':
+      return state + 1
+    case 'DECREMENT':
+      return state - 1
+    case 'RESET':
+      return 0
+    default:
+      return state
+  }
+}
+
+const Counter = () => {
+  const [count, dispatch] = useReducer(reducer, 0)
+  return (
+    <main>
+      <p>{count}</p>
+      <button onClick={() => dispatch('INCREMENT')}>+</button>
+      <button onClick={() => dispatch('DECREMENT')}>-</button>
+      <button onClick={() => dispatch('RESET')}>Reset</button>
+    </main>
+  )
+}
+```
+
+## Implémenter useState avec useReducer
+
+### Initialisation et mise-à-jour de l'état
+
+Avec ce que l'on sait de `useReducer`, il n'y a à priori pas beaucoup de difficultés à implémenter cette fonctionnalité.
+
+```js
+import {useReducer} from 'react'
+
+// j'ai renommé `action` en `newState`
+// mais son nom n'a pas vraiment d'importance
+// le plus important à retenir est que cet argument
+// est celui que l'on fait passer au `reducer` grâce à `dispatch`
+const reducer = (state, newState) => return newState
+
+const useState = (initialValue) => {
+  // j'ai renommé `dispatch` en `setState`
+  const [state, setState] = useReducer(reducer, initialValue)
+  return [state, setState]
+}
+```
+
+En simplifiant, on a
+
+```js
+const reducer = (state, newState) => newState
+const useState = initialValue => useReducer(reducer, initialValue)
+```
+
+### Mise-à-jour de l'état avec un callback
+
+Il faut maintenant que la fonction `dispatch` (ou `setState`) ait la capacité de savoir si on passe une valeur ou une fonction en paramètre de celle-ci.
+
+Pour cela, on teste tout simplement le type de `action` (ou `newState`)
+
+- si c'est une fonction, on l'exécute en lui passant comme argument l'état précédent et on renvoie le résultat
+- si c'est une valeur on la renvoie directement
+
+```diff
+- const reducer = (state, newState) => newState
++ const reducer = (state, newState) => typeof newState === 'function' ? newState(state) : newState
+```
+
+```js
+const reducer = (state, newState) =>
+  typeof newState === 'function' ? newState(state) : newState
+const useState = initialValue => useReducer(reducer, initialValue)
+```
+
+## Initialisation de l'état en mode lazy ou "Lazy initialization"
+
+La solution à celle-ci est moins évidente mais la clé à ce problème se trouve [ici](https://reactjs.org/docs/hooks-reference.html#lazy-initialization). Oui, `useReducer` peut recevoir un 3ème argument qui permet de faire une "lazy initalization".
+
+```js
+useReducer(reducerFunction, initialState, initializer)
+```
+
+Ce 3ème argument `initializer` est exécutée de la sorte
+
+```js
+initializer(initialState)
+```
+
+Elle a été prévue exactement pour les mêmes raisons que `useState`. C'est-à-dire permettre au développeur d'exécuter une fonction d'initialisation, coûteuse en ressources, uniquement au premier appel de `useReducer`
+
+```js
+// ce code
+const initialValue = someProps
+const initialState = veryExpensiveInit(initialValue)
+const [state, dispatch] = useReducer(reducer, initialState)
+
+// devient alors
+const initialValue = someProps
+const initializer = initialValueArg => veryExpensiveInit(initialValueArg)
+const [state, dispatch] = useReducer(reducer, initialValue, initializer)
+```
+
+Dans notre cas, on veut savoir si l'argument reçu par notre `useState` et transféré à `React.useReducer` est une fonction ou une valeur. Pour cela on ajoute une fonction `initializer` et on fait cette vérification à l'intérieur de celle-ci.
+
+```js
+const reducer = (state, newState) =>
+  typeof newState === 'function' ? newState(state) : newState
+
+const initializer = initialValue =>
+  typeof initialValue === 'function' ? initialValue() : initialValue
+
+const useState = initialValue => useReducer(reducer, initialValue, initializer)
+```
+
+## Conclusion
+
+Le but maintenant n'est pas de refaire la même chose dans ton code et de remplacer tous tes `React.useState` par un `useState` custom (ça ne sert à rien)
+
+Mon objectif était d'expliquer simplement le fonctionnement de ces fonctions qui sont `useState` et `useReducer` pour te permettre (et me permettre aussi au passage 😉) d'avoir une compréhension plus fine de celles-ci.
